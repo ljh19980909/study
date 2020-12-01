@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业3</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin:  auto;
+				border: 2px solid #C87F8A;
+				transition: all .5s;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			#clock{
+				width: 100px;
+				height: 100px;
+				background-color: white;
+				border: 2px solid #C87F8A;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transition: all .5s;	
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			#clock>div{
+				width: 50px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				color: gray;
+				font-size: 20px;
+				position: absolute;
+				right: 0;
+				left: 0;
+				margin: auto;
+				transform-origin: center bottom;
+				transition: all .5s;
+			}
+			#div7{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: #C87F8A;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				text-align: center;
+				line-height: 100px;
+				font-size: 50px;
+				color: white;
+				z-index: 10;
+				transition: all .5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="clock">
+				<div class="div1"><span class="fa fa-volume-up"></span></div>
+				<div class="div2"><span class="fa fa-video-camera"></span></div>
+				<div class="div3"><span class="fa fa-camera"></span></div>
+				<div class="div4"><span class="fa fa-user-circle"></span></div>
+				<div class="div5"><span class="fa fa-bell"></span></div>
+				<div class="div6"><span class="fa fa-envelope"></span></div>
+			</div>
+			<div id="div7"><i class="fa fa-plus"></i></div>
+		</div>
+		<script type="text/javascript">
+			var ids = document.querySelectorAll("#clock>div");
+			var spans = document.querySelectorAll("#clock span");
+			for (i = 0;i < ids.length; i++){
+				ids[i].style.transform = "rotateZ(" + (i * 60) + "deg)";
+				spans[i].style.transform = "rotateZ(" + (-i * 60) + "deg)";
+			}
+			
+			for(var m=0;m<spans.length;m++){
+			spans[m].onmouseover = function(){
+				for(var n=0;n<spans.length;n++){
+					if(spans[n] == this){
+						spans[n].style.color = "#C87F8A";
+					}
+				}
+			}
+			}
+			for(var m=0;m<spans.length;m++){
+			spans[m].onmouseout = function(){
+				for(var n=0;n<spans.length;n++){
+					if(spans[n] == this){
+						spans[n].style.color = "grey";
+					}
+				}
+			}
+			}
+			var t = 0;
+			div7.onclick = function(){
+				t = t % 2;
+				if(t == 0){
+						div7.style.transform = "rotateZ(" + 45 + "deg)";
+					t++;
+					box.style.width = 350 + "px";
+					box.style.height = 350 + "px";
+					box.style.borderRadius = 175 + "px";
+					
+					clock.style.width = 340 + "px";
+					clock.style.height = 340 + "px";
+					clock.style.borderRadius = 170 + "px";
+					
+					for(x=0;x<ids.length;x++){
+						ids[x].style.width = 50 + "px";
+						ids[x].style.height = 165 + "px";
+						ids[x].style.fontSize = 30 + "px";
+					}
+				}else{
+					div7.style.transform = "rotateZ(" + 0 + "deg)";
+					t++;
+					box.style.width = 100 + "px";
+					box.style.height = 100 + "px";
+					box.style.borderRadius = 50 + "px";
+					
+					clock.style.width = 100 + "px";
+					clock.style.height = 100 + "px";
+					clock.style.borderRadius = 50 + "px";
+					
+					for(x=0;x<ids.length;x++){
+						ids[x].style.width = 50 + "px";
+						ids[x].style.height = 50 + "px";
+						ids[x].style.fontSize = 10 + "px";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

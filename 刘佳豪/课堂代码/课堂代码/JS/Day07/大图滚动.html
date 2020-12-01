@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>大图滚动</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 350px;
+				height: 500px;
+				border: 1px solid red;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#div1 {
+				width: 2100px;
+				height: 500px;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: all 1s;
+			}
+			
+			#div1 img {
+				float: left;
+				width: 350px;
+				height: 500px;
+			}
+			
+			button {
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<button>5</button>
+		<button>6</button>
+		<div id="box">
+			<div id="div1">
+				<img src="img/1.png" />
+				<img src="img/2.jpeg" />
+				<img src="img/3.jpeg" />
+				<img src="img/4.png" />
+				<img src="img/5.jpeg" />
+				<img src="img/6.png" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			var btns = document.querySelectorAll("button");
+			for(var i = 0; i < btns.length; i++) {
+								btns[i].onclick = function(){
+								for(var j = 0;j < btns.length;j++){
+									if(btns[j] == this){
+										console.log(j);
+										div1.style.left = -j*350 +"px";
+									}
+								}
+							}
+
+//				btns[i].onclick = (function(index) {
+//					return function() {
+//						div1.style.left = -index * 350 + "px";
+//					}
+//				})(i)
+				
+			}
+		</script>
+	</body>
+
+</html>

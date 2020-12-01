@@ -1,0 +1,5 @@
+<!--components/Child2/Child2.wxml-->
+<view class="title">
+	这是Child2组件
+	<Child3 c3Num="{{num}}" c3Obj="{{obj}}"/>
+</view>

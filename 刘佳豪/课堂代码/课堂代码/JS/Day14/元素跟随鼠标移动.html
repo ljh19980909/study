@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素跟随鼠标移动</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+//			div1.onclick = function(e){
+//				var even = e || event;
+//				/*
+//				 * screenX/Y	鼠标距离屏幕左端和上端的距离
+//				 * clientX/Y	鼠标距离浏览器内容区域左端和上端的距离
+//				 * pageX/Y		鼠标距离页面区域左端和上端的距离
+//				 */
+//				console.log(even);
+//			}
+			
+//			document.body.onmousemove = function(e){
+//				var even = e || event;
+//				div1.style.left = even.pageX - div1.offsetWidth/2 + "px";
+//				div1.style.top = even.pageY - div1.offsetHeight/2 + "px";
+//			}
+			
+			
+			div1.onmousedown = function(e){
+				var even = e || event;
+				var X = even.clientX - div1.offsetLeft;
+				var Y = even.clientY - div1.offsetTop;
+				
+				document.body.onmousemove = function(e){
+				var even = e || event;
+				div1.style.left = even.clientX - X + "px";
+				div1.style.top = even.clientY - Y + "px";
+			}
+		}
+			div1.onmouseup = function(){
+				document.body.onmousemove = null;
+			}
+		</script>
+	</body>
+</html>

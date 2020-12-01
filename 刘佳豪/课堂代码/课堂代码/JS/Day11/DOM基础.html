@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM基础</title>
+		<style type="text/css">
+			#div1{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<span>这是span元素</span>
+			你好！
+			<!--这是注释-->
+			<p style="display: none;">这是段落标签</p>
+		</div>
+		<img id="img1"/>
+		<button id="createBtn">创建节点</button>
+		<button id="removeBtn">删除节点</button>
+		<script type="text/javascript">
+			/*
+			 * DOM: Document Object	Model 文档对象类型
+			 * 作用：用来处理与当前"文档内容"有关的操作
+			 * 
+			 * DOM树 当HTML文档加载完毕之后，浏览器会根据我们书写的html代码，
+			  创建一个反应元素之间关系的树状结构，DOM	树是由一个个节点组成的.
+			 *
+			 * DOM节点的类型:
+			 * 1.元素节点<body></body>
+			 * 2.声明节点<!DOCTYPE html>
+			 * 3.文本节点 文字内容，空格
+			 * 4.注释节点
+			 * 5.文档节点 document
+			 * 
+			 * 节点之间的关系:
+			 * 1.子节点
+			 * 2.父节点
+			 * 3.兄弟节点
+			 */
+			
+			/*
+			 * 一、特殊节点的获取方式
+			 */
+			//1.文档节点
+			console.log(document);
+			
+			//2.html节点
+			console.log(document.documentElement,document.querySelector("html"));
+			
+			//3.body节点
+			console.log(document.body,document.querySelector("body"));
+			
+			//4.head节点
+			console.log(document.head,document.querySelector("head"));
+			
+			//5.声明节点
+			console.log(document.doctype);
+			
+			
+			/*
+			 * 二、通过节点之间的关系获取节点
+			 */
+			//1.获取一个节点的子节点(子节点可以有多个)
+			console.log(document.head.childNodes);
+			
+			//不带空格寻找子节点
+			console.log(document.head.children);
+			
+			//2.获取一个节点的父节(父节点有且只有一个)
+			console.log(document.body.parentNode.parentNode.parentNode);
+			
+			//3.获取某个节点里第一个子节点
+			console.log(document.head.firstChild);
+			
+			//4.获取某个节点里最后一个子节点
+			console.log(document.head.lastChild);
+			
+			//5.获取某个节点里第一个元素子节点
+			console.log(document.head.firstElementChild);
+			
+			//6.获取某个节点里最后一个元素子节点
+			console.log(document.head.lastElementChild);
+			
+			//7.获取某个节点里上一个兄弟节点
+			console.log(document.body.previousSibling);
+			
+			//8.获取某个节点里下一个兄弟节点
+			console.log(document.head.nextSibling);
+			
+			//9.获取某个节点里上一个兄弟元素节点
+			console.log(document.body.previousElementSibling);
+			
+			//10.获取某个节点里下一个兄弟元素节点
+			console.log(document.head.nextElementSibling);
+			
+			/*
+			 * 三、操作元素节点里的内容
+			 * 1.innerHTML
+			 * 2.innerText
+			 * 3.textContent
+			 * 
+			 * 以上三个属性均为读写属性
+			 * 
+			 * 读写性:即可获取，也可设置
+			 * 只读性:只可获取，不可设置
+			 */
+			var div1E = document.getElementById("div1");
+			
+//			div1E.innerHTML = "hello,world!";
+//			console.log(div1E.innerHTML);
+//			var content = div1E.innerHTML;
+//			
+//			div1E.innerHTML += div1E.innerHTML
+
+//			div1E.innerText = "hello,text";
+//			console.log(div1E.innerText);
+
+//			div1E.textContent = "hello,content";
+//			console.log(div1E.textContent);
+
+			/*
+			 * 三种操作元素内容方式的区别:
+			 * innerHTML 在设置内容时，如果内容里存在html字符串，会被解析成标签，如果有空格，空格忽略
+			 	 在获取内容时，能获取节点里所有内容，包括文本，元素，注释，多余的空格;
+			 	能获取到隐藏的内容
+			 * innerText 在设置内容时，如果内容里存在html字符串，依旧输出字符串，不会解析，如果有空格，空格忽略
+			 	在获取内容时，只能获取文本，不获取多余的空格 
+			 	无法获取隐藏的文本
+			 * textContent 在设置内容时，如果内容里存在html字符串，依旧输出字符串，不会解析，如果有空格，空格忽略
+			 	 在获取内容时，只能获取文本，能获取多余的空格
+			 	能获取隐藏的文本
+			 */
+			
+			/*
+			 * 四、操作元素节点的属性
+			 * 
+			 * 1.直接使用点语法操作元素的属性
+			 * 2.1 设置元素的属性		元素.setAttribute("属性名"，"属性值");
+			 * 2.2 获取元素的属性		元素.getAttribute("属性名");
+			 * 
+			 * 注意:当属姓名可以直接写出时，使用第一种和第二种都可以
+			 * 如果属性名没有办法直接写出，或者属性名是以字符串形式存在的，只能用第二种
+			 */
+			
+//			div1.style.backgroundColor = "red";
+//			console.log(div1.style.backgroundColor);
+			
+			img1.src = "img/1.png";
+			console.log(img1.src);
+			img1.alt = "这是1.png图片"
+			console.log(img1.alt);
+			
+			img1.setAttribute("src","img/4.png");
+			console.log(img1.getAttribute("src"));
+			img1.setAttribute("alt","这是4.png图片");
+			console.log(img1.getAttribute("alt"));
+			
+			img1.style.width = "300px";
+			img1.style.height = "400px";
+			
+			/*
+			 * 五、操作元素的样式
+			 * 设置元素的样式,通过style属性设置元素的样式
+			 * 语法:	元素.style.样式名 = "样式值";
+			 */
+			div1.style.width = "200px";
+			div1.style.height = "200px";
+			console.log(div1.style.width,div1.style.height);
+			
+			/*
+			 * 注意:只有通过style属性设置的样式，才能被style属性获取到，非行间的样式，通过style属性无法获取!!!!!!
+			 */
+			
+			/*
+			 * JS如何获取非行间的css样式？？？
+			 * getComputedStyle(元素)
+			 * 返回值:元素的样式对象
+			 * 
+			 * 获取元素对象的某个样式
+			 * 元素对象.样式名
+			 * 元素对象["样式名"]
+			 */
+			
+			var styleObj = getComputedStyle(div1);
+			console.log(styleObj);
+			
+			
+			/*
+			 * 六、动态操作元素(创建,插入,删除)
+			 */
+			/*
+			 * 1.创建元素节点
+			 * document.createElement("标签名");
+			 * 返回值：创建好的元素节点
+			 * 
+			 * 2.将创建好的节点插入到当前文档中
+			 * 父节点.appendChild(新节点)	将新节点放到父节点里面的最后面
+			 * 父节点.insertBefore(新节点,已存在的子节点);
+			 * 
+			 * 3.移出已经存在的节点
+			 * 父节点.removeChild(要删除的节点);
+			 */
+			createBtn.onclick = function(){
+				var cDiv = document.createElement("div");
+				console.log(cDiv);
+				
+				cDiv.style.width = "200px";
+				cDiv.style.height = "200px";
+				cDiv.style.backgroundColor = "purple";
+				cDiv.setAttribute("id","div2");
+				
+//				document.body.appendChild(cDiv);
+				document.body.insertBefore(cDiv,img1);
+			}
+			removeBtn.onclick = function(){
+//				document.body.removeChild(img1);
+				this.parentNode.removeChild(img1);
+			}
+		</script>
+	</body>
+</html>

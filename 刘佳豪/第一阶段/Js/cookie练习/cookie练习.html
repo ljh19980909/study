@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/handle.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		账号：<input type="text" id="user" />
+		<br>
+		密码：<input type="text" id="pass" />
+		<br>
+		<input type="checkbox" id="gou" />
+		<button type="button" id="btn">提交</button>
+	</body>
+	<script type="text/javascript">
+		var cookies = document.cookie.split('=');
+		$('#user').val(cookies[0]);
+		$('#pass').val(cookies[1]);
+		if (document.cookie != '') {
+			$('#gou').prop('checked', true);
+		}
+		$('#btn').click(function() {
+			if ($('#gou').prop('checked')) {
+				document.cookie = user.value + '=' + pass.value;
+			} else {
+				document.cookie = user.value + '=;max-age=-1';
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,75 @@
+/* CSSTransition动画的执行,需要依赖对应的class */
+/* 
+    进入动画
+        xxx-enter
+        xxx-enter-active
+        xxx-enter-done
+    离开动画
+        xxx-exit 离开动画点击按钮时触发,在动画的执行过程中保留该class,一般在该class里填写需要做动画的样式的初始值
+        xxx-exit-active 从开始到结束一直保留,一般填写动画的运行信息
+        xxx-exit-done 离开动画执行完毕时需要保持的状态,一般填写结束时样式需要保持的值
+*/
+/* 离开动画 */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: all 1s;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+/* 进入动画 */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: all 1s;
+}
+.fade-enter-done {
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+  background-color: red;
+  width: 50px;
+  height: 100px;
+  transform-origin: right bottom;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+/* 离开动画 */
+/* @keyframes{
+
+} */
+.fades-exit {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.fades-exit-active {
+  transform: rotate(-45deg);
+  opacity: 1;
+  transition: all 1s;
+}
+.fades-exit-done {
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+/* 进入动画 */
+.fades-enter {
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+.fades-enter-active {
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: all 1s;
+}
+.fades-enter-done {
+  opacity: 0;
+  transform: rotate(90deg);
+}

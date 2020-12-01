@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="./promise.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		const p = new Promise((resolve, reject) => {
+			resolve(value) //value
+			setTimeout(()=>{
+				resolve(1)
+			},100)
+		})
+		p.then(
+			value => {
+				console.log("onResolved()1",value)
+			},
+			reason => {
+				console.log("onRejected()1",reason)
+			}
+		)
+		p.then(
+			value => {
+				console.log("onResolved()2",value)
+			},
+			reason => {
+				console.log("onRejected()2",reason)
+			}
+		)
+	</script>
+</html>

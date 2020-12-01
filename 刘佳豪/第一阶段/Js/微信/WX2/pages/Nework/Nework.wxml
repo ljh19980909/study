@@ -1,0 +1,4 @@
+<view>------------------网络请求-------------------</view>
+<button bindtap="netRequest">网络请求</button>
+<button bindtap="net">封装网络请求</button>
+<button bindtap="wyy">网易云音乐</button>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+      "i-rate": "../../dist/rate/index"
+  },
+  "enablePullDownRefresh": true
+}

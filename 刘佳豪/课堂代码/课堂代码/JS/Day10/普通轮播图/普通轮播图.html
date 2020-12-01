@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>普通轮播图</title>
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.box {
+				width: 320px;
+				height: 450px;
+				margin: 50px auto 0;
+				border: 5px solid gold;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#content {
+				width: 2240px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow: hidden;
+			}
+			
+			#content img {
+				width: 320px;
+				height: 450px;
+				float: left;
+			}
+			
+			ul {
+				width: 30%;
+				display: flex;
+				justify-content: space-around;
+				position: absolute;
+				left: 3%;
+				bottom: 3%;
+			}
+			
+			li {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: whitesmoke;
+			}
+			
+			.left,
+			.right {
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+				font-size: 50px;
+				color: white;
+				opacity: 0;
+				transition: all .3s;
+			}
+			
+			.left {
+				left: 0;
+			}
+			
+			.right {
+				right: 0;
+			}
+			
+			.chooseP {
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="content">
+				<img src="img/1.png" alt="" />
+				<img src="img/2.jpeg" alt="" />
+				<img src="img/3.jpeg" alt="" />
+				<img src="img/4.png" alt="" />
+				<img src="img/5.jpeg" alt="" />
+				<img src="img/6.png" alt="" />
+				<img src="img/1.png" alt="" />
+			</div>
+			<ul>
+				<li class="chooseP"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="left">
+				<i class="fa fa-angle-left"></i>
+			</div>
+			<div class="right">
+				<i class="fa fa-angle-right"></i>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var contentDiv = document.getElementById("content");
+			var lis = document.querySelectorAll("ul li");
+			var leftBtn = document.querySelector(".left");
+			var rightBtn = document.querySelector(".right");
+			var boxDiv = document.querySelector(".box");
+			// 声明一个变量存储自动轮播计时器
+			var autoPlay;
+
+			boxDiv.onmouseover = function() {
+				leftBtn.style.opacity = 1;
+				rightBtn.style.opacity = 1;
+				clearInterval(autoPlay);
+			}
+
+			boxDiv.onmouseout = function() {
+				leftBtn.style.opacity = 0;
+				rightBtn.style.opacity = 0;
+				autoPlay = setInterval(rightBtnClick, 2000);
+			}
+
+			/*
+			 * 普通轮播图思路:
+			 * 
+			 * 将换图片与换小点分别封装成两个函数
+			 * 
+			 * 1. 点击按钮 需要 调用换图跟换点的函数
+			 * 2. 点击小点  需要 调用换图跟换点函数
+			 * 3. 自动轮播 (调用右按钮的函数)
+			 * 4. 鼠标移入 自动轮播停止, 左右按钮显示
+			 * 5. 鼠标移出  自动轮播开始, 左右按钮隐藏
+			 * 
+			 */
+			// 声明一个变量记录将来是第几张的图片
+			var index = 0;
+			// 声明一个变量存储当前是第几张图片
+			var previousIndex = 0;
+
+			// 声明一个变量存储换图的偏移量
+			var leftX = 0;
+
+			// 声明一个变量存储换图的计时器
+			var timer = null;
+
+			var arg = 0;
+			// 换图片函数
+			function changeImg(speed) {
+				if(previousIndex > index) {
+					arg = 1;
+				} else {
+					arg = -1;
+				}
+				timer = setInterval(function() {
+					leftX += speed;
+					contentDiv.style.left = -previousIndex * 320 + leftX * arg + "px";
+					if(leftX == Math.abs(index - previousIndex) * 320) {
+						clearInterval(timer);
+						leftX = 0;
+						leftBtn.onclick = leftBtnClick;
+						rightBtn.onclick = rightBtnClick;
+					}
+				}, 10)
+			}
+
+			// 分页器函数
+			function changePoint() {
+				for(var i = 0; i < lis.length; i++) {
+					if(i == index) {
+						lis[i].className = "chooseP";
+					} else {
+						lis[i].className = "";
+					}
+				}
+				if(index == 6) {
+					lis[0].className = "chooseP";
+				}
+			}
+
+			leftBtn.onclick = leftBtnClick;
+
+			function leftBtnClick() {
+				this.onclick = null;
+				if(index == 0) {
+					index = 6;
+					// 如果到达临界值, 立刻把图片切换到最后一张假图
+					contentDiv.style.left = -index * 320 + "px";
+				}
+				previousIndex = index;
+				index--;
+				console.log("当前值是:" + previousIndex, "将来值是:" + index);
+
+				changeImg(10);
+				changePoint();
+			}
+
+			rightBtn.onclick = rightBtnClick;
+
+			function rightBtnClick() {
+				this.onclick = null;
+				if(index == 6) {
+					index = 0;
+					// 如果到达最后一张假图, 立刻把图片切换到第一张真图
+					contentDiv.style.left = "0px";
+				}
+				previousIndex = index;
+				index++;
+				console.log("当前值是:" + previousIndex, "将来值是:" + index);
+				changeImg(10);
+				changePoint();
+			}
+
+			// 自动轮播
+			autoPlay = setInterval(rightBtnClick, 2000);
+
+			// 为每个分页器添加鼠标点击事件
+			for(var i = 0; i < lis.length; i++) {
+				lis[i].onclick = function() {
+					if(index == 0) {
+						index = 6;
+						// 如果到达临界值, 立刻把图片切换到最后一张假图
+						contentDiv.style.left = -index * 320 + "px";
+					}
+					if(index == 6) {
+						index = 0;
+						// 如果到达最后一张假图, 立刻把图片切换到第一张真图
+						contentDiv.style.left = "0px";
+					}
+					previousIndex = index;
+					for(var j = 0; j < lis.length; j++) {
+						if(this == lis[j]) {
+							// 下标为j的小点应该被选中, 其余取消选中
+
+							// 换图
+							if(index != j) {
+								index = j;
+								changeImg(40);
+								changePoint();
+							}
+							// 切换分页器
+
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

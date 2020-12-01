@@ -1,0 +1,4 @@
+<view class="title" bind:c9="c9Func">
+  <view>Child9组件</view>
+  <button bindtap="action">点基础法Child9自定义事件</button>
+</view>

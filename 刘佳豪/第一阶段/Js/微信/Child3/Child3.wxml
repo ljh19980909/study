@@ -1,0 +1,77 @@
+<!--components/Child3/Child3.wxml-->
+<text>components/Child3/Child3.wxml</text>
+<cover-view>
+  <button style="color:red;width=100%" catchtap="btn1">{{msg1?"显示":"隐藏"}}</button>
+</cover-view>
+
+<!-- 
+  bindload:"图片加载完成时触发",
+  binderror:"图片加载失败时触发"
+ -->
+<view>_______________cover-view______________</view>
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <map
+        style="width: 100%; height: 300px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+      >
+        <cover-view class="cover-view">
+          <cover-view class="container">
+            <cover-view class="flex-wrp" style="flex-direction:row;">
+              <!-- <cover-view class="flex-item demo-text-1"></cover-view>
+              <cover-view class="flex-item demo-text-2"></cover-view>
+              <cover-view class="flex-item demo-text-3"></cover-view> -->
+              <cover-image src="./picture/8169431837be79f7ff21c09a7daec2e6.jpg" bindload="imgText" binderror="imgtext" wx:if="{{msg1}}">
+  </cover-image>
+            </cover-view>
+          </cover-view>
+        </cover-view>
+      </map>
+    </view>
+  </view>
+</view>
+<!--
+  cover-view 在小程序中是比较特殊的组件，与 view 的最大区别在于，它能覆盖在原生组件 map、video、canvas、camera 之上，且只能嵌套 cover-view 和 cover-image。
+  cover-view使用中遇到的其他小问题进行总结：
+1、cover-view是覆盖在原生组件之上的文本视图，只支持嵌套cover-view、cover-image
+2、cover-view不支持text-decoration属性设置
+3、cover-view设置文本内容换行 white-space: normal;（注意flex布局时可能不起效果哦） -->
+<match-media min-width="300" max-width="600">
+  <view>当页面宽度在 300 ~ 500 px 之间时展示这里</view>
+</match-media>
+
+<match-media min-height="400" orientation="landscape">
+  <view>当页面高度不小于 400 px 且屏幕方向为纵向时展示这里</view>
+</match-media>
+<movable-area class="movable-area">
+<movable-view class="movable-view" direction="all" nertia="ture" out-of-bounds="ture" x="{x}" y="{y}" bindchange='td'/>
+</movable-area>
+<view class="box" upper-threshold:1 refresher-enabled="ture" paging-enabled="ture">
+  <view>1</view>
+  <view>2</view>
+  <view>3</view>
+  <view>4</view>
+  <view>5</view>
+  <view>6</view>
+  <view>7</view>
+  <view>8</view>
+  <view>9</view>
+  <view>10</view>
+</view>
+<swiper ndicator-dots="ture" indicator-color='rgb(0,0,0)' autoplay="ture" interval='1000' circular="ture" easing-function="easeInOutCubic">
+  <swiper-item>
+    <image src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg" class="imgs"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605542471829&di=8571cebe6b8732d8e7cb6303db12cae0&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201803%2F13%2F20180313200341_cxept.jpg" class="imgs"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605542471829&di=561ce89840557036179f00040d41eed1&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201511%2F07%2F20151107191711_H5LwP.jpeg" class="imgs"></image>
+  </swiper-item>
+</swiper>
+
+<textarea placeholder="输入框"></textarea>
+<!-- textarea和index类似使用 -->
+<navigator url="/components/Child4/child4">child4</navigator>

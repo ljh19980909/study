@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .h2S {
+            width: 200px;
+            height: 200px;
+        }
+
+        .pS {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    let app=document.getElementById("app")
+    ReactDOM.render(
+        (<div>
+            <h2 className="h2S">这是h2标签</h2>
+            <p className="pS">这是段落标签</p>
+            <div id="div1"></div>
+        </div>),app)
+
+    /* 
+        2.通过style属性的方式设置样式
+            注意:在jsx语法里,给标签通过style属性设置样式,注意style的值不再是一个字符串,而是一个对象,且必须在react的编译环境里
+    */
+   let liS={width:"200px",height:"200px"}
+   let li2S={width:"100px",height:"100px",borderRadius:"50%",background:"yellow"}
+
+   ReactDOM.render(
+   (
+       <ul>
+            <li style={{background:"red",...liS}}>这是第1个li标签</li>
+            <li style={{background:"blue"}}>这是第2个li标签</li>
+            <li style={li2S}>这是第3个li标签</li>
+        </ul>
+   ),app)
+</script>
+
+</html>

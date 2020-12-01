@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分支语句</title>
+	</head>
+	<body>
+		<!--
+			程序运行的三大结构
+			1.顺序结构	从上至下依次执行，不重不漏。
+			2.分支结构	根据不同的情况，执行不同的代码
+			3.循环结构	重复执行某段代码
+		-->
+		<!--
+			1.if语句
+			2.switch...case语句
+		-->
+		<!--
+			表达式：由常量||变量||运算符组成的且都有结果的式子
+		-->
+		<input type="number" id="i1"/>
+		<!--驼峰命名法：第二个单词开始，首字母大写-->
+		<button onclick="judgeAge()">判断年龄</button>
+		
+		<input type="sex" id="i2"/>
+			<button onclick="judgeSex()">判断性别</button>
+			
+		<input type="number" id="i3"/>
+			<button onclick="judgeYear()">判断闰年</button>
+			
+		<input type="text" placeholder="输入第一个数" id="i4"/>
+		<input type="text" placeholder="输入第二个数" id="i5"/>
+			<button onclick="twoMax()">两数较大值</button>
+			<hr />
+		<input type="text" placeholder="输入第一个数" id="i6"/>
+		<input type="text" placeholder="输入第二个数" id="i7"/>
+		<input type="text" placeholder="输入第三个数" id="i8"/>
+			<button onclick="threeMax()">仨数较大值</button>
+			
+		<input type="number" id="i9"/>
+			<button onclick="score()">判断成绩</button>
+		<script type="text/javascript">
+			
+//			1.if语句第一种形式
+//			语法:
+//			if(表达式){
+//				代码...
+//			}
+//			
+//			如果小括号里的值为真,执行大括号里的代码;为假,大括号里的代码不执行
+
+			function judgeAge(){
+				//获取输入框的内容
+				var i1E = document.getElementById("i1");
+				//JS里，获取元素的属性值，使用.语法	元素.属性名
+				var i1Value = i1E.value;
+				//注意：输入框的value值获取到的是string类型
+				
+				//判断内容是否大于18
+				if (i1Value >= 18) {
+					alert("已成年");
+				}
+				if (i1Value < 18) {
+					alert("未成年");
+				}
+				console.log(i1Value);
+			}
+			
+			//练习2 输入框输入性别,判断，内容是"男"，alert出男性，内容是“女”，alert出女性
+			
+			function judgeSex() {
+				var i2E = document.getElementById("i2");
+				var i2value = i2E.value;
+				if (i2value == "男") {
+					alert("男性");
+				}
+				if (i2value == "女") {
+					alert("女性");
+				}
+				console.log(i2value);
+			}
+			
+			//练习3 输入年份，判断概念是否是闰年
+			//闰年的判断规则：能否被400整除或者能被4整除但不能被100整除的年份
+			
+			function judgeYear() {
+				var i3E = document.getElementById("i3");
+				var i3value = i3E.value;
+				if (i3value % 400 == 0 || (i3value % 4 == 0 && i3value % 100 != 0 )) {
+					alert("闰年");
+				}
+			}
+			
+			/*
+			 * 2.if语句的第二种写法
+			 * 语法：
+			 * if(表达式){
+			 * 	代码块1...
+			 * }else{
+			 * 	代码块2...
+			 * }
+			 * 如果if后小括号里表达式的值为真，执行第一个大括号里的代码.结果为假，执行第二个大括号里的代码.
+			 */
+			
+			//练习4 输入两个数，alert出两个数的较大值
+			//输入框的值是字符串类型
+			//字符串比较大小是按照ASCII码表里的字符对应的十进制数的大小比较的；
+			//比较规则，按照顺序，逐个比较，如果相等，比较下一位，知道比较出来为止.
+			//一旦比较出来，不再比较后面的字符.
+			
+			//字符串转数字，触发隐式转换的条件是：两者的数据类型不同
+			function twoMax() {
+				var i4 = document.getElementById("i4").value - 0;
+				var i5 = document.getElementById("i5").value;
+				if (i4 > i5) {
+					alert(i4);
+				} else{
+					alert(i5);
+				}
+			}
+			
+			//练习5 输入3个数，alert出最大值
+			function threeMax() {
+				var i6 = document.getElementById("i6").value - 0;
+				var i7 = document.getElementById("i7").value - 0;
+				var i8 = document.getElementById("i8").value - 0;
+				if (i6 > i7 && i6 > i8) {
+					alert(i6);
+				} 
+				else {
+					if(i7 > i8) {
+						alert(i7);
+					}else
+					alert(i8);
+				}
+			}
+			
+			/*
+			 * 三目运算符，是if...else语句结构的一种简写形式
+			 * 表达式1？表达式2：表达式3
+			 * 
+			 * 如果表达式1的值为真，整个式子的结果是表达式2的值，
+			 * 如果表达式1的值为假，整个式子的结果是表达式3的值.
+			 */
+			
+			/*
+			 * 3.if语句第三种形式
+			 * 语法：
+			 * if(表达式1){
+			 * 	代码块1...
+			 * }else if(表达式2){
+			 * 	代码块2...
+			 * }else{
+			 * 	代码块3...
+			 * }
+			 * 注意：else if可以根据需求书写多次
+			 * 
+			 * 先判断表达式1是否成立，如果值为真，执行代码块1，
+			 * 为假，判断表达式2是否成立，如果成立，执行代码块2...以此类推，
+			 * 如果以后if语句均不成立，执行else里的代码.
+			 */
+			
+			/*
+			 * 练习6 打分系统
+			 * 90分及以上,优秀
+			 * [80,90),良好
+			 * [70,80),中
+			 * [60,70),及格
+			 * 60分以下,不及格
+			 */
+			function score() {
+				var i9 = document.getElementById("i9").value - 0;
+				if(i9 < 0 || i9 > 100){
+					alert("请输入正确的分数");
+				}else{
+					if (i9 >= 90){
+					alert("优秀");
+				}else if (i9 >= 80 && i9 < 90){
+					alert("良好");
+				}else if (i9 >= 70 && i9 < 80){
+					alert("中");
+				}else if (i9 >= 60 && i9 < 70){
+					alert("及格")
+				}else{
+					alert("不及格")
+				}
+				}
+			}
+		</script>
+	</body>
+</html>

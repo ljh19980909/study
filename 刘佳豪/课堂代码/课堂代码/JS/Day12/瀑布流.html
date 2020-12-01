@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>瀑布流</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 1100px;
+				border: 2px solid red;
+				margin: 30px auto 0;
+				overflow: hidden;
+			}
+			
+			.box>ul {
+				width: 200px;
+				list-style: none;
+				float: left;
+				margin: 0 10px;
+			}
+			
+			li {
+				font-size: 50px;
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+
+		<!--
+			瀑布流的实现原理
+			瀑布流是一种多列布局，每一列的宽度相等，高度根据内容决定
+			但最终每一列的高度不可相差太多
+			
+			核 心思想:将新的内容选择性的加入到最低的那一列列里.
+			难点:如何判断最低的列
+		-->
+
+		<script type="text/javascript">
+			function randomNumber(x, y) {
+				return Math.floor(Math.random() * (y - x + 1) + x);
+			}
+
+			function randomColor() {
+				var r = randomNumber(0, 255)
+				var g = randomNumber(0, 255)
+				var b = randomNumber(0, 255)
+				return "rgb(" + r + "," + g + "," + b + ")";
+			}
+
+			//循环创建li
+			for(var i = 0; i < 1000; i++) {
+				var newLi = document.createElement("li");
+
+				//背景色
+				newLi.style.backgroundColor = randomColor();
+				//序号
+				newLi.innerHTML = i + 1;
+				//高度
+				newLi.style.height = randomNumber(100, 400) + "px";
+				//行高
+				newLi.style.lineHeight = newLi.style.height
+
+				//判断哪一个ul高度最低
+				shortUl().appendChild(newLi)
+			}
+			//获取最低高度ul的方法，无参有返
+
+			function shortUl() {
+				var uls = document.querySelectorAll("ul");
+				var shortHeight = Math.min(uls[0].offsetHeight, uls[1].offsetHeight, uls[2].offsetHeight,
+					uls[3].offsetHeight, uls[4].offsetHeight);
+				for(var i = 0; i < uls.length; i++) {
+					if(shortHeight == uls[i].offsetHeight) {
+						return uls[i];
+					}
+				}
+			}
+
+			/*
+			 * 查Nodelists和HTMLCollection与数组的区别和联系
+			 * HTMLCollection 是 HTML 元素的集合。
+			 * NodeList 是一个文档节点的集合。
+			 * NodeList 与 HTMLCollection 有很多类似的地方。
+			 * NodeList 与 HTMLCollection 都与数组对象有点类似，可以使用索引 (0, 1, 2, 3, 4, ...) 来获取元素。
+			 * NodeList 与 HTMLCollection 都有 length 属性。
+			 * HTMLCollection 元素可以通过 name，id 或索引来获取。
+			 * NodeList 只能通过索引来获取。
+			 * 只有 NodeList 对象有包含属性节点和文本节点。
+			         
+			         
+			 * 节点列表不是一个数组！
+			 * 节点列表看起来可能是一个数组，但其实不是。
+			 * 你可以像数组一样，使用索引来获取元素。
+			 * 节点列表无法使用数组的方法： valueOf(), pop(), push(), 或 join() 。
+			 */
+		</script>
+	</body>
+
+</html>

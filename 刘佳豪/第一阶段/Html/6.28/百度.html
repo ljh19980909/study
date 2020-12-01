@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+			}
+			.A{
+				height: 100px;
+				/* background-color: red; */
+				text-align: right;
+				padding: 10px;
+				
+			}
+			.A a{
+				margin-right: 20px;
+				color: black;
+			}
+			.A .more{
+				background-color: #0000FF;
+				text-decoration: none;
+				padding: 5px;
+				color: white;
+				vertical-align: top;
+			}
+			/* 中间部分 */
+			.B{
+				height: 100px;
+				/* background-color: blue; */
+				margin-bottom: 200px;
+				text-align: center;
+				font-size: 0px;
+			}
+			.B img{
+				width: 236px;
+			}
+			.B .key{
+				width: 540px;
+				height: 32px;
+				border: 1px solid #4587ff;
+				/* 清楚input自带的浏览器外边框颜色,点击时出现 */
+				outline: none;
+				padding-left: 5px;
+				
+			}
+			.B .but{
+				width:100px ;
+				height: 36px;
+				border: 1px solid #4587ff;
+				background-color: #4587ff;
+				color: white;
+				vertical-align: top;
+				cursor: pointer;
+				/* 取消左边框 */
+				border-left: none;
+			}
+			.B .but:hover{
+				color:#888888;
+				background-color: white;
+			}
+			/* 第三部分 */
+			.C{
+				height: 150px;
+				/* background-color: yellow; */
+				text-align: center;
+				margin-bottom: 0px;
+			}
+			.C .bai{
+				margin-top: 25px;
+			}
+			.C .logo{
+				width: 60px;
+			}
+			h4{
+				font-size: 12px;
+				}
+			.C .bai a{
+				color: #a0a0a0;
+				font-size: 12px;
+				font-weight: bold;
+				margin-left: 25px;
+				}
+			.C #di{
+					margin-top: 5px;
+					}
+			.C #di,a{
+				color: #a0a0a0;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			.C #di img{
+				vertical-align: middle;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="A">
+			<a href="#">新闻</a>
+			<a href="#">好123</a>
+			<a href="#">地图</a>
+			<a href="#">视频</a>
+			<a href="#">贴吧</a>
+			<a href="#">学术</a>
+			<a href="#">登录</a>
+			<a href="#">设置</a>
+			<a href="#" class="more">更多产品</a>
+		</div>
+		<div class="B">
+			<img src="./img/bd_logo1.png" >
+			<!-- 再建一个块级元素就可以换行 -->
+			<div>
+				<!-- input下text是一个单行输入框，button是一个按钮 -->
+				<input type="text" class="key"/>
+				<input type="button"  value="百度一下" class="but"/>
+			</div>
+		</div>
+		<div class="C">
+			<img src="img/code.png" class="logo" >
+			<h4>手机百度</h4>
+			<div class="bai">
+				<a href="#">把百度设为主页</a>
+				<a href="#">关于百度</a>
+				<a href="#">About Baidu</a>
+				<a href="#">百度推广</a>
+			</div>
+			<div id="di">
+				@2020 Baidu
+				<a href="">使用百度前必读</a>
+				<a href=""> 意见反馈</a>
+				(京)-经营性-2017-0020 
+				<img src="1.png" >
+				<a href="">	京公网安备11000002000001号</a>
+				<img src="2.png" >
+			</div>
+		</div>
+	</body>
+</html>

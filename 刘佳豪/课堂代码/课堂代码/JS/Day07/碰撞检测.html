@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>碰撞检测</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width: 600px;
+				height: 300px;
+				border: 1px red solid;
+				margin: 50px auto;
+			}
+			.box>div{
+				width: 15px;
+				height: 15px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="div1"></div>
+		</div>
+		<script type="text/javascript">
+				//声明变量存储x方向位置
+				var x = 0;
+				//声明变量存储y方向位置
+				var y = 0;
+				//声明一个变量记录水平方向是否达到边界 false：未到达边界，true：到达边界
+				var flagX = true;
+				//声明一个变量记录竖直方向是否达到边界 false：未到达边界，true：到达边界
+				var flagY = true;
+			function moveX() {
+				if (flagX == false) {
+					//未到达右边界
+					//向右移动
+					x++;
+
+					if(x >= 585){
+						flagX = true;
+					}
+				} else{
+					//到达右边界
+					//向左移动
+					x--;
+
+					if(x <= -1){
+						flagX = false;
+					}
+				}
+				if(x > 585){
+					x = 585;
+				}
+				if(x < 0){
+					x = 0
+				}
+			}
+			function moveY() {
+				if (flagY == false) {
+					//未到达下边界
+					//向下移动
+					y++;
+
+					if(y >= 285){
+						flagY = true;
+					}
+				} else{
+					//到达下边界
+					//向上移动
+					y--;
+
+					if(y <= -1){
+						flagY = false;
+					}
+				}
+				if(y > 285){
+					y = 285;
+				}
+				if(y < 0){
+					y = 0
+				}
+			}
+			setInterval(function(){
+				moveX();
+				moveY();
+				div1.style.transform = "translate(" + x + "px, " + y +"px)";
+			},5)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    /* 
+        组件:就是将整个UI拆分成可以复用的代码片段,并对每个片段进行独立的构思
+
+        React里的组件,从概念上来讲更像是JS里的函数,其接受任意的参数(即"prop"),并返回用于描述UI界面的React元素
+    */
+    /* 
+        React里创建组件有两个钟语法:
+            1.函数式组件(写法简单,不通用,没办法写生命周期,想要更完整需要使用react-hook语法)
+            2.class式组件(通用)
+     */
+
+    //1.函数式组件
+    function Welcome(props){
+        console.log(props);
+        return <h1>Welcome,{props.name},{props.age},{props.news}</h1>
+    }
+
+    // ReactDOM.render(
+    //    <div>
+    //         {Welcome({name:"张三"})}
+    //         {Welcome({name:"李四"})}
+    //     </div>,
+    //     app
+    // )
+
+    ReactDOM.render(
+        <Welcome name="张三" age="20" news={[1,2,3,4,5]} />,
+        app
+    )
+
+    /* 
+        class式组件
+    */
+   let {Component} =React;
+    class Welcome1 extends Component{
+        render(){
+            console.log(this.props)
+            return <h1>hi,react!{this.props.name}</h1>
+        }
+    }
+    ReactDOM.render(
+        <Welcome1 name="张三"/>,
+        app
+    )
+    /* 
+        函数式组件的执行过程
+            1.调用ReactDOM.render()函数,并传入
+                <Welcome name="张三" age="20" news={[1,2,3,4,5]} />作为参数
+            2.React调用Welcome函数,并将name,age,news封装成对象传给Welcome函数props参数
+            3.Welcome函数将<h1>返回,并通过props对象给h1添加内容
+            4.ReactDOM将UI高效(虚拟DOM)的更新为<h1>
+
+        class式组件的执行过程
+            1.调用reactDOM.render参数,并传入
+                <Welcome1 name="张三" />作为参数
+            2.React会通过Welcome1类 实例化一个Welcome1对象,并将name="张三"传递给实例对象的props属性
+            3.实例对象创建完毕之后会自动调用render方法(生命周期函数),并返回<h1>标签
+            4.ReactDOM将UI高效(虚拟DOM)的更新为<h1>
+
+    */
+</script>
+
+</html>

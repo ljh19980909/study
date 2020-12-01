@@ -1,0 +1,4 @@
+/* components/Child3/Child3.wxss */
+.title {
+    border: 1rpx solid yellow;
+}

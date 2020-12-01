@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>01-computed和watch</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2>原始msg值:{{msg}}</h2>
+			<h2>翻转msg值:{{msg.split('').reverse().join('')}}</h2>
+			<h2>computed翻转msg值:{{com}}</h2>
+			<h2>methods翻转msg值:{{d()}}</h2>
+			<hr>
+			<button @click="a++">a自增</button>
+			<button @click="b++">b自增</button>
+			<button @click="c++">c自增</button>
+			<p>a的值：{{a}}</p>
+			<p>b的值：{{b}}</p>
+			<p>c的值：{{c}}</p>
+			<!-- <p>a+c的值：{{a+c}}</p>
+			<p>b+c的值：{{b+c}}</p> -->
+			<!-- 计算属性 -->
+			<p>a+c的值：{{a加c}}</p>
+			<p>b+c的值：{{b加c}}</p>
+			<!-- 普通方法 -->
+			<p>a+c的值：{{a加c方法()}}</p>
+			<p>b+c的值：{{b加c方法()}}</p>
+			<hr>
+			<h2>{{全名}}</h2>
+			<button @click="全名='Tom·Jerry'">点击修改全名</button>
+			<button @click="per1={name:'aa'}">修改per1</button>
+			<button @click="per1.name='aa'">改变</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*
+			1.计算属性
+			模板内的表达是非常便利,但是设计他们的初衷是用于简单运算的.在模板中放入太多的逻辑会让模板锅中且难以维护,vue建议当模板内有比较复杂的逻辑运算时,可以用计算属性实现
+			1.0 计算属性的主要目的是进行计算复杂计算,并得到计算结果
+			1.1 计算属性如果直接写成函数形式,默认执行的是该计算属性的get方法
+			1.2 计算属性是基于数据的响应式以来进行缓存的
+			1.3计算属性既可以基于data数据,也可以基于props属性
+			1.4计算属性的完整写法是一个对象,对象里是set和get方法,vue会根据我们如何操作计算属性,自动调用对应的set或者get方法
+			1.5计算属性的函数里不能有异步的代码
+			
+			面试题：
+				计算属性和普通方法的区别：
+					计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值。而函数只要引起页面变化，所有函数都会触发，效率很低
+					
+			2.watch
+				侧重于看,computed侧重于算,最大的差别
+				2.0 观察一个值,当被监听到值发生变化时,我们能知道其发生了变化,进而可以进行一些后续的操作,有时候可能关心改变值是什么>有时候可能连改变值都不关心.watch更像一个观察动作
+				2.1 可以观察data或者props的数据,但是watch里的key不能自定义,只能是data里的变量名或者props的属性名
+				2.2 watch名写成函数形式,函数名就是要观察到的data变量名或者props属性名,有两个参数,最新的数据(newV)和上一次的数据(oldV)
+				2.3 watch可以写成对象形式,对象里可以有如下字段
+					2.3.1 handler(newV,oldV){}函数,当监听到数据变化时的回调函数
+					2.3.2 immediate	布尔值,如果没有true,网页运行的时候先执行一遍回调
+					2.3.3 deep,布尔值,只在监听的数据是对象类型时有用,设置为true,当只修改对象的某个属性时,watch也能监听到
+		*/
+
+		new Vue({
+			data: {
+				msg: "Hello",
+				a: 0,
+				b: 0,
+				c: 0,
+				firstName: "现宝",
+				lastName: "尼古拉斯",
+				per1: {
+					name: "冬午",
+					age: 18,
+					sex: "男"
+				}
+			},
+			computed: {
+				com: function() {
+					return this.msg.split('').reverse().join('')
+				},
+				a加c() {
+					return this.a + this.c
+				},
+				b加c() {
+					return this.b + this.c
+				},
+				全名: {
+					get() {
+						console.log("全名的get方法触发了")
+						return this.lastName + "·" + this.firstName
+					},
+					set(newV) {
+						console.log("全名的set方法触发了")
+						let names = newV.split("·");
+						this.firstName = names[0]
+						this.lastName = names[names.length - 1]
+					}
+				}
+			},
+			methods: {
+				d: function() {
+					return this.msg.split('').reverse().join('')
+				},
+				a加c方法() {
+					return this.a + this.c
+				},
+				b加c方法() {
+					return this.b + this.c
+				},
+			},
+			watch: {
+				firstName: function(newV, oldV) {
+					console.log("firstName改变了!", newV, oldV)
+				},
+				lastName: {
+					handler(newV, oldV) {
+						console.log("lasttName改变了!", newV, oldV)
+					},
+					immediate: true
+				},
+				per1: {
+					handler(newV, oldV) {
+						console.log("per1对象改变了", newV, oldV)
+					},
+					deep: true
+				},
+				"per1.name":{
+					handler(newV, oldV){
+						console.log("per1的name改变了!",oldV,newV)
+					}
+				}
+			}
+		}).$mount("#wrap")
+		console.log([].toString())
+	</script>
+</html>

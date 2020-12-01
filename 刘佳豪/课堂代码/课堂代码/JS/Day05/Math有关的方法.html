@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Math有关的方法</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//向下取整
+			console.log(Math.floor(1.999));
+			//随机数
+			console.log(Math.random());
+			//向下取整
+			console.log(Math.ceil(1.01));
+			//四舍五入
+			console.log(Math.round(1.4),Math.round(1.5));
+			//绝对值
+			console.log(Math.abs(-7),Math.abs(7));
+			//n次幂
+			console.log(Math.pow(2,5));
+			//开平方
+			console.log(Math.sqrt(9));
+			
+			//p1(73,56),p2(110,276)
+			console.log(Math.sqrt(Math.pow((110-73),2) + Math.pow((276-56),2)));
+			
+			//求最大值Math.Max()
+			console.log(Math.max(20,70,100,1000));
+			//求最小值Math.min()
+			console.log(Math.min(20,70,100,1000));
+			
+			function myMax() {
+				//每个函数，系统都会提供了参数数组，该数组里存储了函数调用时传入的所有实参  arguments[]
+				console.log(arguments);
+			}
+			myMax(100,200,300,1,90,1000);
+		</script>
+	</body>
+</html>

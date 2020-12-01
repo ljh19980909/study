@@ -1,0 +1,4 @@
+/* components/Child1/Child1.wxss */
+.child1{
+    border:1rpx solid red;
+}

@@ -1,0 +1,15 @@
+.mine {
+  overflow: hidden;
+}
+.left {
+  width: 20%;
+  background-color: red;
+  height: 300px;
+  float: left;
+}
+.right {
+  width: 80%;
+  background-color: yellowgreen;
+  height: 300px;
+  float: right;
+}

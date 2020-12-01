@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM基础</title>
+	</head>
+	<body>
+		<button id="btn1">新建窗口</button>
+		<a href="http://www.mi.com" target="abc">点击跳转到小米官网</a>
+		<button id="btn2">新建三个窗口</button>
+		<button id="btn3">关闭所有窗口</button>
+		<button id="btn4">moveTo移动窗口</button>
+		<button id="btn5">moveBy移动窗口</button>
+		<script type="text/javascript">
+			/*
+			 * BOM: Browser Object Model 浏览器对象模型
+			 * 作用：用来处理与浏览器窗口有关的操作
+			 * 
+			 * BOM是由一系列的对象组成的，每个对象都有自己的属性，他们各自负责一类功能
+			 * 
+			 * window对象是由BOM里的核心对象，也是顶层对象，其余所有的对象都是从window
+			延伸出来的 
+			 *
+			 * 从window延伸出来的对象
+			 * 1.document
+			 * 2.history
+			 * 3.location
+			 * 4.navigator
+			 * 5.screen
+			 * 6.frames(iframe标签) 
+			 */
+			
+			/*
+			 * window对象
+			 * 1.以上6个对象都属于window对象的属性
+			 * 2.所有的全局变量或者方法，也都属于window，都是window的属性，只不过在书写
+			的时候，window可以省略
+			 */
+			
+//			window.document.getElementById("div1");
+			//表示的是当前浏览器的窗口
+			
+			//一、window对象有关的方法
+			/*
+			 * 1.open(URL，name,features)	打开一个新的浏览器窗口
+			 * URL:要打开的新窗口的链接
+			 * name:新窗口的标识，结合a链接可以进行跨窗口操作
+			 * features:新建窗口的特性，如大小，位置
+			 * 
+			 * 返回值：窗口创建完成之后对应的window对象
+			 */
+			var q;
+			btn1.onclick = function(){
+				q = window.open("","abc",
+				"width=500,height=500");
+			}
+			var a = [];
+			btn2.onclick = function(){
+				for(var i = 0; i < 3; i++){
+				var w = window.open("http://www.baidu.com","",
+				"width=500,height=500");
+				a.push(w);
+				}
+			}
+			
+			/*
+			 * 2.close() 关闭浏览器窗口
+			 * 注意：想要关闭那个窗口，请使用对应窗口的window对象调用close方法
+			 */
+			btn3.onclick = function(){
+				for(var i = 0;i<a.length;i++){
+					a[i].close();
+					a.shift();
+					i--;
+					
+//					a = [];
+					console.log(a);
+				}
+			}
+			
+			/*
+			 * 3.移动窗口的方法
+			 * 	3.1 moveTo(x,y)
+			 * 	3.2 moveBy(x,y)
+			 */
+			btn4.onclick = function(){
+				q.moveTo(300,500);
+			}
+			btn5.onclick = function(){
+				q.moveBy(10,10);
+			}
+		</script>
+	</body>
+</html>

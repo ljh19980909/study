@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-HelloReact</title>
+    <!-- React.js react的核心文件,支持react语法 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+<script type="text/babel">
+    /*
+        1.使用react创建元素,将其插入到dom里
+        语法:
+            React.createElement()
+            参数1: 节点名
+            参数2: 节点的属性
+            参数3: 节点的内容
+            返回值: 新建的dom节点(虚拟)
+
+            例子: h2元素,设置id:#eH2, 内容:Hello,React
+    */
+   let app=document.getElementById("app")
+   let newH2= React.createElement("h2",{id:"eH2"},"hello,world!");
+   ReactDOM.render(newH2,app)
+
+   /*
+        练习:
+            创建ul标签,设置class:ull,内容:li标签,设置class:li1,内容:这是第一个li标签
+   */
+    // let ul1=ReactDOM.createElement("ul",{className:'ul1'},ReactDOM.createElement("li",{className:'li1'},"这是第一个li标签"))
+    // ReactDOM.render(ul1,app)
+
+    ReactDOM.render(
+       ( <ul className="ul1">
+            <li className="li1">这是第123213个li标签</li>
+        </ul>),
+        app
+    )
+</script>
+
+</html>

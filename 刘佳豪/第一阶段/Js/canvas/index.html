@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#myCanvas {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="500">
+			<img src="./img/AF(4M96%7D2)B8XN$%7BOV%25X6%7B8.png" id="scream">
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		let myCan = document.getElementById("myCanvas");
+		let ctx = myCan.getContext("2d");
+		ctx.beginPath();
+		// ctx.lineTo(100,100);
+		// ctx.lineTo(200,175);
+		// ctx.lineTo(150,50);
+		// ctx.lineTo(100,175);
+		// ctx.lineTo(200,100);
+		// ctx.lineTo(110,100);
+		// ctx.arc(200,200,100,0,Math.PI,true);
+		// ctx.strokeStyle="red"
+		var img=document.getElementById("scream");
+		ctx.drawImage(img,10,10);
+		ctx.closePath();
+		ctx.stroke()
+	</script>
+</html>

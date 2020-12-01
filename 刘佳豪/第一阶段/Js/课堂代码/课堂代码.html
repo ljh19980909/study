@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#one {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+
+		</div>
+		<button type="button" id="open">新建窗口</button>
+		<button type="button" id="close">关闭窗口</button>
+		<button type="button" id="setContent">设置内容</button>
+		<button type="button" id="moveTo">moveTo</button>
+		<button type="button" id="moveBy">moveBy</button>
+		<button type="button" id="resizeTo">resizeTo</button>
+		<button type="button" id="resizeBy">resizeBy</button>
+	</body>
+	<script type="text/javascript">
+		var a = -6;
+		console.log(Math.abs(a)); //绝对值
+		var ab = 25;
+		console.log(Math.sqrt(ab)); //开根号
+
+		var x = 5,
+			y = 3;
+		console.log(Math.pow(x, y)); //x的y次方
+
+		// 求直角三角形的第三边的长度。
+		x = 6;
+		y = 8;
+		var z = Math.pow(x, 2) + Math.pow(y, 2);
+		console.log(Math.sqrt(z))
+
+		// 新建窗口
+		var openObj = document.getElementById('open');
+		openObj.onclick = function() {
+			newWindowObj = [];
+			for (var i = 0; i < 1; i++) {
+				//新窗口对象 newWindowObj = window
+				var _newWindowObj = window.open('./first.html', '', "width=300px,height=200px");
+				newWindowObj.push(_newWindowObj);
+			}
+		}
+		//关闭窗口
+		var closeObj = document.getElementById('close');
+		closeObj.onclick = function() {
+			for (var i = 0; i < 1; i++) {
+				newWindowObj[i].close();
+			}
+		}
+
+		//设置内容
+		var setContent = document.getElementById('setContent');
+		setContent.onclick = function() {
+			newWindowObj[0].document.body.innerHTML = 'aaaaa';
+			newWindowObj[0].document.body.style.backgroundColor = 'yellow';
+			var h1 = newWindowObj[0].document.createElement('h1');
+			h1.innerHTML = '宝宝！';
+
+			newWindowObj[0].document.body.appendChild(h1);
+		}
+
+		//移动窗口
+		var moveToObj = document.getElementById('moveTo');
+		moveToObj.onclick = function() {
+			newWindowObj[0].moveTo(100, 100);
+		}
+
+		//移动窗口
+		var moveByObj = document.getElementById('moveBy');
+		moveByObj.onclick = function() {
+			newWindowObj[0].moveBy(10, 30);
+		}
+
+		// resizeTo 设置当前窗口的宽和高
+		var resizeToObj = document.getElementById('resizeTo');
+		resizeToObj.onclick = function() {
+			newWindowObj[0].resizeTo(200, 500);
+		}
+
+		// resizeBy 每点击一次放大一次。 值为正时放大，值为负时缩小
+		var resizeByObj = document.getElementById('resizeBy');
+		resizeByObj.onclick = function() {
+			newWindowObj[0].resizeBy(-10, -30);
+		}
+
+		var oneObj = document.getElementById('one');
+		oneObj.onclick = function() {
+			//在当前窗口跳转到指定页面。
+			location.href = './first.html';
+		};
+
+		var oneObj = document.getElementById('one');
+		var timeOut;
+		// 单击
+		oneObj.onclick = function() {
+			//清除定时器
+			clearTimeout(timeOut);
+			timeOut = setTimeout(function() {
+				console.log('单击');
+				oneObj.style.backgroundColor = 'green';
+			}, 300);
+		};
+		// 双击
+		oneObj.ondblclick = function() {
+			//清除定时器
+			clearTimeout(timeOut);
+
+			console.log('双击');
+			this.style.width = '500px';
+		};
+
+		twoObj.onclick = function() {
+			console.log(event);
+			// 距离可视区域的坐标
+			console.log(event.clientX);
+			console.log(event.clientY);
+			// 距离自身容器的左上角的坐标
+			console.log(event.offsetX);
+			console.log(event.offsetY);
+
+			// 触发事件的 标签对象
+			console.log(event.target); // 相当于this。
+		}
+
+		twoObj.onmouseover = function() {
+			twoObj.style.borderRadius = '50%';
+			console.log(event);
+		}
+		// 练习：鼠标移动小圆球跟着移动
+		var round = document.getElementById('round');
+		// round.onmouseover = function(){
+		//  this.style.left = event.clientX + 'px';
+		//  this.style.top = event.clientY + 'px';
+		// }
+
+		// 鼠标移动
+		document.body.onmousemove = function() {
+			// console.log(event);
+			round.style.left = event.clientX - round.offsetWidth / 2 + 'px';
+			round.style.top = event.clientY - round.offsetHeight / 2 + 'px';
+		}
+	</script>
+</html>

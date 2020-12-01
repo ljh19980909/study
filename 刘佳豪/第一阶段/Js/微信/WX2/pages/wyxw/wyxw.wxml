@@ -1,0 +1,17 @@
+<wxs src="../../utils/indeof.wxs" module="tools" />
+<view>网易新闻</view>
+<i-message id="message" />
+<view class="news_list">
+	<view wx:for="{{news}}" wx:key="item" class="news_item" bindlongpress="handleLongPress" data-idx="{{item}}">
+		<view class="fonts">
+			<view class="ellipsis">{{item.title}}</view>
+			<view class="a">{{item.digest}}</view>
+		</view>
+		<view class="pic">
+			<image src="{{item.imgsrc}}" />
+		</view>
+		<view class="stars">
+			<i-icon type="{{tools.indexOf(collections,item.postid)?'collection_fill':'collection'}}" size="28" color="yellow" />
+		</view>
+	</view>
+</view>

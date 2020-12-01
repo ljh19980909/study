@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.wrap {
+				width: 100%;
+			}
+
+			.left {
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+				overflow-y: scroll;
+			}
+
+			.right {
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+			}
+
+			li {
+				list-style: none;
+				float: left;
+				width: 100%;
+				height: 100px;
+				position: relative;
+			}
+
+			.imgs {
+				width: 20%;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.imgs>img {
+				width: 100%;
+				height: 100%;
+			}
+
+			h3 {
+				padding-top: 15px;
+				position: absolute;
+				top: 0;
+				left: 20%;
+				height: 30%;
+				width: 70%;
+				font-size: 20px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				padding-left: 10px;
+			}
+
+			p {
+				position: absolute;
+				top: 30px;
+				left: 20%;
+				height: 70%;
+				width: 70%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				white-space:  normal;
+				font-size: 17px;
+				padding-top: 10px;
+				text-indent: 2rem;
+			}
+
+			button {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 10%;
+				height: 30px;
+			}
+
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/网易新闻.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div class="wrap">
+			<div class="left">
+
+			</div>
+			<div class="right">
+				<h1>收藏</h1>
+
+			</div>
+		</div>
+	</body>
+</html>

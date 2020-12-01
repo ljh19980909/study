@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟</title>
+		<style type="text/css">
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: #000000;
+				border-radius: 50%;
+				position: relative;
+				margin: auto;
+			}
+			.clock{
+				width: 350px;
+				height: 350px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				
+			}
+			.clock>div{
+				width: 330px;
+				height: 40px;
+				line-height: 40px;
+				color: black;
+				font-size: 30px;
+				position: absolute;
+				top: 155px;
+				right: 0;
+				bottom: 0;
+				padding: 0 10px;
+			}
+			.clock span{
+				display: inline-block;
+			}
+			.h{
+				width: 4px;
+				height: 70px;
+				background: black;
+				position: absolute;
+				top: 0;
+				bottom:80px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transform-origin: center bottom;
+				border-bottom-left-radius: 50%;
+				border-bottom-right-radius: 50%;
+			}
+			.m{
+				width: 3px;
+				height: 85px;
+				background: black;
+				position: absolute;
+				top: 0;
+				bottom:90px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transform-origin: center bottom;
+			}
+			.s{
+				width: 3px;
+				height: 95px;
+				background: red;
+				position: absolute;
+				top: 0;
+				bottom:100px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transform-origin: center bottom;
+			}
+			.bx{
+				width: 10px;
+				height: 10px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="clock">
+				<div class="div9"><span>9</span></div>
+				<div class="div10"><span>10</span></div>
+				<div class="div11"><span>11</span></div>
+				<div class="div12"><span>12</span></div>
+				<div class="div1"><span>1</span></div>
+				<div class="div2"><span>2</span></div>
+				<div class="div3"><span>3</span></div>
+				<div class="div4"><span>4</span></div>
+				<div class="div5"><span>5</span></div>
+				<div class="div6"><span>6</span></div>
+				<div class="div7"><span>7</span></div>
+				<div class="div8"><span>8</span></div>
+			</div>
+			<div class="bx"></div>
+			<div class="h"></div>
+			<div class="m"></div>
+			<div class="s"></div>
+		</div>
+		<script type="text/javascript">
+			var ids = document.querySelectorAll(".clock>div");
+			var spans = document.querySelectorAll(".clock span");
+			for (i = 0;i < ids.length; i++){
+				ids[i].style.transform = "rotateZ(" + (i * 30) + "deg)";
+				spans[i].style.transform = "rotateZ(" + (-i * 30) + "deg)";
+			}
+			
+			var hDiv = document.querySelector(".h");
+			var mDiv = document.querySelector(".m");
+			var sDiv = document.querySelector(".s");
+			
+			setInterval(function(){
+				var now = new Date();
+				var h = now.getHours();
+				var m = now.getMinutes();
+				var s = now.getSeconds();
+				
+				//时针1小时转30°，时针最终转到的角度由小时和分钟共同决定
+				hDiv.style.transform = "rotateZ(" + (h * 30 + m / 60 * 30) + "deg)";
+				mDiv.style.transform = "rotateZ(" + (m * 6 + s / 60 * 6) + "deg)";
+				sDiv.style.transform = "rotateZ(" + (s * 6) + "deg)";
+			},1000);
+		</script>
+	</body>
+</html>

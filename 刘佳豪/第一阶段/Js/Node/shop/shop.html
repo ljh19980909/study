@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<fieldset>
+    <legend><h2>登录</h2></legend>
+    用户名：<input type="text" id="username"><br>
+    密码：<input type="password" id="password"><br>
+    <button>登录</button>
+</fieldset>
+</body>
+<script>
+    $("button").click(function () {
+        if ($("#username").val() == "" && $("#password").val() == "") {
+            alert("用户名密码不能为空！！");
+            return;
+        }
+        $.ajax({
+            url: "http://127.0.0.1:7898/login",
+            type: "get",
+            data: {username: $("#username").val(), password: $("#password").val()},
+            success: function (data) {
+                if (data.msg == "查找成功") {
+                    if (data.data[0].password == $("#password").val()) {
+                        alert("登录成功");
+                        $(location).prop('href', "http://127.0.0.1:7898/management.html")
+                    } else {
+                        alert("密码错误")
+                    }
+                } else {
+                    alert("注册成功");
+                    $(location).prop('href', "http://127.0.0.1:7898/management.html")
+                }
+            }
+        })
+    })
+</script>
+</html>

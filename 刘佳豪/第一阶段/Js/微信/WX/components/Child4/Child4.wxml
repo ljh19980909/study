@@ -1,0 +1,5 @@
+<!--components/Child4/Child4.wxml-->
+<view class="title">
+	<view>我是Child4组件</view>
+	<button bindtap="sendToPage">点击传递数据</button>
+</view>

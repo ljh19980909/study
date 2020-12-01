@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>收货地址</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100px;
+        }
+
+        .dizhi {
+            width: 3.75rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .thead {
+            width: 3.75em;
+            height: 0.44rem;
+            background-color: #f2f2f2;
+            border-bottom: solid 0.005rem #cccccc;
+        }
+        .div1 {
+            width: 3.5rem;
+            height: 0.38rem;
+            margin: 0 0.13rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .div1 div:nth-child(1) {
+            width: 0.11rem;
+            height: 0.2rem;
+            background-image: url(img/20.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: auto 0;
+        }
+        .div1 div:nth-child(2){
+            width: 1.08rem;
+            height: 0.22rem;
+            color: grey;
+            font-size: 0.18rem;
+            margin: auto 0;
+        }
+        .tbody1{
+            width: 3.6rem;
+            height: 0.5rem;
+            display: flex;
+            margin-left: 0.15rem;
+            border-bottom: 0.005rem #cccccc solid;
+        }
+        .tbody1 div:nth-child(1){
+            width: 0.9rem;
+            height: 0.17rem;
+            color:#666666;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody1 div:nth-child(2){
+            width: 0.9rem;
+            height: 0.17rem;
+            color:#333333;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody2{
+            width: 3.55rem;
+            height: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 0.15rem;
+            padding-right: 0.05rem;
+            border-bottom: 0.005rem #cccccc solid;
+        }
+        .tbody2 div:nth-child(1){
+            width: 0.9rem;
+            height: 0.17rem;
+            color:#666666;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody2 div:nth-child(2){
+            width: 2.6rem;
+            height: 0.18rem;
+            color:#333333;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody2 div:nth-child(3){
+            width: 0.11rem;
+            height: 0.15rem;
+            background-image: url(img/23.png);
+            background-size: 70%;
+            background-repeat: no-repeat;
+            margin: auto 0;
+        }
+        .tbody3{
+            width: 3.6rem;
+            height: 0.71rem;
+            display: flex;
+            margin-left: 0.15rem;
+            border-bottom: 0.005rem #cccccc solid;
+        }
+        .tbody3 div:nth-child(1){
+            width: 0.9rem;
+            height: 0.17rem;
+            color:#666666;
+            font-size: 0.14rem;
+            margin: 0.2rem 0 0.34rem;
+        }
+        .tbody3 div:nth-child(2){
+            width: 2.49rem;
+            height: 0.32rem;
+            color:#333333;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody4{
+            width: 3.54rem;
+            height: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 0.15rem;
+            padding-right: 0.11rem;
+        }
+        .tbody4 div:nth-child(1){
+            width: 0.9rem;
+            height: 0.17rem;
+            color:#666666;
+            font-size: 0.14rem;
+            margin: auto 0;
+        }
+        .tbody4 div:nth-child(2){
+            width: 0.5rem;
+            height: 0.3rem;
+            background-color: #b91b34;
+            border-radius: 0.15rem;
+            margin: auto 0;
+            border: 0.005rem #b91b34 solid;
+        }
+        .tbody4 div:nth-child(2) div{
+            width: 0.3rem;
+            height: 0.29rem;
+            background-color: white;
+            border-radius: 0.145rem;
+            float: right;
+        }
+        .tfoot1{
+            width: 3.75rem;
+            height: 3.49rem;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        .tfoot1 div{
+            width: 3.35rem;
+            height: 0.41rem;
+            background-color: #b91b34;
+            margin: 0.4rem auto 0;
+            text-align: center;
+            line-height: 0.41rem;
+            font-size: 0.16rem;
+            color: white;
+            border-radius: 0.05rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dizhi">
+        <div class="thead">
+            <div class="div1">
+                <div></div>
+                <div>编辑收货地址</div>
+                <div></div>
+            </div>
+        </div>
+        <div class="tbody1">
+            <div>收货人：</div>
+            <div>陶星星</div>
+        </div>
+        <div class="tbody1">
+            <div>手机号码：</div>
+            <div>133****1350</div>
+        </div>
+        <div class="tbody2">
+            <div>选择地区：</div>
+            <div>内蒙古锡林郭勒盟锡林…巴彦宝力格苏木</div>
+            <div></div>
+        </div>
+        <div class="tbody3">
+            <div>详细地址：</div>
+            <div>霄云路26号鹏润大厦23层1080室某某某
+                d地方地方公司</div>
+        </div>
+        <div class="tbody4">
+            <div>设为默认地址</div>
+            <div><div></div></div>
+        </div>
+        <div class="tfoot1">
+            <div>保存</div>
+        </div>
+    </div>
+</body>
+</html>

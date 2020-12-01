@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		开发者工具 ctrl+shift+i
+		opacity(透明属性)0-1之间
+		css的引入方式有三种：
+		1.行内样式，在标签或者元素内直接添加style属性
+		2.内部样式表：在head标签中添加style标签
+		3.外部样式表：在head标签中添加link标签
+		优先级：行内样式>内部样式>外部样式
+		选择器：
+			获取要设置样式的元素
+			id选择器 
+			class选择器 
+			元素选择器 
+			后代选择器（ p a是指捕获body里面所有的p选择器里面的所有a元素）
+			直接子代选择器（指挥获取p选择器里的下一级a元素）
+			获取近邻的下一个兄弟元素（+） 
+			获取近邻的同级的兄弟元素（~）
+			
+		overflow:hidden（隐藏文本里装不下的内容）
+		
+		让块级标签完全变成行级标签display：inline
+		让块级标签变成行内块标签display：inline-block
+		vertical-align垂直方向对齐，只适用行级标签和文本，改变大的能让小的对齐
+		<!-- 内容溢出隐藏 -->
+	</head>
+	<body>
+		<input type="text" name="" />
+		<!-- text是一个单行输入框，且必须带name -->
+		<input type="button" value="baidu">
+		<!-- button是一个按钮，且必须带value -->
+		根据特性将行级标签和块级标签分类
+		1.块级标签
+			1.块级标签独占一行（相对于父元素）
+			2.块级标签的宽度默认百分百
+			3.块级标签的高度有内容撑起来
+			4.块级标签可以设置宽高
+			5.块级标签可以嵌套块级标签和行级标签（p标签除外不能嵌套块级标签）
+		总结：br hr h1-6 p li (list-style：none清除li前面的点) ul ol div
+		2.行级标签
+			1.行级标签可以在一行显示
+			2.行级标签的宽和高由内容撑开
+			3.行级标签不可以设置宽和高（img，input除外）
+			4.行级标签可以嵌套行级标签
+		总结：img a strong span input
+		
+		盒模型：
+			盒模型有多个组成部分，像现实中的盒子一样。（精细化布局）
+			组成：
+				content 内容+padding 内填充+border 边框+margin 外边距（浏览器默认给的外边距 p，body，
+				content内容包括文字。图片等  width和height决定了宽和高
+				padding内填充:一个值代表上下左右；两个值带上下 左右；三个值代表上 左右 下；四个值代表 上右下左  
+				margin外边距：使用方式跟padding一样
+			问题：
+				如果纵向相邻的两个标签同时设置外边距，取最大值
+				如果横向相邻的两个标签同时设置外边距，取和值
+				当父标签包子标签时，让顶部相邻边之间产生间距，推荐设置父标签的顶部内填充
+		
+		text-overflow:ellipsits(文本内容太长改成省略号)
+		white-space：nowrap(强制不换行)
+		box-shadow:(水平阴影的位置。允许负值, 必需的。垂直阴影的位置。, 模糊的距离， 颜色 )
+	</body>
+</html>

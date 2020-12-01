@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业2</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				height: 240px;
+				margin: 100px auto;
+			}
+			#box>div{
+				width: 300px;
+				height: 60px;
+				transition: all .5s;
+			}
+			#box>div:nth-child(1){
+				background-color: #7986CB;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				
+			}
+			#box>div:nth-child(2){
+				background-color: #FF8A65;
+			}
+			#box>div:nth-child(3){
+				background-color: #F06293;
+			}
+			#box>div:nth-child(4){
+				background-color: #4DB6AC;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+			#div1,#div2,#div3,#div4{
+				position: relative;
+			}
+			#p1{
+				width: 100px;
+				height: 20px;
+				color: white;
+				display: block;
+				position: absolute;
+				left: 20px;
+				top: 30%;
+				transition: all .5s;
+			}
+			#p2{
+				width: 50px;
+				height: 10px;
+				color: white;
+				font-size: 12px;
+				display: block;
+				position: absolute;
+				left: 0px;
+				top: 55%;
+				opacity: 0;
+				transition: all .5s;
+			}
+			#p3{
+				color: white;
+				display: block;
+				position: absolute;
+				top: 35%;
+				right: 10px;
+
+			}
+			#p4{
+				width: 40px;
+				height: 40px;
+				background-color: white;
+				border-radius: 40px;
+				position: absolute;
+				top: 30%;
+				left: -40px;
+				transition: all .1s;
+				opacity: 0;
+			}
+			#p4>img{
+				width: 40px;
+				height: 40px;
+				border-radius: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="div1">
+				<p id="p4"><img src="img/011-girl.png"/></p>
+				<p id="p1">Tap here</p>
+				<p id="p2">hello</p>
+				<p id="p3">66.6%</p>
+			</div>
+			<div id="div2">
+				<p id="p4"><img src="img/163807.png"/></p>
+				<p id="p1">Tap here</p>
+				<p id="p2">Hi</p>
+				<p id="p3">62.3%</p>
+			</div>
+			<div id="div3">
+				<p id="p4"><img src="img/011-girl.png"/></p>
+				<p id="p1">Tap here</p>
+				<p id="p2">Bey</p>
+				<p id="p3">60.6%</p>
+			</div>
+			<div id="div4">
+				<p id="p4"><img src="img/163807.png"/></p>
+				<p id="p1">Tap here</p>
+				<p id="p2">Bey!</p>
+				<p id="p3">62.6%</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var divs = document.querySelectorAll("#box div");
+		console.log(divs)
+		for(var i=0;i<divs.length;i++){
+			divs[i].onmouseover = function(){
+				for(var j=0;j<divs.length;j++){
+					if(divs[j] == this){
+						divs[j].style.height = 100 + "px";
+						p1[j].style.left = 80 + "px";
+						p2[j].style.left = 83 + "px";
+						p2[j].style.opacity = 1;
+						p4[j].style.left = 20 + "px";
+						p4[j].style.opacity = 1;
+					}
+				}
+			}
+			divs[i].onmouseout = function(){
+				for(var j=0;j<divs.length;j++){
+					if(divs[j] == this){
+						divs[j].style.height = 60 + "px";
+						p1[j].style.left = 20 + "px";
+						p2[j].style.left = 0 + "px";
+						p2[j].style.opacity = 0;
+						p4[j].style.left = -40 + "px";
+						p4[j].style.opacity = 0;
+					}
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

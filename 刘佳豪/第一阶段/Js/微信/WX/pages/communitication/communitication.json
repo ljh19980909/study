@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "Child1": "../../components/Child1/Child1",
+        "Child2": "../../components/Child2/Child2",
+        "Child4": "../../components/Child4/Child4",
+        "Child5": "../../components/Child5/Child5",
+        "Child7": "../../components/Child7/Child7",
+        "Child8": "../../components/Child8/Child8",
+        "Child9": "../../components/Child9/Child9"
+    }
+}

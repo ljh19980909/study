@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分类</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100px;
+        }
+
+        .fenlei {
+            width: 3.75rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .thead {
+            width: 3.75rem;
+            height: 0.48rem;
+            background-color: #f9f9f9;
+            padding-top: 0.13rem;
+            border-bottom: #cccccc 0.005rem solid;
+        }
+
+        .div1 {
+            width: 3.5rem;
+            height: 0.38rem;
+            margin: 0 0.13rem 0;
+            display: flex;
+        }
+
+        .div1 div:nth-child(1) {
+            width: 0.11rem;
+            height: 0.2rem;
+            background-image: url(img/20.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.09rem 0;
+        }
+
+        .div1 div:nth-child(2) {
+            width: 0.30rem;
+            height: 0.29rem;
+            background-image: url(img/2.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: 80% 58%;
+            background-color: white;
+            margin: 0.045rem 0 0 0.22rem;
+            border-bottom-left-radius: 0.06rem;
+            border-top-left-radius: 0.06rem;
+        }
+
+        .div1 input {
+            width: 2.40rem;
+            height: 0.29rem;
+            font-family: STXihei;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.1rem;
+            letter-spacing: 0rem;
+            color: #b3b3b3;
+            margin: 0.045rem 0.12rem 0 0;
+            border: transparent;
+            border-bottom-right-radius: 0.06rem;
+            border-top-right-radius: 0.06rem;
+            outline: none;
+        }
+
+        .tbody1 {
+            width: 0.89rem;
+            height: 5.55rem;
+            background-color: #f9f9f9;
+            float: left;
+        }
+
+        .tbody1 div {
+            width: 0.67rem;
+            height: 0.49rem;
+        }
+
+        .tbody1 div:nth-child(1) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.13rem 0 0.1rem;
+        }
+
+        .tbody1 div:nth-child(2) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #b91b34;
+            padding: 0 0.13rem 0 0.05rem;
+            border-left: 0.05rem solid #b91b34;
+            background-color: white;
+        }
+
+        .tbody1 div:nth-child(3) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.13rem 0 0.1rem;
+        }
+
+        .tbody1 div:nth-child(4) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.08rem 0 0.1rem;
+            border-bottom: solid #cccccc 0.005rem;
+            border-top: solid #cccccc 0.005rem;
+        }
+
+        .tbody1 div:nth-child(5) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.08rem 0 0.1rem;
+            border-bottom: solid #cccccc 0.005rem;
+        }
+
+        .tbody1 div:nth-child(6) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            letter-spacing: 0rem;
+            color: #353535;
+            margin: 0 0.08rem 0 0.1rem;
+            border-bottom: solid #cccccc 0.005rem;
+        }
+
+        .tbody1 div:nth-child(7) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.08rem 0 0.1rem;
+            border-bottom: solid #cccccc 0.005rem;
+        }
+
+        .tbody1 div:nth-child(8) {
+            font-family: PingFang-SC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.49rem;
+            color: #353535;
+            margin: 0 0.08rem 0 0.1rem;
+            border-bottom: solid #cccccc 0.005rem;
+        }
+
+        .tbody2 {
+            width: 2.86rem;
+            height: 5.55rem;
+            float: right;
+            background-color: white;
+        }
+
+        .div2 {
+            width: 2.78rem;
+            height: 2.17rem;
+
+            margin: 0.12rem 0 0 0.09rem;
+            border-bottom: solid #cccccc 0.005rem;
+        }
+
+        .s1 {
+            width: 0.30rem;
+            height: 0.17rem;
+            font-family: PingFang-SC-Regular;
+            font-size: 0.15rem;
+            color: #272727;
+            display: block;
+            margin: 0 0 0 0.09rem;
+        }
+
+        .s2 {
+            width: 0.6rem;
+            height: 0.17rem;
+            font-family: PingFang-SC-Regular;
+            font-size: 0.15rem;
+            color: #272727;
+            display: block;
+            margin: 0.15rem 0 0 0.09rem;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        td {
+            width: 0.7rem;
+            height: 0.35rem;
+            font-size: 0.12rem;
+            font-family: PingFang-SC-Regular;
+        }
+
+        .div3 {
+            width: 2.78rem;
+            height: 1.5rem;
+            margin: 0.12rem 0 0 0.09rem;
+        }
+
+        .div4 {
+            width: 2.78rem;
+            height: 1.5rem;
+            margin: 0.12rem 0 0 0.09rem;
+            border-top: solid #cccccc 0.005rem;
+        }
+
+        .tfoot6 {
+            width: 3.75rem;
+            height: 0.5rem;
+            display: flex;
+            justify-content: space-around;
+            border-top: 0.005rem solid #cccccc;
+            float: left;
+        }
+
+        .S {
+            width: 0.25rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.11rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #7c8188;
+            
+        }
+
+        .D {
+            width: 0.25rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #7c8188;
+        }
+
+        .D1 {
+            width: 0.36rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #7c8188;
+        }
+
+        .SY {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/21.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .FL {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/17.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .GWC {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/18.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .WD {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/19.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fenlei">
+        <div class="thead">
+            <div class="div1">
+                <div></div>
+                <div></div>
+                <input type="text" placeholder="搜索商品">
+            </div>
+        </div>
+        <div class="tbody1">
+            <div>一键选酒</div>
+            <div>葡萄酒</div>
+            <div>白酒</div>
+            <div>洋酒</div>
+            <div>啤酒</div>
+            <div>黄酒/养生</div>
+            <div>就周边</div>
+            <div>其他</div>
+        </div>
+        <div class="tbody2">
+            <div class="div2">
+                <span class="s1">产品</span>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>波尔多</td>
+                            <td>勃艮第</td>
+                            <td>香槟</td>
+                        </tr>
+                        <tr>
+                            <td>罗讷河谷</td>
+                            <td>南澳</td>
+                            <td>西澳</td>
+                        </tr>
+                        <tr>
+                            <td>东南澳</td>
+                            <td>新南威尔士</td>
+                            <td>维多利亚</td>
+                        </tr>
+                        <tr>
+                            <td>莫舍尔</td>
+                            <td>莱茵高</td>
+                            <td>莱茵黑森</td>
+                        </tr>
+                        <tr>
+                            <td>法尔茨</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div3">
+                <span class="s1">类型</span>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>红葡萄酒</td>
+                            <td>白葡萄酒</td>
+                            <td>桃红葡萄酒</td>
+                        </tr>
+                        <tr>
+                            <td>甜白葡萄酒</td>
+                            <td>贵腐酒</td>
+                            <td>其他起泡酒</td>
+                        </tr>
+                        <tr>
+                            <td>香槟</td>
+                            <td>冰酒</td>
+                            <td>加强葡萄酒 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div4">
+                <span class="s2">葡萄品种</span>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>赤霞珠</td>
+                            <td>美乐</td>
+                            <td>品丽珠</td>
+                        </tr>
+                        <tr>
+                            <td>黑皮诺</td>
+                            <td>马尔贝克 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tfoot6">
+            <div class="S">
+                <div class="SY"></div>
+                首页
+            </div>
+            <div class="D">
+                <div class="FL"></div>
+                分类
+            </div>
+            <div class="D1">
+                <div class="GWC"></div>
+                购物车
+            </div>
+            <div class="D">
+                <div class="WD"></div>
+                我的
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

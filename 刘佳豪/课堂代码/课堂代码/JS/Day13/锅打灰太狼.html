@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>锅打灰太狼</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 320px;
+				height: 480px;
+				background-image: url(img/game_bg.jpg);
+				background-size: cover;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#div1 {
+				width: 50px;
+				height: 30px;
+				position: absolute;
+				top: 8px;
+				left: 60px;
+				color: white;
+				font-size: 20px;
+			}
+			
+			#div2 {
+				width: 180px;
+				height: 18px;
+				position: absolute;
+				top: 65px;
+				left: 63px;
+				overflow: hidden;
+			}
+			
+			#div3 {
+				width: 180px;
+				height: 150px;
+				position: absolute;
+				top: 100px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				color: red;
+				font-size: 40px;
+				text-align: center;
+				line-height: 60px;
+				z-index: 1;
+			}
+			
+			#div4 {
+				width: 180px;
+				height: 150px;
+				position: absolute;
+				top: 100px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				color: red;
+				font-size: 40px;
+				text-align: center;
+				line-height: 60px;
+				display: none;
+				z-index: -1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="div1">0</div>
+			<div id="div2">
+				<img src="img/progress.png" />
+			</div>
+			<div id="div3">
+				<p id="beginGame">开始游戏</p>
+				<p>游戏说明</p>
+			</div>
+			<div id="div4">
+				<p>游戏结束</p>
+				<p id="restart">再来一局</p>
+			</div>
+		</div>
+		<script src="tween.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//倒计时计时器
+			var countDowntimer;
+			//创建img标签计时器
+			var imgTimer;
+			//切换图片的计时器
+			var changeImgSrcTimer;
+			//控制src增减的布尔值
+			var isAdd;
+			//控制图片下标
+			var index;
+			//切换被打图片的计时器
+			var changeHitImgSrcTimer;
+			//保存狼的类型
+			var wolfName;
+			//控制被打的图片下标
+			var hitIndex = 6;
+
+			//位置数组
+			var positionArr = [
+				[110, 137],
+				[30, 182],
+				[30, 245],
+				[195, 166],
+				[114, 216],
+				[210, 236],
+				[41, 318],
+				[130, 298],
+				[219, 319]
+			];
+			//开始游戏按钮
+			beginGame.onclick = function() {
+				//隐藏开始菜单
+				div3.style.display = "none";
+				//倒计时
+				countDown();
+				startGame();
+			}
+
+			restart.onclick = function() {
+				div4.style.display = "none";
+				countDown();
+				startGame();
+				div1.innerHTML = 0;
+			}
+			//开始游戏方法
+			function startGame() {
+				//每隔一段时间创建一个img标签
+				imgTimer = setInterval(function() {
+					wolfImg = createWolf();
+					//添加点击事件
+					wolfImg.onclick = hitWolf;
+					//设置src
+					/*
+					 * 设置小灰灰和灰太狼的概率
+					 */
+					wolfName = Math.random() > 0.7 ? "x" : "h";
+					index = 0;
+					wolfImg.src = "img/" + wolfName + index + ".png";
+					box.appendChild(wolfImg);
+					/*
+					 * 声明一个变量isAdd用来控制index是否可以控制继续自增
+					 */
+					isAdd = true;
+					changeImgSrcTimer = setInterval(changeSrc, 70);
+				}, 2000);
+			}
+			//图片点击事件
+			
+			function hitWolf() {
+				/*
+				 * 更改分数
+				 * 换图
+				 */
+				this.onclick = null;
+				//清除之前的换图计时器
+				clearInterval(changeImgSrcTimer);
+
+				//换被打的图片
+				changeHitImgSrcTimer = setInterval(changeHitSrc, 70);
+
+				//更改分数
+				var nowScore = div1.innerHTML - 0;
+				if(wolfName == "h") {
+					div1.innerHTML = nowScore + 10;
+				} else {
+					div1.innerHTML = nowScore - 10;
+				}
+
+			}
+
+			//切换被打图片src的函数
+			function changeHitSrc(){
+				wolfImg.src = "img/" + wolfName + hitIndex + ".png";
+				hitIndex++;
+				if (hitIndex == 10) {
+					hitIndex = 6;
+					clearInterval(changeHitImgSrcTimer);
+					box.removeChild(wolfImg);
+				}
+			}
+
+			//切换图片src的函数
+			function changeSrc(){
+				wolfImg.src = "img/" + wolfName + index + ".png";
+				if (index == 5) {
+					isAdd = false;
+				}
+ 				if (isAdd) {
+					index++;
+				}else {
+					index--
+				}
+				if (index == -1) {
+					clearInterval(changeImgSrcTimer);
+					box.removeChild(wolfImg);
+				}
+			}
+
+
+			//创建图片的函数
+			function createWolf() {
+				var wolf = document.createElement("img");
+				wolf.style.position = "absolute";
+				wolf.style.width = "70px";
+				wolf.style.height = "70px";
+				//随机位置 随机数范围[0-8]
+				var pArr = positionArr[Math.floor(Math.random() * 9)];
+				wolf.style.left = pArr[0] + "px";
+				wolf.style.top = pArr[1] + "px";
+				return wolf;
+			}
+
+			function countDown() {
+				var t = 0;
+				var b = 180;
+				var c = -180;
+				var d = 6000;
+				countDowntimer = setInterval(function() {
+					t++;
+					div2.style.width = Tween.Linear(t, b, c, d) + "px";
+					if(t == d) {
+						div4.style.display = "block";
+						div4.style.zIndex = 1;
+						clearInterval(countDowntimer);
+						clearInterval(imgTimer);
+						
+						var newIndex = setInterval(function() {}, 1000)
+						for(var i = 1; i < newIndex; i++) {
+							clearInterval(i);
+						}
+						
+						var imgs = document.querySelectorAll("#box img");
+						for(var j = 1; j < imgs.length; j++) {
+							box.removeChild(imgs[j]);
+						}
+					}
+				}, 10)
+			}
+		</script>
+	</body>
+
+</html>

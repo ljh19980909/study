@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业1</title>
+		<style type="text/css">
+			#T{
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/down-0.png"/ id="T">
+		<button>左上</button>
+		<button>向上</button>
+		<button>右上</button>
+		<br/>
+		<button>向左</button>
+		<button>停止</button>
+		<button>向右</button>
+		<br/>
+		<button>左下</button>
+		<button>向下</button>
+		<button>右下</button>
+		
+		<script type="text/javascript">
+			var btns = document.querySelectorAll("button");
+			var x = 0;
+			var y = 0;
+			var index = 0;
+			var JSQ
+				btns[0].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x-=7;
+						y-=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/lu-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;	
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/lu-" + 0 +".png"
+					}
+				}
+				
+				btns[1].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						y-=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/up-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);	
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/up-" + 0 +".png"
+					}
+				}
+				
+				btns[2].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x+=7;
+						y-=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/rightUp-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/rightUp-" + 0 +".png"
+					}
+				}
+				
+				btns[3].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x-=7;
+						T.style.transform = "translateX(" + x + "px)" + "translateY(" + y + "px)";
+						T.src = "images/left-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);	
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/left-" + 0 +".png"
+					}
+				}
+				
+				btns[5].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x+=7;
+						T.style.transform = "translateX(" + x + "px)" + "translateY(" + y + "px)";
+						T.src = "images/right-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/right-" + 0 +".png"
+					}
+				}
+				
+				btns[6].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x-=7;
+						y+=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/ld-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/ld-" + 0 +".png"
+					}
+				}
+				
+				btns[7].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						y+=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/down-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/down-" + 0 +".png"
+					}
+				}
+				
+				btns[8].onclick = function(){
+					clearInterval(JSQ);
+					JSQ = setInterval (function(){
+						x+=7;
+						y+=7;
+						T.style.transform = "translateY(" + y + "px)" + "translateX(" + x + "px)";
+						T.src = "images/rd-" + index +".png"
+						index++;
+						if(index == 5){
+						index = 0;
+					}
+					},100);
+					btns[4].onclick = function(){
+						clearInterval(JSQ)
+						T.src = "images/rd-" + 0 +".png"
+					}
+				}
+		</script>
+	</body>
+</html>

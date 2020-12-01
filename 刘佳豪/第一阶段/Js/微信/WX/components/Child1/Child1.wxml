@@ -1,0 +1,16 @@
+<!--components/Child1/Child1.wxml-->
+<view class="child1">
+    <view>
+        child1组件
+    </view>
+    <view>
+        接收到父page的值:{{c1Msg}}
+    </view>
+      <view wx:for="{{c1Array}}" wx:key="item">
+          <text>{{item.title}}</text>
+          ---
+          <text>{{item.content}}</text>
+      </view>
+        
+</view>
+  

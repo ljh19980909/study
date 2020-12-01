@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/wyxw/wyxw",
+        "pages/collections/collections",
+        "pages/interface/interface",
+        "pages/lifeCircle/lifeCircle",
+        "pages/Nework/Nework"
+    ],
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/wyxw/wyxw",
+                "text": "网易新闻"
+            },
+            
+            {
+                "pagePath": "pages/collections/collections",
+                "text": "我的收藏"
+            },
+            {
+                "pagePath": "pages/interface/interface",
+                "text": "交互"
+            },
+            {
+                "pagePath": "pages/lifeCircle/lifeCircle",
+                "text": "生命周期"
+            },
+            {
+                "pagePath": "pages/Nework/Nework",
+                "text": "网络请求"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true ,"backgroundTextStyle": "dark","backgroundColorTop": "yellow" 
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <h2>
+        {{name}}
+        <p>
+            {{age}}
+        </p>
+    </h2>
+</div>
+<div id="abc">{{abc}}</div>
+</body>
+<script>
+    let app = new Vue({
+        // el字段：指定vue实例的作用域
+        el: "#app",
+        //data字段：指定vue实例的数据源
+        data: {
+            msg: "hello,vue!",
+            name: "张三",
+            age: 20,
+            abc:"你好！"
+        }
+    })
+</script>
+</html>

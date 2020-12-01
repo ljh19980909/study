@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "Child3": "../../components/Child3/Child3"
+    }
+}

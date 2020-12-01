@@ -1,0 +1,8 @@
+<i-swipeout i-class="i-swipeout-demo-item" wx:for="{{collects}}" wx:key="item" actions="{{actions}}" bind:change="isChange" data-id="{{item.id}}">
+	<view slot="content">
+		<view class="fonts">
+			<view class="ellipsis">{{item.title}}</view>
+			<view class="ellipsis">{{item.content}}</view>
+		</view>
+	</view>
+</i-swipeout>

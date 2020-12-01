@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    let app=document.getElementById("app")
+    /* 
+        React绑定事件
+            事件名首字母大写 eg: onClick
+        写法1:on事件名={this.函数名}
+            特点:
+                1.无法传参
+                2.函数里无法访问this
+                3.函数里通过event获取事件对象
+        写法2:on事件名={this.函数名.bind(this,实参列表)}
+            特点:
+                1.可以传参
+                2.可以访问this
+                3.函数里通过event获取事件对象
+        写法3:on事件名={()=>this.函数名()}
+        写法4:将bind改变this指向的代码在组件的constructor函数里声明,这样只需要改变一次this的指向,以后就不需要改了
+        constructor
+     */
+    class Child1 extends React.Component {
+            // 构造函数,该函数会在组件初始化时触发,整个生命里只触发一次
+            constructor(props){
+                super(props)
+                // 一次性修改事件指向this
+                this.btnClick4=this.btnChild4.bind(this)
+            }
+         render() {
+             return (
+                 <fieldset>
+                    <legend><h2>这是child1组件</h2></legend>
+                    <button onClick={this.btnClick}>按钮1</button>
+                    <hr/>
+                    <button onClick={this.btnClick2.bind(this,10,20,30)}>按钮2</button>
+                    <hr/>
+                    <button onClick={()=>this.btnClick3(10,20)}>按钮3</button>
+                    <hr />
+                    <button onClick={this.btnClick4}>按钮4</button>
+                 </fieldset>
+             )
+         }
+         btnClick(){
+            //  alert("按钮1被点击了!")
+            console.log(event);
+         }
+         btnClick2(a,b,c){
+            // alert("按钮1被点击了!")
+            console.log(this.props,event);
+            console.log(a,b,c);
+         }
+         btnClick3(a,b){
+            // alert("按钮1被点击了!")
+            console.log(this.props,event,a+b);
+         }
+         btnClick4(){
+            console.log(this.props);
+         }
+     }
+     ReactDOM.render(
+         <Child1 name="现宝"/>,
+         app
+     )
+</script>
+
+</html>

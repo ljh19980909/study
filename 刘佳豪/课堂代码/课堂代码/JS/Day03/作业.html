@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业</title>
+	</head>
+
+	<body>
+		<input type="text" id="n1" />
+		<input type="text" id="n2" />
+		<button onclick="GY()">最大公约数</button>
+		<button id="btn">最大公约数高级</button>
+		<script type="text/javascript">
+			//第一题
+//			for(var j = 1, i = 2; i <= 20; i++) {
+//				j = j * i;
+//			}
+//			console.log(j);
+			
+			//第二题
+//			var sum = 0;
+//			var smu = 0;
+//			for(var i = 1; i < 101; i++){
+//				if(i % 2 == 0){
+//					sum += i;
+//				}else{
+//					smu += i;
+//				}
+//			}
+			//第三题
+//			function GY() {
+//				var n1 = document.getElementById("n1").value - 0;
+//				var n2 = document.getElementById("n2").value - 0;
+//				if (n1 < n2) {
+//					var t = n1;
+//					n1 = n2;
+//					n2 = t;
+//				}
+//				while (n2 != 0){
+//					var yu = n1 % n2;
+//					n1 = n2;
+//					n2 = yu;
+//				}
+//				console.log("最大公约数：", n1);
+//			}
+//			btn.onclick = function(){
+//				var n1 = document.getElementById("n1").value - 0;
+//				var n2 = document.getElementById("n2").value - 0;
+//				console.log(maxGY(n1, n2));
+//			}
+//			
+//			// 求最大公约数的方法
+//			function maxGY(a, b) {
+//				return b ? maxGY(b, a % b) : a;
+//			}
+			//第四题
+//			var z = 0;
+//			for(var a = 1;a <= 9;a++){
+//				for(var b = 0;b <= 9;b++){
+//					for(var c = 0;c <= 9;c++){
+//						if((a*a*a+b*b*b+c*c*c) == (a*100+b*10+c)){
+//							console.log((a*100+b*10+c));
+//							z++;
+//						}
+//					}
+//				}
+//			}
+//			console.log(z);
+			//第五题
+//			for(var a = 1;a <= 9;a++){
+//				for(var b = 0;b <= 9;b++){
+//					for(var c = 0;c <= 9;c++){
+//						if((a*100+b*10+c + c*100+b*10+a) == 1333){
+//							console.log((a*100+b*10+c))
+//						}
+//					}
+//				}
+//			}
+			//第六题
+//			var j = 0;
+//			for (var i = 1; i < 100; i++) {
+//							if (i % 7 == 0 || i % 10 == 7 || Math.floor(i / 10) == 7) {
+//								console.log(i);
+//								j++;
+//							}
+//					}
+//			console.log(j);
+		</script>
+	</body>
+
+</html>

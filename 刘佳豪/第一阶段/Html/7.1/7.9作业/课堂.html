@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+					height: 100%;
+					width: 100%;
+			}
+			body{
+				background-image: url(img/201041993511.jpg);
+				/* background-repeat: no-repeat; */
+				perspective: 1000px;
+			}
+			.wrap{
+				width: 300px;
+				height: 300px;
+				margin: 200px auto;
+				/* border: 1px solid #FFFFFF; */
+				transform-style: preserve-3d;
+			}
+			.all{
+				width: 200px;
+				height: 200px;
+				background-color: aliceblue;
+				transform:rotateY(40deg) rotateX(50deg);
+				/* border: 1px solid black; */
+				position: relative;
+				transform-style: preserve-3d;
+				font-size: 50px;
+				color: #ffffff;
+			}
+			.wrap:hover{
+				transform: rotateX(3600deg) rotateY(3000deg) ;
+				transition: 30s linear;
+			}
+			.all>div{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				border-radius: 10px;
+				border: 1px solid yellow;
+				box-shadow: 0px 0px 10px 20px yellow;
+			}
+			.all div:nth-child(1){
+				transform: translateZ(-100px);
+				background-color: red;
+			}
+			.all div:nth-child(2){
+				transform: translateZ(100px);
+				background-color: green;
+			}
+			.all div:nth-child(3){
+				transform: rotateY(90deg) translateZ(100px);
+				background-color: purple;
+			}
+			.all div:nth-child(4){
+				transform: rotateY(-90deg) translateZ(100px);
+				background-color: pink;
+			}
+			.all div:nth-child(5){
+				transform: rotateX(90deg) translateZ(100px);
+				background-color: blue;
+			}
+			.all div:nth-child(6){
+				transform: rotateX(-90deg) translateZ(100px);
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="all">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+			</div>
+		</div>
+	</body>
+</html>

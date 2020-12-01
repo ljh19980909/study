@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格合并</title>
+		<style type="text/css">
+			table{
+				/* height: 50px; */
+				width: 500px;
+			}
+			.home{
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 快捷生成方式
+		tr:行
+		td：列
+		th：列的标题
+		caption：表格的标题
+		table：表格
+		 table>(tr>td*3)*2
+		 table>(tr>td*9)*9
+		 table>(tr>th*9)+(tr>td*9)*8
+		 cellspacing:单元格与单元格之间的距离
+		 cellpadding：单元格与内容之间的距离
+		 -->
+		 <table border="1" cellspacing="0" cellpadding="10px" class="home">
+			 <caption>学生信息表</caption>
+			 <tr>
+			 	<th>姓名</th>
+			 	<th>绰号</th>
+			 	<th>性别</th>
+			 	<th>爱好</th>
+			 </tr>
+			 <tr>
+			 	<td>璐瑶</td>
+			 	<td>瑶瑶</td>
+			 	<td>女</td>
+			 	<td>男</td>
+			 </tr>
+			 <tr>
+			 	<td>文豪</td>
+			 	<td>豪哥</td>
+			 	<td>男</td>
+			 	<td>睡觉</td>
+			 </tr>
+			 <tr>
+			 	<td>张飞</td>
+			 	<td>翼德</td>
+			 	<td>女</td>
+			 	<td>拜把子</td>
+			 </tr>
+		 </table>
+	</body>
+</html>

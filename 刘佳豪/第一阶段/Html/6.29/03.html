@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table{
+					text-align: center;
+			}
+			.b{
+				height: 200px;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 标签：
+			table：表格
+			caption：表格的标题
+			tr：行
+			th: 列的标题
+			td：列 
+			rowspan: 列的合并
+			colspan：行的合并
+			-->
+		
+		<table border="1" cellpadding="20" cellspacing="0">
+			<caption>学生信息表</caption>
+			<!-- 属性：
+			border: 边框
+			cellspacing：控制单元格与单元格之间的间距。
+			cellpadding：控制单元格边框与内容之间的间距。 -->
+			<tr>
+				<td>姓名</td>
+				<td>绰号</td>
+				<td>性别</td>
+				<td>爱好</td>
+			</tr>
+			<tr>
+				<td>璐瑶</td>
+				<td>瑶瑶</td>
+				<td>女</td>
+				<td>男</td>
+			</tr>
+			<tr>
+				<td>文豪</td>
+				<td>豪哥</td>
+				<td>男</td>
+				<td>睡觉</td>
+			</tr>
+			<tr>
+				<td>张飞</td>
+				<td>翼德</td>
+				<td>女</td>
+				<td>拜把子</td>
+			</tr>
+		</table>
+		<!-- 
+		 快捷生成方式：
+			table>(tr>td*3)*2
+			table>(tr>td*9)*9
+			table>(tr>th*9)+(tr>td*9)*8
+		  -->
+		  <table border="1" cellspacing="0" cellpadding="1" class="b">
+		  	<tr>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  		<th></th>
+		  	</tr>
+		  	<tr>
+		  		<td rowspan="3"></td>
+		  		<td colspan="7"></td>
+		  	</tr>
+		  	<tr>
+		  		
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  	</tr>
+		  	<tr>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  	</tr>
+		  	<tr>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  	</tr>
+		  	<tr>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  	</tr>
+		  	<tr>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  		<td></td>
+		  	</tr>
+		  </table>
+	</body>
+</html>

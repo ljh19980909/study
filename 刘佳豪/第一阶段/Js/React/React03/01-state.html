@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script type="text/babel">
+    /*
+    React里的state和 props
+        props: 这是react组件的输入属性,类似于vue里的props,可以接收外部传入组件内的值,props是内置的,不需要声明即可使用
+            注意点:props里存储的值都是 只读的,不可修改
+        state: 也是React组件的内置属性,不需要声明即可使用,类似vue里的data数据源
+            注意点: 
+                1.即可读又可写
+                2.修改state的值时,不能直接修改,需要调用setState方法
+                3.state属性虽然不需要声明,但是需要初始化,我们一般选择在constructor函数里初始化state
+
+            修改setState方法时,其实React会在state数据修改之后重新调用render方法,让页面更新
+  */
+    let app = document.getElementById("app");
+
+    class Child1 extends React.Component {
+      constructor(props) {
+        super(props);
+        // 初始化state
+        this.state = { msg: "hello,React!" };
+        //初始化组件修改this指向
+        this.changeProps = this.changeProps.bind(this);
+        this.changeState = this.changeState.bind(this);
+      }
+      render() {
+        return (
+          <fieldset>
+            <legend>
+              <h2>Child1组件</h2>
+            </legend>
+            <p>显示props的msg值:{this.props.msg}</p>
+            <button onClick={this.changeProps}>点击修改props的msg的值</button>
+            <hr />
+            <p>显示state的msg值:{this.state.msg}</p>
+            <button onClick={this.changeState}>点击修改state的msg的值</button>
+            <hr />
+          </fieldset>
+        );
+      }
+      changeProps() {
+        this.props.msg = "bye!!!现宝!!!!";
+      }
+      changeState() {
+        // this.state.msg = "bye!!!React!!!!";
+        this.setState(
+          {
+            msg: "hello,vue!!!",
+          },
+          () => {
+            console.log(this.state.msg);
+          }
+        );
+        console.log(this.state.msg);
+      }
+    }
+    ReactDOM.render(<Child1 msg="hello,现宝!!!!" />, app);
+  </script>
+</html>

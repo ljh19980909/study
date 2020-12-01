@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script type="text/babel">
+    let app = document.getElementById("app");
+    /*
+        父向子传值:使用props输入属性
+    */
+    class Child1 extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          news: this.props.cData2,
+        };
+      }
+      componentWillReceiveProps(nextProps) {
+        this.setState({
+          news: nextProps.cData2,
+        });
+        console.log(111, nextProps);
+      }
+
+      render() {
+        return (
+          <fieldset>
+            <legend>
+              <h2>Child1组件</h2>
+            </legend>
+            <p>data1的值:{this.props.cData1}</p>
+            <ul>
+              {this.state.news.map((v, i) => {
+                return <li key={i}>{v.title}</li>;
+              })}
+            </ul>
+          </fieldset>
+        );
+      }
+    }
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          data1: "hello,App",
+          data2: [{ title: "张三" }, { title: "李四" }, { title: "王五" }],
+        };
+        this.reqData = this.reqData.bind(this);
+      }
+      render() {
+        return (
+          <fieldset>
+            <legend>
+              <h2>父组件</h2>
+            </legend>
+            <button onClick={this.reqData}>发起网络请求</button>
+            <Child1 cData1={this.state.data1} cData2={this.state.data2} />
+          </fieldset>
+        );
+      }
+      reqData() {
+        fetch("http://127.0.0.1:5678/news", {
+          method: "get",
+        })
+          .then((res) => {
+            console.log(res);
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            this.setState({
+              data2: data.T1348647853363.slice(0, 10),
+            });
+          });
+
+        this.setState({});
+      }
+    }
+    ReactDOM.render(<App />, app);
+  </script>
+</html>

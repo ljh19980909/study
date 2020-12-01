@@ -1,0 +1,6 @@
+<view class="container"></view>
+<button bindtap="gotoLifeCircle">点击切换到生命周期页</button>
+<navigator class="" target="" url="../lifeCircle/lifeCircle" hover-class="navigator-hover" open-type="switchTab">
+    666
+</navigator>
+<button bindtap="add">点击加数</button>

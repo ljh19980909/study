@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业</title>
+		<style type="text/css">
+			/**{
+				margin: 0;
+				padding: 0;
+			}
+			#a{
+				width:100%;
+				height: 200px;
+				background-color: cyan;
+				text-align: center;
+				line-height: 200px;
+			}
+			#c1{
+				width:350px;
+				height: 350px;
+				border: 1px solid black;
+				position: relative;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c2{
+				width:300px;
+				height: 300px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c3{
+				width:250px;
+				height: 250px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c4{
+				width:200px;
+				height: 200px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c5{
+				width:150px;
+				height: 150px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c6{
+				width:100px;
+				height: 100px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+			}
+			#c7{
+				width:50px;
+				height: 50px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				border-radius: 50%;
+				background-color: white;
+				
+				div{
+				background-color: white;
+			}*/
+			
+			
+			#div1{
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				margin: auto;
+				position: relative;
+				border: 1px solid black;
+			}
+			#div2{
+				width: 500px;
+				height: 500px;
+				border-radius: 50%;
+				margin: auto;
+				border: 1px solid black;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			#div3{
+				width: 400px;
+				height: 400px;
+				border-radius: 50%;
+				margin: auto;
+				border: 1px solid black;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			#div4{
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				margin: auto;
+				border: 1px solid black;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			#div5{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				margin: auto;
+				border: 1px solid black;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			
+			
+			/*#box div {
+				border: 2px solid black;
+				border-radius: 50%;
+				background-color: white;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			#box {
+				height: 800px;
+				position: relative;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="d1">开奖</div>
+			<img src="img/1.gif" id="img"/>
+			
+		<!--<div id="c1">
+			<div id="c2">
+				<div id="c3">
+					<div id="c4">
+						<div id="c5">
+							<div id="c6">
+								<div id="c7"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button id="c8">由内向外改变颜色</button>
+		<button id="c9">由外向内改变颜色</button>-->
+		
+		
+		<div id="div1">
+			<div id="div2">
+				<div id="div3">
+					<div id="div4">
+						<div id="div5"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button id="but1">从外向里</button>
+		<button id="but2">从里向外</button>
+		
+		
+		
+		
+		<!--<div id="box">
+			<div id="div1">
+				<div id="div2">
+					<div id="div3">
+						<div id="div4">
+							<div id="div5">
+								<div id="div6"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+		<!--<button id="outIn">从外往里换色</button>
+		<button id="inOut">从里往外换色</button>-->
+		<script type="text/javascript">
+			
+			function randomNumber(x, y) {
+				return Math.floor(Math.random() * (y - x + 1) + x);
+			}
+			
+			
+//				var i1 = Math.floor(Math.random() * (33 + 1));
+//				var i2 = Math.floor(Math.random() * (33 + 1));
+//				var i3 = Math.floor(Math.random() * (33 + 1));
+//				var i4 = Math.floor(Math.random() * (33 + 1));
+//				var i5 = Math.floor(Math.random() * (33 + 1));
+//				var i6 = Math.floor(Math.random() * (33 + 1));
+//				var i7 = Math.floor(Math.random() * (16 + 1));
+//			d1.onclick = function() {
+//				document.write(i1 + "," + i2 + "," + i3 + "," + i4 + "," + i5 + "," + i6 + "," + i7);
+//			}
+//			
+//			var image = document.getElementById('img');
+//			image.onclick = function() {
+//				var mysrc = image.getAttribute('src');
+//				if (mysrc == "img/1.gif") {
+//					image.setAttribute("src","img/2.gif")
+//				} else{
+//					image.setAttribute("src","img/1.gif")
+//				}
+//			}
+//			
+			
+			
+	
+//				function randomNumber(x, y) {
+//				return Math.floor(Math.random() * (y - x + 1) + x);
+//			}
+//				function randomColor() {
+//				var r = randomNumber(0, 255);
+//				var g = randomNumber(0, 255);
+//				var b = randomNumber(0, 255);
+//				return "rgb(" + r + "," + g + "," + b + ")";
+//			}
+//				var i =1;
+//				
+////				var z =1;
+//				var arr1 = [];
+////				var arr2 = [];
+//	
+//			c8.onclick = function() {
+//					
+//				var e = c7.style.backgroundColor = randomColor();
+//				arr1[i]=e;
+//				c1.style.backgroundColor = arr1[i-6];
+//				c2.style.backgroundColor = arr1[i-5];
+//				c3.style.backgroundColor = arr1[i-4];
+//				c4.style.backgroundColor = arr1[i-3];
+//				c5.style.backgroundColor = arr1[i-2];
+//				c6.style.backgroundColor = arr1[i-1];
+//				i<8;
+//				i++;
+//		
+//			
+//		}
+//			c9.onclick = function() {
+//				
+//				var e = c1.style.backgroundColor = randomColor();
+//				arr1[i]=e;
+//				c7.style.backgroundColor = arr1[i-6];
+//				c6.style.backgroundColor = arr1[i-5];
+//				c5.style.backgroundColor = arr1[i-4];
+//				c4.style.backgroundColor = arr1[i-3];
+//				c3.style.backgroundColor = arr1[i-2];
+//				c2.style.backgroundColor = arr1[i-1];
+//				i<8;
+//				i++;
+//			}
+
+
+
+			function randomColor(){
+				var r = Math.random()*256;
+				var g = Math.random()*256;
+				var b = Math.random()*256;
+				return "rgb(" + r +"," + g + "," +b+")";
+			}
+			but1.onclick = function(){
+				div5.style.backgroundColor=div4.style.backgroundColor;
+				div4.style.backgroundColor=div3.style.backgroundColor;
+				div3.style.backgroundColor=div2.style.backgroundColor;
+				div2.style.backgroundColor=div1.style.backgroundColor;
+				div1.style.backgroundColor=randomColor();
+			}
+			but2.onclick = function(){
+				div1.style.backgroundColor=div2.style.backgroundColor;
+				div2.style.backgroundColor=div3.style.backgroundColor;
+				div3.style.backgroundColor=div4.style.backgroundColor;
+				div4.style.backgroundColor=div5.style.backgroundColor;
+				div5.style.backgroundColor=randomColor();
+			}
+
+
+
+			
+			
+//			function randomColor() {
+//				var red = randomNumber(0, 255);
+//				var green = randomNumber(0, 255);
+//				var blue = randomNumber(0, 255);
+//				return "rgb(" + red + "," +  green + "," + blue + ")";
+//			}
+//			
+//			var allDivs = document.querySelectorAll("#box div");
+//			for (var i = 0; i < allDivs.length; i++) {
+//				allDivs[i].style.width = (allDivs.length - i)*100 + "px";
+//				allDivs[i].style.height = allDivs[i].style.width;
+//			}
+//			
+//			outIn.onclick = function(){
+//				// 最外层的div获取最新的背景色, 所有div背景色向里传递
+//				for (var i = allDivs.length - 1; i > 0; i--) {
+//					allDivs[i].style.backgroundColor = allDivs[i - 1].style.backgroundColor;
+//				}
+//				allDivs[0].style.backgroundColor = randomColor();
+//			}
+//			
+//			inOut.onclick = function(){
+//				// 最里层的div获取最新的背景色, 所有div背景色向外传递
+//				for(var i = 0; i < allDivs.length - 1; i++){
+//					allDivs[i].style.backgroundColor = allDivs[i + 1].style.backgroundColor;
+//				}
+//				allDivs[allDivs.length-1].style.backgroundColor = randomColor();
+//			}
+		</script>
+	</body>
+</html>

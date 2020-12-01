@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环结构</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 循环结构
+			 * 1.for循环
+			 * 2.while循环
+			 * 3.do...while循环
+			 */
+			
+			/*
+			 * for循环
+			 * 语法：
+			 * for(1;2;3){
+			 * 	4代码块...
+			 * }
+			 * 1：循环变量初始值	该位置代码在整个循环过程中只执行一次
+			 * 2：循环条件	系统会不断核对该条件是否为真，只要循环条件为真，循环一直执行下去
+			 * 3：循环增量
+			 * 4：循环体
+			 * 第一次1243，以后都是243，直到2不成立，for循环结束
+			 */
+			
+//			for(var i = 0;i < 5;i++) {
+//				console.log("holle.world!");
+//			}
+
+			//练习1 控制台输入1-5
+//			for(var i = 1;i < 6;i++){
+//				console.log(i);
+//			}
+			//练习2 控制台输入5-1
+//			for(var i = 5;i > 0;i--){
+//				console.log(i);
+//			}
+			//练习3 输入1-100以内的偶数
+//			for(var i = 1;i < 101;i++){
+//				if(i % 2 == 0){
+//					console.log(i);
+//				}	
+//			}
+			//练习4 输入1-100以内个位为7的数
+//			for(var i = 1;i < 101;i++){
+//				if(i % 10 == 7){
+//				console.log(i);
+//				}	
+//			}
+			//练习5 输入1-100以内十位为7的数
+//			for(var i = 1;i < 101;i++){
+//				if(Math.floor(i / 10) == 7){
+//				console.log(i);
+//				}	
+//			}
+			//练习6 输入1-100以内不包含7的数
+//			for(var i = 1;i < 101;i++){
+//				if(!(Math.floor(i / 10) == 7 || i % 10 == 7 || i % 7 == 0)){
+//				console.log(i);
+//				}	
+//			}
+			//练习7 输入10个随机数，随机数范围[30-90]
+//			for(var i = 1;i < 11;i++){
+//				console.log(Math.floor(Math.random() * (90-30+1)+30));
+//			}
+			//练习8 输出10个随机数，随机数范围[30-90],并求出这10个随机数的最大值；
+//			var max = 0;
+//			for(var i = 1;i < 11;i++){
+//				var rn = Math.floor(Math.random() * (90-30+1)+30);
+//				console.log(rn);
+//				max = max > rn　?　max : rn;
+//			}
+//			console.log("最大值是：" + max);
+			//练习9 输出10个随机数，随机数范围[30-90],并求出这10个随机数的最小值；
+//			var min = 100;
+//			for(var i = 1;i < 11;i++){
+//				var wb = Math.floor(Math.random() * (90-30+1)+30);
+//				console.log(wb);
+//				min = min < wb　?　min : wb;
+//			}
+//			console.log("最小值是：" + min);
+
+			
+			/*
+			 * break和continue关键字
+			 * break：跳出当前循环
+			 * continue：跳过本次循环，继续下一次循环
+			 */
+//			for (var i = 0; i < 20; i++) {
+//				if(i == 13){
+//					break;
+//					continue;
+//				}
+//				console.log(i);
+//			}
+			
+			//输出随机数，随机数范围[10-120],随机到75停止输出
+//			for (;ture;) {
+//				var ru = Math.floor(Math.random() * (120-10+1)+10);
+//				console.log(ru);
+//				if (ru == 75){
+//					break;
+//				}
+//			}
+			
+			//循环嵌套：让一个循环结构成为另一个循环结构的循环体
+			//跑圈
+//			for (var i = 1; i <= 5; i++) {
+//				console.log("第" + i + "圈");
+//				for (var j = 0; j < 5; j++) {
+//					console.log("1234~~~");
+//				}
+//			}
+
+			/*
+			 * 练习10 在页面的内容区域显示如下效果
+			 * 1 2 3 4 5
+			 * 1 2 3 4 5
+			 * 1 2 3 4 5
+			 * 1 2 3 4 5
+			 * 1 2 3 4 5
+			 * 外层控制行数，内层控制每一行的列数
+			 */
+//			for (var i = 0; i < 5; i++) {
+//				for (var j = 1; j < 6; j++) {
+//					document.write(j + " ");
+//				}
+//				document.write("<br />")
+//			}
+			
+			/*
+			 * 练习11 在页面内容区域显示如下效果
+			 * 1
+			 * 1 2
+			 * 1 2 3
+			 * 1 2 3 4
+			 * 1 2 3 4 5
+			 */
+//			for (var i = 1; i <= 5; i++) {
+//				for (var j = 1; j <= i; j++) {
+//					document.write(j + " ");
+//				}
+//				document.write("<br />")
+//			}
+			/*
+			 * 练习12 在页面内容区域显示如下效果
+			 * 1 2 3 4 5
+			 * 1 2 3 4 
+			 * 1 2 3 
+			 * 1 2 
+			 * 1 
+			 */
+//			for (var i = 5; i >= 0; i--) {
+//				for (var j = 1; j <= i; j++) {
+//					document.write(j + " ");
+//				}
+//				document.write("<br />")
+//			}
+
+			/*
+			 * 练习13 在页面内容显示九九乘法表
+			 */
+//			for (var i = 1; i <= 9; i++) {
+//				for (var j = 1; j <= i; j++) {
+//					document.write(j + " * " + i + " = " + j * i + " ");
+//				}
+//				document.write("<br />")
+//			}
+		</script>
+	</body>
+</html>

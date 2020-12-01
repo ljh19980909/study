@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this关键字</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			ul{
+				width: 400px;
+				height: 50px;
+				margin: 100px auto;
+			}
+			ul>li{
+				width: 98px;
+				height: 48px;
+				background-color: green;
+				float: left;
+				border: 1px black solid;
+				text-align: center;
+				line-height: 48px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>热点</li>
+			<li>历史</li>
+			<li>体育</li>
+			<li>娱乐</li>
+		</ul>
+		<script type="text/javascript">
+			/*
+			 * this	关键字，是一个代指，一般代指的是元素或者对象，具体代指的是哪个元素需要根据当时的代码上下合理判断。
+			 * 
+			 * 如何准确找到this代指的元素或对象
+			 * 1.先看this出现在哪个函数里
+			 * 2.再看谁会触发该函数
+			 * 那么this代指的就是谁
+			 */
+			var lis = document.querySelectorAll("ul li");
+			for(var i = 0;i<lis.length;i++){
+				lis[i].onclick = function(){
+					//先把所有的标签样式还原
+					for(var j = 0;j<lis.length;j++){
+						lis[j].style.backgroundColor = "green";
+						lis[j].style.color = "white";
+					}
+					//再把点击的标签样式做修改
+					this.style.backgroundColor = "red";
+					this.style.color = "black";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+.left {
+  width: 30%;
+  height: 300px;
+  float: left;
+}
+.left > a {
+  display: block;
+  margin-top: 20px;
+}
+.right {
+  float: left;
+  width: 70%;
+  background-color: blue;
+  height: 300px;
+}

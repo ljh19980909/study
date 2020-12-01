@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>循环结构02</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			 * while循环
+			 * 语法：
+			 * while(循环条件){
+			 * 	循环体
+			 * }
+			 * 循环条件为真，重复执行一次循环体，判断条件循环条件；为假，跳出循环
+			 */
+
+			//			var i = 0;
+			//			while (i < 5){
+			//				console.log("hello, world!");
+			//				i++;
+			//			}
+
+			/*
+			 * 输出随机数, 随机数范围[10-120], 随机到75停止输出
+			 */
+
+			//			while(true) {
+			//				var rn = Math.floor(Math.random() * (120 - 10 + 1) + 10);
+			//				console.log(rn);
+			//				if(rn == 75) {
+			//					break;
+			//				}
+			//			}
+			/*
+			 * for循环和while循环的使用选择：
+			 * 如果明确的知道循环次数，建议使用for循环
+			 * 不知道循环次数的循环，建议使用while循环
+			 */
+
+			//练习1  控制台输入1-5
+			//			for (var i = 1; i < 6; i++) {
+			//							console.log(i);
+			//						}
+
+			//			var i = 1;
+			//			while(i < 6){
+			//				console.log(i);
+			//				i++;
+			//			}
+
+			// 练习2  控制台输入5-1
+			//			for(var i = 5; i > 0; i--) {
+			//				console.log(i);
+			//			}
+
+			//			var i = 5;
+			//			while(i > 0){
+			//				console.log(i);
+			//				i--;
+			//			}
+
+			// 练习3 输入1-100以内的偶数
+			//			for (var i = 1; i < 101; i++) {
+			//				if (i % 2 == 0) {
+			//					console.log(i);
+			//				}
+			//			}
+
+			//			var i = 1;
+			//			while(i < 101){
+			//				if(i % 2 == 0){
+			//					console.log(i);
+			//				}
+			//				i++;
+			//			}
+
+			// 练习4 输入1-100以内个位为7的数
+			//			for (var i = 1; i < 101; i++) {
+			//				if (i % 10 == 7) {
+			//					console.log(i);
+			//				}
+			//			}
+
+			//			var i = 1;
+			//			while(i < 101){
+			//				if (i % 10 == 7){
+			//					console.log(i);
+			//				}
+			//				i++;
+			//			}
+
+			// 练习5 输入1-100以内十位为7的数
+			//			for (var i = 1; i < 101; i++) {
+			//				if (Math.floor(i / 10) == 7) {
+			//					console.log(i);
+			//				}
+			//			}
+
+			//			var i = 1;
+			//			while(i < 101) {
+			//				if (Math.floor(i / 10) == 7) {
+			//					console.log(i);
+			//					}
+			//				i++;
+			//			}
+
+			// 练习6 输出1-100以内不包含7的数
+			//			for (var i = 1; i < 101; i++) {
+			//				if (!(i % 7 == 0 || i % 10 == 7 || Math.floor(i / 10) == 7)) {
+			//					console.log(i);
+			//				}
+			//				if (i % 7 != 0 && i % 10 != 7 && Math.floor(i / 10) != 7) {
+			//					console.log(i);
+			//				}
+			//			}
+
+			//			var i = 1;
+			//			while(i < 101){
+			//				if (!(i % 7 == 0 || i % 10 == 7 || Math.floor(i / 10) == 7)) {
+			//								console.log(i);
+			//							}
+			//				i++;
+			//			}
+
+			// 练习7 输出10个随机数, 随机数范围[30-90];
+			//			for (var i = 0; i < 10; i++) {
+			//				var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//				console.log(rn);
+			//			}
+
+			//			var i = 0;
+			//			while(i < 10) {
+			//				var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//							console.log(rn);
+			//							i++;
+			//			}
+
+			// 练习8 输出10个随机数, 随机数范围[30-90], 并求出这10个随机数的最大值;
+			//				var max = 0;
+			//				for (var i = 0; i < 10; i++) {
+			//					var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//					console.log(rn);
+			//					max = max > rn ? max : rn;
+			//				}
+			//				console.log("最大值是:" + max);
+
+			//			var max = 0;
+			//			var i = 0;
+			//			while(i < 10) {
+			//				var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//								console.log(rn);
+			//								max = max > rn ? max : rn;
+			//								i++;
+			//			}
+			//			console.log("最大值是：" + max);
+
+			// 练习9 输出10个随机数, 随机数范围[30-90], 并求出这10个随机数的最小值;
+			//				var min = 100;
+			//				for (var i = 0; i < 10; i++) {
+			//					var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//					console.log(rn);
+			//					min = min < rn ? min : rn;
+			//				}
+			//				console.log("最小值是:" + min);
+
+			//						var min = 100;
+			//						var i = 0;
+			//						while(i < 10) {
+			//							var rn = Math.floor(Math.random() * (90 - 30 + 1) + 30);
+			//											console.log(rn);
+			//											min = min < rn ? min : rn;
+			//											i++;
+			//						}
+			//						console.log("最小值是:" + min);
+
+			//			练习10 在页面的内容区域显示如下效果
+			//			1 2 3 4 5
+			//			1 2 3 4 5
+			//			1 2 3 4 5
+			//			1 2 3 4 5
+			//			1 2 3 4 5
+			//			for (var i = 0; i < 5; i++) {
+			//				for (var j = 1; j < 6; j++) {
+			//					document.write(j + " ");
+			//				}
+			//				document.write("<br/>");
+			//			}
+			//			document.write("<hr/>");
+
+			//			var i = 0;
+			//			while(i < 5){
+			//				var j = 1;
+			//				while(j < 6){
+			//					document.write(j + " ");
+			//					j++;
+			//				}
+			//				document.write("<br/>");
+			//				i++;
+			//			}
+
+			//			练习11 在页面的内容区域显示如下效果
+			//			1 
+			//			1 2 
+			//			1 2 3 
+			//			1 2 3 4 
+			//			1 2 3 4 5
+			//			for (var i = 1; i <= 5; i++) {
+			//				for (var j = 1; j <= i; j++) {
+			//					document.write(j + " ");
+			//				}
+			//				document.write("<br/>");
+			//			}
+			//			document.write("<hr/>");
+
+			//			var i = 1;
+			//			while(i <= 5){
+			//				var j = 1;
+			//				while(j <= i){
+			//					document.write(j + " ");
+			//					j++;
+			//				}
+			//				document.write("<br/>");
+			//				i++;
+			//			}
+
+			//			练习12 在页面的内容区域显示如下效果
+			//			1 2 3 4 5
+			//			1 2 3 4 
+			//			1 2 3 
+			//			1 2
+			//			1
+			//			外层控制行数, 内层控制每一行的列数
+			//			
+			//			for (var i = 1; i <= 5; i++) {
+			//				for (var j = 1; j <= 6 - i; j++) {
+			//					document.write(j + " ");
+			//				}
+			//				document.write("<br/>");
+			//			}
+			//			document.write("<hr/>");
+
+			//			var i = 1;
+			//			while(i <= 5){
+			//				var j = 1;
+			//				while(j <= 6 - i){
+			//					document.write(j + " ");
+			//					j++;
+			//				}
+			//				document.write("<br/>");
+			//				i++;
+			//			}
+
+			//			练习13 在页面的内容区域显示九九乘法表
+			//			for (var i = 1; i < 10; i++) {
+			//				for (var j = 1; j <= i; j++) {
+			//					document.write(j + " * " + i + " = " + j * i);
+			//					if (j != i) {
+			//						document.write(", ")
+			//					}
+			//				}
+			//				document.write("<br/>");
+			//			}
+			//				var i = 1;
+			//				while(i < 10){
+			//					var j = 1;
+			//					while(j <= i){
+			//					document.write(j + " * " + i + " = " + j * i + " ");
+			//					j++;
+			//					}
+			//					document.write("<br/>");
+			//					i++;
+			//				}
+		</script>
+	</body>
+
+</html>

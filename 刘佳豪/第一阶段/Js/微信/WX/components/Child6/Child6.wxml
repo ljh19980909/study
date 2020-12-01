@@ -1,0 +1,5 @@
+<!--components/Child6/Child6.wxml-->
+<view class="Child6">
+  <text>这是Child6组件</text>
+  <button bindtap="sendToChild5">点击向Child5件传值</button>
+</view>

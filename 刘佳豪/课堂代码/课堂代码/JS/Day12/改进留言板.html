@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>留言板</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			#box {
+				width: 800px;
+				overflow: hidden;
+				background-color: skyblue;
+				margin: 80px auto;
+				padding: 30px 10px;
+			}
+			
+			#box span {
+				display: block;
+			}
+			
+			#box p {
+				display: block;
+			}
+			
+			#content {
+				width: 100%;
+				height: 200px;
+				display: block;
+			}
+			#qq{
+				width: 100%;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<span>QQ</span>
+			<input type="text" id="qq" />
+			<p>留言</p>
+			<textarea id="content"></textarea>
+			<button id="btn1">提交</button>
+			<p>显示留言:</p>
+			<ul id="comment"></ul>
+		</div>
+		
+		<script src="tween.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			
+
+			btn1.onclick = function() {
+			    var qqv = qq.value;
+			    var contentv = content.value;
+			      qq.value = "";
+			      content.value = "";
+				if(qqv.trim().length == 0|| contentv.trim().length == 0){
+					 alert("请输入内容!");
+					 return;
+				}else{
+					var wrapLi = document.createElement("li");
+					wrapLi.style.overflow = "hidden";
+					var qqp = document.createElement("p");
+					qqp.innerHTML = qqv;
+					qqp.style.backgroundColor = "pink";
+					wrapLi.appendChild(qqp);
+					
+					var contentp = document.createElement("p");
+					contentp.innerHTML = contentv;
+					contentp.style.backgroundColor = "pink";
+					wrapLi.appendChild(contentp);
+					
+					var btn2 = document.createElement("button");
+					btn2.innerHTML = "删除";
+					
+					btn2.onclick = function(){
+					 	this.parentNode.parentNode.removeChild(this.parentNode);
+					}
+					 
+					wrapLi.appendChild(btn2);
+			        comment.appendChild(wrapLi);
+			        
+			        
+			        var t = 0;
+					var b = 0;
+					var c = wrapLi.offsetHeight;
+					var d = 100;
+					wrapLi.style.height = "0";
+					var timer = setInterval(function() {
+						t+=4;
+						wrapLi.style.height = Tween.Linear(t, b, c, d) + "px";
+						if(t == d) {
+							clearInterval(timer);
+							t = 0;
+						}
+					}, 10);
+
+					btn2.onclick = function() {
+						t = 0;
+						b = wrapLi.offsetHeight;
+						c = -wrapLi.offsetHeight;
+						d = 100;
+						var timer = setInterval(function() {
+							t+=4;
+							wrapLi.style.height = Tween.Linear(t, b, c, d) + "px";
+							if(t == d) {
+								clearInterval(timer);
+								comment.removeChild(wrapLi);
+							}
+						}, 10);
+						
+					}
+
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,4 @@
+/* components/Child5/Child5.wxss */
+.Child5 {
+    border: 1rpx solid green;
+}

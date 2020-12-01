@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>携程</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 375px;
+            overflow: hidden;
+            background-image: url(1.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+        }
+
+        .div2 {
+            width: 363px;
+            height: 40px;
+            padding: 0px 0 0 12px;
+        }
+
+        .div3 {
+            width: 302px;
+            height: 23px;
+            padding: 5px 0 0 10px;
+            background-color: white;
+            margin-top: 4px;
+            border-radius: 14px;
+            float: left;
+        }
+
+        .s1 {
+            width: 30px;
+            height: 23px;
+            display: block;
+            float: left;
+            background-image: url(2.png);
+            background-size: 30px
+        }
+
+        .s2 {
+            width: 272px;
+            height: 23px;
+            display: block;
+            float: left;
+            font-size: 15px;
+            color: grey;
+        }
+
+        .div4 {
+            width: 51px;
+            height: 40px;
+            float: right;
+            text-align: center;
+        }
+
+        .div5 {
+            width: 22px;
+            height: 22px;
+            background-image: url(2.png);
+            background-size: 100%;
+            background-position: 55% 34%;
+            margin: auto;
+        }
+
+        .s3 {
+            font-size: 12px;
+            color: white;
+
+        }
+
+        .div6 {
+            width: 351px;
+            height: 64px;
+            background-color: white;
+            margin: 160px 0 10px 10.5px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 12px;
+            box-shadow: grey 0 2px 5px;
+        }
+
+        .a {
+            width: 40px;
+            height: 40px;
+            background-image: url(3.png);
+            background-size: 40px;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        .b {
+            width: 40px;
+            height: 40px;
+            background-image: url(3.png);
+            background-size: 100%;
+            background-position: 50% 25%;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        .c {
+            width: 40px;
+            height: 40px;
+            background-image: url(3.png);
+            background-size: 100%;
+            background-position: 50% 50%;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        .d {
+            width: 40px;
+            height: 40px;
+            background-image: url(3.png);
+            background-size: 100%;
+            background-position: 50% 75%;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        .e {
+            width: 40px;
+            height: 40px;
+            background-image: url(3.png);
+            background-size: 100%;
+            background-position: 50% 100%;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        .div7 {
+            width: 351px;
+            height: 66.2px;
+            margin: 0 10.5px;
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        .div7 div:nth-child(1) {
+            width: 98px;
+            height: 65.19px;
+            background-color: #FA6654;
+            background-image: url(4.png);
+            background-position: 25px 28px;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            padding-left: 10px;
+            color: white;
+            border-radius: 5px 0 0 0;
+        }
+
+        .div7 div:nth-child(2) {
+            width: 80px;
+            height: 65.19px;
+            background-color: #FB7A52;
+            background-image: url(5.png);
+            background-position: 0px 43px;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div7 div:nth-child(3) {
+            width: 160px;
+            height: 65.19px;
+            background-color: #FFC04B;
+            background-image: url(6.png);
+            background-position: 60px 30px;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+            border-radius: 0 5px 0 0;
+        }
+
+        .div8 {
+            width: 351px;
+            height: 66.2px;
+            margin: 0 10.5px;
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        .div8 div:nth-child(1) {
+            width: 98px;
+            height: 65.19px;
+            background-color: #4D96ED;
+            background-image: url(7.png);
+            background-position: 23px 30px;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            padding-left: 10px;
+            color: white;
+        }
+
+        .div8 div:nth-child(2) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #4EA1ED;
+            background-image: url(8.png);
+            background-position: 0px 43px;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div8 div:nth-child(3) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #50ADED;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div8 div:nth-child(4) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #50ADED;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div9 {
+            width: 351px;
+            height: 66.2px;
+            margin: 0 10.5px;
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        .div9 div:nth-child(1) {
+            width: 98px;
+            height: 65.19px;
+            background-color: #3CC59D;
+            background-image: url(9.png);
+            background-position: 20px 23px;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            padding-left: 10px;
+            color: white;
+        }
+
+        .div9 div:nth-child(2) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #4BCA87;
+            background-image: url(10.png);
+            background-position: 0px 50px;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div9 div:nth-child(3) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #59CE73;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div9 div:nth-child(4) {
+            width: 79.5px;
+            height: 65.19px;
+            background-color: #59CE73;
+            font-size: 14px;
+            line-height: 65.19px;
+            text-align: center;
+            color: white;
+        }
+
+        .div10 {
+            width: 375px;
+            height: 110px;
+            margin: 0 0px 12px;
+            display: inline-flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: grey 1px solid;
+            padding-bottom: 15px;
+        }
+
+        .div10 div {
+            width: 70px;
+            height: 55px;
+            text-align: center;
+        }
+
+        .div10 div:nth-child(1) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 0;
+            margin: 8px auto 0px;
+        }
+
+        .div10 div:nth-child(1) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(2) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 11%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(2) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(3) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 22%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(3) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(4) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 33%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(4) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(5) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 45%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(5) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(6) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 55%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(6) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(7) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 66%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(7) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(8) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 77%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(8) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(9) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 89%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(9) span {
+            font-size: 12px;
+        }
+
+        .div10 div:nth-child(10) div {
+            width: 28px;
+            height: 28px;
+            background-image: url(11.png);
+            background-size: 100%;
+            background-position: 50% 100%;
+            margin: 6px auto 0px;
+        }
+
+        .div10 div:nth-child(10) span {
+            font-size: 12px;
+        }
+
+        .div11 {
+            width: 359px;
+            height: 44px;
+            padding: 0 8px;
+        }
+
+        .div11 div:nth-child(1) {
+            width: 79px;
+            height: 14px;
+            background-image: url(12.png);
+            background-size: 100%;
+            float: left;
+            margin-top: 15px;
+        }
+
+        .div11 div:nth-child(2) {
+            width: 54px;
+            height: 20px;
+            background-color: #ff4e63;
+            float: right;
+            margin-top: 12px;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .div12 {
+            width: 367px;
+            height: 203px;
+            padding: 0 8px 8px;
+            background-color: white;
+            display: inline-flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: 1px solid grey;
+        }
+
+        .divz {
+            width: 173.5px;
+            height: 210px;
+            margin: 0 2px 4px 0;
+            background-image: url(13.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: #F9F9F9;
+        }
+
+        .bao {
+            background-color: red;
+            font-size: 12px;
+            color: white;
+            width: 38px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .divx {
+            width: 161.5px;
+            height: 36px;
+            font-size: 14px;
+            padding: 6px;
+            margin-top: 85px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .divc{
+            width: 153.5px;
+            height: 22px;
+            padding: 0 6px;
+            color: red;
+        }
+        .div13{
+            width: 161.5px;
+            height: 88px;
+            padding: 8px;
+            background-color: #F9F9F9;
+            display: inline-flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+        .div14{
+            width: 64px;
+            height: 100px;
+            background-color: #F9F9F9;
+            padding: 0 8px;
+            text-align: center;
+        }
+        .div15{
+            width: 173px;
+            height: 201px;
+            display: inline-flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .p2{
+            width: 100px;
+            height: 21px;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+        }
+        .p3{
+            width: 100px;
+            height: 18px;
+            font-size: 12px;
+            color: grey;
+            display: block;
+        }
+        .p4{
+            width: 59.7px;
+            height: 21px;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+        }
+        .p5{
+            width: 59.7px;
+            height: 18px;
+            font-size: 12px;
+            color: grey;
+            display: block;
+        }
+        .p6{
+            width: 60px;
+            height: 21px;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+        }
+        .p7{
+            width: 60px;
+            height: 18px;
+            font-size: 12px;
+            color: grey;
+            display: block;
+        }
+        .div16{
+            width: 54px;
+            height: 54px;
+            background-image: url(14.png);
+            background-size: 100%;
+            margin: 17px 0;
+        }
+        .div17{
+            width: 100px;
+            height: 40px;
+            margin: 22px 0;
+        }
+        .div18{
+            width: 50px;
+            height: 50px;
+            background-image: url(15.png);
+            background-size: 100%;
+            margin: 0 7px;
+        }
+        .div19{
+            width: 48px;
+            height: 48px;
+            background-image: url(16.png);
+            background-size: 100%;
+            margin: 0 9px;
+        }
+        .div20{
+            width: 359px;
+            height: 44px;
+            padding: 0 8px;
+            margin-top: 8px;
+            border-top: 1px solid grey;
+            border-bottom: 1px solid grey;
+        }
+        .div20 div:nth-child(1){
+            width: 79px;
+            height: 15px;
+            background-image: url(12.png);
+            background-size: 100%;
+            background-position: 100% 45%;
+            margin: 15.5px 0;
+            float: left;
+        }
+        .div20 div:nth-child(2){
+            width: 36px;
+            height: 15px;
+            background-image: url(17.png);
+            background-size: 100%;
+            float: left;
+            margin: 15.5px 0;
+        }
+        .div20 div:nth-child(3){
+            width: 102.08px;
+            height: 20px;
+            background-color: #ff4e63;
+            color: white;
+            float: right;
+            border-radius: 10px;
+            font-size: 12px;
+            margin: 13px 0;
+            text-align: center;
+            line-height: 20px;
+        }
+        .div21{
+            width: 375px;
+            height: 293px;
+            background-color: #FAFAFC;
+            display: inline-flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .div21 div:nth-child(1){
+            width: 186.5px;
+            height: 129.3px;
+            background-image: url(18.png);
+            background-size: 100%;
+        }
+        .div21 div:nth-child(2){
+            width: 186.5px;
+            height: 129.3px;
+            background-image: url(19.png);
+            background-size: 100%;
+        }
+        .div21 div:nth-child(3){
+            width: 186.5px;
+            height: 79.56px;
+            background-image: url(20.png);
+            background-size: 100%;
+        }
+        .div21 div:nth-child(4){
+            width: 186.5px;
+            height: 80.2px;
+            background-image: url(21.jpg);
+            background-size: 100%;
+        }
+        .div21 div:nth-child(5){
+            width: 186.5px;
+            height: 79.56px;
+            background-image: url(22.jpg);
+            background-size: 100%;
+        }
+        .div21 div:nth-child(6){
+            width: 186.5px;
+            height: 80.2px;
+            background-image: url(23.jpg);
+            background-size: 100%;
+        }
+        .div22{
+            width: 375px;
+            height: 124px;
+        }
+        .div23{
+            width: 375px;
+            height: 60px;
+            background-color: white;
+            display: inline-flex;
+            border-bottom: 1px grey solid;
+            border-top: 1px grey solid;
+        }
+        .div23 div{
+            width: 125px;
+            height: 60px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .span1{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(24.png);
+            background-size: 100%;
+            margin: 10px auto 0;
+        }
+        .span2{
+            font-size: 12px;
+            color: grey;
+        }
+        .span3{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(25.png);
+            background-size: 100%;
+            margin: 10px auto 0;
+        }
+        .span5{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(26.png);
+            background-size: 100%;
+            margin: 10px auto 0;
+        }
+        .div24{
+            width: 375px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            color: grey;
+            background-color: #FAFAFC;
+            padding: 5px 0 0 0;
+        }
+        .div25{
+            width: 375px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            font-size: 12px;
+            color: grey;
+            background-color: #FAFAFC;
+            padding: 5px 0 ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="div2">
+            <div class="div3">
+                <span class="s1"></span>
+                <span class="s2">搜索：目的地/酒店/景点/航班号</span>
+            </div>
+            <div class="div4">
+                <div class="div5"></div>
+                <span class="s3">我 的</span>
+            </div>
+        </div>
+        <div class="div6">
+            <div class="A">
+                <div class="a"></div>
+                <span>攻略·景点</span>
+            </div>
+            <div class="B">
+                <div class="b"></div>
+                <span>门票·玩乐</span>
+            </div>
+            <div class="C">
+                <div class="c"></div>
+                <span>美食林</span>
+            </div>
+            <div class="D">
+                <div class="d"></div>
+                <span>周边游</span>
+            </div>
+            <div class="E">
+                <div class="e"></div>
+                <span>一日游</span>
+            </div>
+        </div>
+        <div class="div7">
+            <div>酒店</div>
+            <div>民宿·客栈</div>
+            <div>机票·火车票+酒店 </div>
+        </div>
+        <div class="div8">
+            <div>机票</div>
+            <div>火车票</div>
+            <div>汽车·船票</div>
+            <div>专车·租车</div>
+        </div>
+        <div class="div9">
+            <div>旅游</div>
+            <div>高铁游</div>
+            <div>邮轮游</div>
+            <div>定制游</div>
+        </div>
+        <div class="div10">
+            <div>
+                <div></div>
+                <span>自由行</span>
+            </div>
+            <div>
+                <div></div>
+                <span>WiFi电话卡</span>
+            </div>
+            <div>
+                <div></div>
+                <span>保险·签证</span>
+            </div>
+            <div>
+                <div></div>
+                <span>换钞·购物</span>
+            </div>
+            <div>
+                <div></div>
+                <span>当地导购</span>
+            </div>
+            <div>
+                <div></div>
+                <span>特价机票</span>
+            </div>
+            <div>
+                <div></div>
+                <span>礼品卡</span>
+            </div>
+            <div>
+                <div></div>
+                <span>申卡·借钱</span>
+            </div>
+            <div>
+                <div></div>
+                <span>旅拍</span>
+            </div>
+            <div>
+                <div></div>
+                <span>更多</span>
+            </div>
+        </div>
+        <div class="div11">
+            <div></div>
+            <div>更多></div>
+        </div>
+        <div class="div12">
+            <div class="divz">
+                <div class="bao">爆款</div>
+                <div class="divx">三亚5日自由行(5钻)·避寒热销【高星度假型酒店合辑·4晚连住】春节限时享惠·网红酒店|唯美海滩|亲子宅玩|海鲜盛宴|惬意泳池|热剧取景地·暖冬甄选旅行地
+                    累计超6万人真实出行 | 可选B款含专车接送机</div>
+                <div class="divc">￥2102起</div>
+            </div>
+            <div class="div15">
+            <div class="div13">
+                <div class="div17">
+                <span class="p2">千款特价</span>
+                <span class="p3">走过路过不错过</span>
+            </div>
+                <div class="div16"></div>
+            </div>
+            <div class="div14">
+                <div class="v">
+                    <span class="p4">境外精选</span>
+                    <span class="p5">限时抢购</span>
+                    <div class="div18"></div>
+                </div>
+            </div>
+            <div class="div14">
+                <div class="v">
+                    <span class="p6">周边玩乐</span>
+                    <span class="p7">欢乐度周末</span>
+                    <div class="div19"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="div20">
+                <div></div>
+                <div></div>
+                <div>获取更多福利></div>
+            </div>
+            <div class="div21">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="div22">
+                <div class="div23">
+                    <div class="div">
+                        <span class="span1"></span>
+                        <span class="span2">电话预约</span>
+                    </div>
+                    <div class="div">
+                        <span class="span3"></span>
+                        <span class="span2">下载客户端</span>
+                    </div>
+                    <div class="div">
+                        <span class="span5"></span>
+                        <span class="span2">我的</span>
+                    </div>
+                </div>
+                <div class="div24">
+                    <span>网站地图丨</span>
+                    <span>language丨</span>
+                    <span>电脑版</span>
+                </div>
+                <div class="div25">
+                    <span>©2019携程旅行丨</span>
+                    <span>沪ICP备08023580号</span>
+                </div>
+            </div>
+    </div>
+</body>
+
+</html>

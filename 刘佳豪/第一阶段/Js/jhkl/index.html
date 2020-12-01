@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div id="btnBox">
+			<input type="button" value="button_1" />
+			<input type="button" value="button_2" />
+			<input type="button" value="button_3" />
+			<input type="button" value="button_4" />
+			<input type="button" value="button_5" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		// console.log(1 + +"2")
+		// function a() {
+		// 	console.log(this)
+		// }
+		// setTimeout(() => {
+		// 	console.log(this)
+		// 	a()
+		// }, 1000)
+
+		// var str = "nininihaoa";
+		// console.log(str.charAt(3))
+		// var o = {};
+		// for (var i = 0, length = str.length; i < length; i++) {
+		// 	var char = str.charAt(i);
+		// 	if (o[char]) {
+		// 		o[char]++; //次数加1
+		// 	} else {
+		// 		o[char] = 1; //若第一次出现，次数记为1
+		// 	}
+		// }
+		// console.log(o);
+
+		// var max = 0;
+		// for (var key in o) {
+		// 	if (max < o[key]) {
+		// 		max = o[key]; //max始终储存次数最大的那个
+		// 	}
+		// }
+		// for (var key in o) {
+		// 	if (o[key] == max) {
+		// 		//console.log(key);
+		// 		console.log("最多的字符是" + key);
+		// 		console.log("出现的次数是" + max);
+		// 	}
+		// }
+
+
+		// var btnBox = document.getElementById('btnBox'),
+		// 	inputs = btnBox.getElementsByTagName('input');
+		// var l = inputs.length;
+		// for (var i = 0; i < l; i++) {
+		// 	inputs[i].onclick = (function() {
+		// 		var num = i;
+		// 		return function(){
+		// 			alert(num);
+		// 		}
+		// 	})(i)
+		// }
+		// let test = Object.create({
+		// 	x: 123,
+		// 	y: 345
+		// });
+		// console.log(test); //{}
+		// console.log(test.x); //123
+		// console.log(test.__proto__.x); //3
+		// console.log(test.__proto__.x === test.x); //true
+
+
+		// var arr = [{
+		// 	a: 1
+		// }, {}];
+		// arr.forEach(function(item, idx) {
+		// 	item.b = idx;
+		// });
+		// console.log(arr)
+
+		// ! function(e) {
+		// function t(a) {
+		// if (i[a]) return i[a].exports;
+		// var n = i[a] = {
+		// exports: {},
+		// id: a,
+		// loaded: !1
+		// };
+		// return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+		// }
+		// var i = {};
+		// return t.m = e, t.c = i, t.p = "", t(0)
+		// }([function(e, t) {
+		// "use strict";
+		// Object.defineProperty(t, "__esModule", {
+		// value: !0
+		// });
+		// var i = window;
+		// t["default"] = i.flex = function(e, t) {
+		// var a = e || 100,
+		// n = t || 1,
+		// r = i.document,
+		// o = navigator.userAgent,
+		// d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+		// l = o.match(/U3\/((\d+|\.){5,})/i),
+		// c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+		// p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+		// s = i.devicePixelRatio || 1;
+		// p || d && d[1] > 534 || c || (s = 1);
+		// var u = 1 / s,
+		// m = r.querySelector('meta[name="viewport"]');
+		// m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute(
+		// "content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u +
+		// ",minimum-scale=" + u), r.documentElement.style.fontSize = a / 2 * s * n + "px"
+		// }, e.exports = t["default"]
+		// }]);
+		// flex(100, 1);
+
+
+
+
+		// var head = document.getElementsByTagName('head')[0],
+		// scalevalue = screen.width / 750,
+		// metaTag = document.createElement('meta');
+		// metaTag.setAttribute('name', 'viewport');
+		// metaTag.setAttribute('content', 'width=' + scalevalue + ',initial-scale=' + scalevalue + ',maximum-scale=' +
+		// scalevalue + ',user-scalable=no');
+		// head.appendChild(metaTag);
+
+
+		// (function(doc, win) {
+		// var htmlScale = function() {
+		// console.log('2');
+		// oBdoy = doc.getElementsByTagName('html')[0];
+		// var domWidht = doc.documentElement.clientWidth;
+		// var myScale = 750 / domWidht;
+		// if (domWidht) {
+		// oBdoy.style.transform = 'scale(' + myScale + ')';
+		// oBdoy.style.transformOrigin = '50% ' + 0 + '%';
+		// } else {
+		// oBdoy.removeAttribute('style', 'transform');
+		// oBdoy.removeAttribute('style', 'transformOrigin');
+		// }
+
+		// };
+		// htmlScale();
+		// win.addEventListener('resize', htmlScale, false);
+		// })(document, window);
+
+		// function a(){
+		// 	console.log(11)
+		// }
+		// console.log()
+
+		// function Person() {
+		//     this.name = "Ykx";
+		// }; 
+		// let ykx = new Person();
+		// Object.defineProperty(ykx, "sex", {
+		//     value: "male",
+		//     //是否为枚举属性
+		//     enumerable: false
+		// });
+		// console.log(Object.getOwnPropertyNames(ykx));    // ["name", "sex"]
+
+		
+		// var current = Object.prototype.valueOf;
+		// Object.prototype.valueOf = function() {
+		//   if (this.hasOwnProperty('-prop-value')) {
+		// console.log(this['-prop-value'])
+		//     return this['-prop-value'];
+		//   } else {
+			  
+		// 	  console.log(current.apply(this, arguments))
+		//     return current.apply(this, arguments);
+		//   }
+		// }
+		
+		// const object1 = {};
+		
+		// Object.defineProperty(object1, 'property1', {
+		//   value: 42,
+		//   // writable:true,
+		// });
+		// object1.property1 = 77;
+		// console.log(object1)
+		
+		// var obj = {};
+		// Object.defineProperties(obj, {
+		//   'property1': {
+		//     value: true,
+		//     writable: true
+		//   },
+		//   'property2': {
+		//     value: 'Hello',
+		//     writable: false
+		//   }
+		// });
+		// console.log(obj)
+		
+		// const object1 = {
+		//   a: 'somestring',
+		//   b: 42
+		// };
+		// console.log(Object.entries(object1))
+		
+		const object1 = {
+		  a: 1,
+		  b: 2,
+		  c: 3,
+		  d:4,
+		  enumerable:false
+		};
+		
+		console.log(Object.keys(object1).length);
+	</script>
+</html>

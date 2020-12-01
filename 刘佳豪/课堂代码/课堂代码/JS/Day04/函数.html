@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数</title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script type="text/javascript">
+			/*
+			 * 函数：具有特定功能的一段代码
+			 * 
+			 * 1.将对应代码封装成函数，在以后如果要使用该段函数，直接调用该函数即可，不用将代码再写一遍
+			 * 
+			 * 本节课懵逼的地方：
+			 * 1.当我们自己封装一个函数时，什么时候该给函数添加参数？？？什么时候该给函数添加返回值？？？
+			 * 2.函数的调用（尤其是调用时的代码跳转）
+			 */
+			
+			/*
+			 * 函数根据创建者的不同，可以分成三种：
+			 * 1.库函数			js为我们提供的函数
+			 * 2.自定义函数		我们自己封装的函数		
+			 * 3.第三方函数		别人写的函数
+			 */
+			
+			/*
+			 * 函数的组成：
+			 * 一个完整的函数有两部分组成：
+			 * 1.函数的声明
+			 * 2.函数的调用
+			 * 
+			 * 函数声明的语法：
+			 * function 函数名(参数1,参数2,参数3...){
+			 * 		特定功能的代码段...
+			 * 		return 返回值;
+			 * }
+			 * 注意：函数只声明，不调用，函数里的代码不会执行！！！
+			 * 
+			 * 函数调用的语法：
+			 * 函数名(参数1，参数2，参数3...);
+			 * 
+			 * 
+			 * 声明函数时，函数的参数和返回值根据情况决定是否书写
+			 * 
+			 * 一个函数根据是否有返回值，是否有参数可以分为四种
+			 */
+			
+			//1.无参无返
+			function buywater() {
+				console.log("没有卖水的");
+			}
+//			buywater()
+
+			//2.有参无返 当函数有参数，需要在调用的时候给参数赋值，赋值按顺序依次赋值，赋值个数与参数个数相等
+			function sumValue(n1,n2) {
+				console.log(n1+n2);
+			}
+			sumValue(10, 20);
+			var a = 100;
+			var b = 200;
+			sumValue(a, b)
+			
+			//3.无参有返 当一个函数有返回值时，返回值最终会被返回到函数调用的地方.
+			//注意：return关键字的作用是跳出函数并将值返回到函数调用的地方，return下面写任何代码不会执行
+			function randomColor(){
+				var r = Math.floor(Math.random() * 256);
+				var g = Math.floor(Math.random() * 256);
+				var b = Math.floor(Math.random() * 256);
+				return "rgb(" + r + "," + g + "," + b +")";
+			}
+			
+			//randomColor();
+			
+			div1.onclick = function() {
+				div1.style.backgroundColor = randomColor();
+			}
+			
+			//有参有返
+			//自定义一个函数，函数功能：产生一个任意区间的随机数
+			function randomNumber(x,y) {
+				return Math.floor(Math.random() * (y - x + 1) + x);
+			}
+			var r1 = randomNumber(10,50);
+			var r2 = randomNumber(10,50);
+			var r3 = randomNumber(10,50);
+			console.log(r1,r2,r3);
+			
+			//声明一个函数，求两个数的最大值
+			function twoMax(a,b) {
+				return a > b ? a : b;
+			}
+			//声明一个函数，求三个数的较大值
+			function threeMax() {
+//				return a > b ? (a > c ? a : c) : (b > c ? b : c);
+				return twoMax(a, twoMax(b,c));
+			}
+			console.log(threeMax(10,20,30));
+			//声明一个函数，求四个数的较大值
+			function fourMax() {
+//				return twoMax(twoMax(a,b), twoMax(c,d));
+				return twoMax(a, threeMax(b,c,d));
+			}
+
+			/*
+			 * 参数
+			 * 按照所在位置不同，分为两种：
+			 * 1.形式参数
+			 * 2.实际参数
+			 * 
+			 * 函数声明小括号里的参数永远是形参
+			 * 函数调用小括号里的参数永远是实参
+			 * 
+			 * 函数调用的过程是实参向形参赋值的过程
+			 */
+			
+			/*
+			 * 变量的作用域：变量能被系统识别的范围
+			 * 一个变量在其作用域内，可以被系统识别，出了其作用域，系统无法识别
+			 * 
+			 * JS拥有的作用域叫做：函数级作用域
+			 * 
+			 * 在函数里声明的变量和在函数外声明的变量的作用域是不同的
+			 * 
+			 * 全局变量：在函数外面声明的变量
+			 * 局部变量：在函数里面声明的变量
+			 * 
+			 * 变量的生命周期
+			 * 全局变量的生命周期，代码执行到时被创建，之后一直存在，除非网页关闭
+			 * 局部变量的生命周期，函数调用以后代码执行到时被创建，函数调用完毕被销毁
+			 * 
+			 * 全局变量的作用域是整个文件都可以识别
+			 * 局部变量的作用域是函数里
+			 */
+		</script>
+	</body>
+</html>

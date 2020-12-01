@@ -1,0 +1,4 @@
+<view class="title" bind:c9="c8Func">
+  <view bind:c9="c8Func">Child8组件</view>
+  <slot></slot>
+</view>

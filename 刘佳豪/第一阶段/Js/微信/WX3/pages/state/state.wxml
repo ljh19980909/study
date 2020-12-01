@@ -1,0 +1,10 @@
+<view class="container">这是state页面</view>
+<navigator url="../b/b">
+    <button>点击进入b页面</button>
+</navigator>
+
+<view>store里的msg的值:{{$state.msg}}</view>
+<view wx:for="{{myArr}}" wx:key="{{item.name}}">
+    <view>名字:{{item.name}}</view>
+    <view>年龄:{{item.age}}</view>----
+</view>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旋转</title>
+    <style type="text/css">
+    *   {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    }
+    .box{
+        width: 150px;
+        height: 200px;
+        margin: 250px auto;
+        position: relative;
+        animation: xuanzhuan 5s linear infinite;
+        transform-style: preserve-3d;
+    }
+    @keyframes xuanzhuan {
+        0%{
+            transform: rotateX(35deg) rotateY(0);
+        }
+        100%{
+            transform: rotateX(35deg) rotateY(360deg);
+        }
+    }
+    .box div{
+        width: 150px;
+        height: 200px;
+        position: absolute;
+        border-radius: 20px;
+    }
+    .box div:nth-child(1){
+        transform: rotateY(40deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+         -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(2){
+        transform: rotateY(80deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(3){
+        transform: rotateY(120deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(4){
+        transform: rotateY(160deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(5){
+        transform: rotateY(200deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(6){
+        transform: rotateY(240deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(7){
+        transform: rotateY(280deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(8){
+        transform: rotateY(320deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    .box div:nth-child(9){
+        transform: rotateY(360deg) translateZ(350px);
+        background-image: url(1.png);
+        background-size: 100% 100%;
+        -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent, yellow);
+    }
+    /* .box div:nth-child(10){
+        background-color: yellow;
+        opacity: .5;
+    } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

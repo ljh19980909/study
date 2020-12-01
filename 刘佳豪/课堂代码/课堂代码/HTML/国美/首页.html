@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100px;
+        }
+
+        .shouye {
+            width: 3.75rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .thead {
+            width: 3.75em;
+            height: 0.52rem;
+            background-color: #B91B37;
+            padding-top: 0.12rem;
+        }
+
+        .div1 {
+            width: 3.5rem;
+            height: 0.38rem;
+            margin: 0 0.13rem 0;
+            display: flex;
+        }
+
+        .div1 div:nth-child(1) {
+            width: 0.16rem;
+            height: 0.38rem;
+            background-image: url(img/1.png);
+            background-size: 100%;
+            background-color: #B91B37;
+        }
+
+        .div1 div:nth-child(2) {
+            width: 0.30rem;
+            height: 0.29rem;
+            background-image: url(img/2.png);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: 80% 58%;
+            background-color: white;
+            margin: 0.09rem 0 0 0.22rem;
+            border-bottom-left-radius: 0.06rem;
+            border-top-left-radius: 0.06rem;
+        }
+
+        .s1 {
+            width: 0.24rem;
+            height: 0.15rem;
+            color: white;
+            font-size: 0.12rem;
+            margin: 0.15rem 0 0.08rem 0;
+        }
+
+        .div1 input {
+            width: 2.40rem;
+            height: 0.29rem;
+            font-family: STXihei;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.1rem;
+            letter-spacing: 0rem;
+            color: #b3b3b3;
+            margin: 0.09rem 0.12rem 0 0;
+            border: transparent;
+            border-bottom-right-radius: 0.06rem;
+            border-top-right-radius: 0.06rem;
+            outline: none;
+        }
+
+        .tbody {
+            width: 3.75rem;
+            height: 1.5rem;
+            background-image: url(img/3.png);
+            background-size: 100%;
+        }
+
+        .box {
+            width: 3.75rem;
+            background-color: #f9f9f9;
+        }
+
+        .tbody1 {
+            width: 3.75rem;
+            height: 0.73rem;
+            display: flex;
+            justify-content: space-around;
+            background-color: #f9f9f9;
+        }
+
+        .A {
+            width: 0.56rem;
+            height: 0.56rem;
+            background-color: white;
+            margin-top: 0.17rem;
+            border-radius: 0.28rem;
+        }
+
+        .a {
+            width: 0.3rem;
+            height: 0.16rem;
+            background-image: url(img/4.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .s2 {
+            width: 0.5rem;
+            height: 0.16rem;
+            font-size: 0.12rem;
+            margin-left: 0.03rem;
+        }
+
+        .c {
+            width: 0.28rem;
+            height: 0.17rem;
+            background-image: url(img/5.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .e {
+            width: 0.36rem;
+            height: 0.12rem;
+            background-image: url(img/6.png);
+            background-size: 100%;
+            margin: 0.09rem 0.13rem 0.08rem;
+        }
+
+        .g {
+            width: 0.36rem;
+            height: 0.14rem;
+            background-image: url(img/7.png);
+            background-size: 100%;
+            margin: 0.09rem 0.12rem 0.07rem;
+        }
+
+        .tbody2 {
+            width: 3.26rem;
+            height: 0.15rem;
+            margin: 0 auto;
+            margin: 0.17rem auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tbody2 div:nth-child(1) {
+            width: 1.21rem;
+            height: 0.01rem;
+            border: solid 0.005rem #cccccc;
+            margin-top: 0.07rem;
+        }
+
+        .tbody2 div:nth-child(2) {
+            width: 0.59rem;
+            height: 0.15rem;
+            font-family: STXihei;
+            font-size: 0.14rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.15rem;
+            letter-spacing: 0rem;
+            color: #666666;
+        }
+
+        .tbody2 div:nth-child(3) {
+            width: 1.21rem;
+            height: 0.01rem;
+            border: solid 0.005rem #cccccc;
+            margin-top: 0.07rem;
+        }
+
+        .tbody3 {
+            width: 3.75rem;
+            height: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .d1 {
+            width: 2.19rem;
+            height: 1rem;
+            background-color: white;
+            display: flex;
+            margin-left: 0.1rem;
+        }
+
+        .d2 {
+            width: 1.25rem;
+            height: 1rem;
+            background-color: white;
+            margin-right: 0.1rem;
+        }
+
+        .d3 {
+            width: 0.91rem;
+            height: 1rem;
+            background-color: white;
+        }
+
+        .d4 {
+            width: 1.28rem;
+            height: 1rem;
+            background-image: url(img/8.png);
+            background-size: 58%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+
+        }
+
+        .p1 {
+            width: 0.8rem;
+            height: 0.25rem;
+            font-family: PingFangSC-Regular;
+            font-size: 0.2rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #000000;
+            margin: 0.2rem auto 0.05rem;
+        }
+
+        .p2 {
+            width: 0.65rem;
+            height: 0.12rem;
+            font-family: PingFangSC-Light;
+            font-size: 0.12rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.13rem;
+            letter-spacing: 0.01rem;
+            color: #000000;
+            margin: 0rem auto 0.05rem;
+        }
+
+        .p3 {
+            width: 0.68rem;
+            height: 0.15rem;
+            font-family: PingFangSC-Medium;
+            font-size: 0.15rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.13rem;
+            letter-spacing: 0.01rem;
+            color: #e43643;
+            margin: auto;
+        }
+
+        .d5 {
+            width: 0.56rem;
+            height: 0.61rem;
+            background-image: url(img/9.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+        }
+
+        .p4 {
+            width: 0.84rem;
+            height: 0.12rem;
+            font-family: PingFangSC-Light;
+            font-size: 0.09rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.12rem;
+            color: #000000;
+            margin: 0 auto 0.05rem
+        }
+
+        .p5 {
+            width: 0.34rem;
+            height: 0.12rem;
+            font-family: PingFangSC-Medium;
+            font-size: 0.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.12rem;
+            color: #e43643;
+            margin: 0 auto
+        }
+
+        .tbody4 {
+            width: 3.5rem;
+            height: 1rem;
+            background-image: url(img/10.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .tbody5 {
+            width: 3.5rem;
+            height: 1rem;
+            background-image: url(img/11.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .tbody6 {
+            width: 3.5rem;
+            height: 1rem;
+            background-image: url(img/12.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .tbody7 {
+            width: 3.5rem;
+            height: 1rem;
+            background-image: url(img/13.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .tbody8 {
+            width: 3.5rem;
+            height: 1rem;
+            background-image: url(img/12.png);
+            background-size: 100%;
+            margin: 0.06rem 0.13rem;
+        }
+
+        .tfoot1 {
+            width: 3.51rem;
+            height: 3.24rem;
+            padding: 0rem 0.13rem;
+        }
+
+        .tfoot2 {
+            width: 1.72rem;
+            height: 1.74rem;
+            background-color: white;
+            float: left;
+            margin-bottom: 0.06rem;
+        }
+
+        .tfoot3 {
+            width: 1.72rem;
+            height: 1.74rem;
+            background-color: white;
+            float: right;
+            margin-bottom: 0.06rem;
+        }
+
+        .tfoot4 {
+            width: 1.72rem;
+            height: 1.44rem;
+            background-color: white;
+            float: left;
+        }
+
+        .tfoot5 {
+            width: 1.72rem;
+            height: 1.44rem;
+            background-color: white;
+            float: right;
+        }
+
+        .i1 {
+            width: 1rem;
+            height: 1.04rem;
+            background-image: url(img/14.png);
+            background-size: 100%;
+            margin: 0.1rem auto;
+        }
+
+        .i2 {
+            width: 1rem;
+            height: 1.04rem;
+            background-image: url(img/15.png);
+            background-size: 100%;
+            margin: 0.1rem auto;
+        }
+
+        .p6 {
+            width: 1.65rem;
+            height: 0.11rem;
+            font-family: STXihei;
+            font-size: 0.11rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.1rem;
+            letter-spacing: 0rem;
+            color: #272727;
+            margin: 0.1rem auto;
+        }
+
+        .p7 {
+            width: 0.51rem;
+            height: 0.12rem;
+            font-family: STXihei;
+            font-size: 0.09rem;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 0.1rem;
+            letter-spacing: 0rem;
+            color: #b91b34;
+            margin-left: 0.035rem;
+        }
+
+        .tfoot6 {
+            width: 3.75rem;
+            height: 0.5rem;
+            display: flex;
+            justify-content: space-around;
+            border-top: 0.005rem solid #cccccc;
+        }
+
+        .S {
+            width: 0.25rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.11rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #b91b34;
+        }
+
+        .D {
+            width: 0.25rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #7c8188;
+        }
+        .D1{
+            width: 0.36rem;
+            height: 0.5rem;
+            font-family: PingFang-SC-Medium;
+            font-size: 0.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #7c8188;
+        }
+        .SY {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/16.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .FL {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/17.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .GWC {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/18.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+
+        .WD {
+            width: 0.22rem;
+            height: 0.2rem;
+            background-image: url(img/19.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0.07rem auto 0.04rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shouye">
+        <div class="thead">
+            <div class="div1">
+                <div></div>
+                <div></div>
+                <input type="text" placeholder="拉菲">
+                <div class="s1">登录</div>
+            </div>
+        </div>
+        <div class="tbody"></div>
+        <div class="box">
+            <div class="tbody1">
+                <div class="A">
+                    <div class="a"></div>
+                    <div class="s2">每日推荐</div>
+                </div>
+                <div class="A">
+                    <div class="c"></div>
+                    <div class="s2">限时闪购</div>
+                </div>
+                <div class="A">
+                    <div class="e"></div>
+                    <div class="s2">新品上架</div>
+                </div>
+                <div class="A">
+                    <div class="g"></div>
+                    <div class="s2">热销推荐</div>
+                </div>
+            </div>
+            <div class="tbody2">
+                <div></div>
+                <div>活动精选</div>
+                <div></div>
+            </div>
+            <div class="tbody3">
+                <div class="d1">
+                    <div class="d3">
+                        <p class="p1">国美酒节</p>
+                        <p class="p2">意大利名酒</p>
+                        <p class="p3">19.9元秒</p>
+                    </div>
+                    <div class="d4"></div>
+                </div>
+                <div class="d2">
+                    <div class="d5"></div>
+                    <p class="p4">茅台红色限量版</p>
+                    <p class="p5">799元</p>
+                </div>
+            </div>
+            <div class="tbody4"></div>
+            <div class="tbody5"></div>
+            <div class="tbody6"></div>
+            <div class="tbody7"></div>
+            <div class="tbody8"></div>
+            <div class="tbody2">
+                <div></div>
+                <div>为您推荐</div>
+                <div></div>
+            </div>
+            <div class="tfoot1">
+                <div class="tfoot2">
+                    <div class="i1"></div>
+                    <P class="p6">澳洲原瓶进口红酒洛神山庄干...</P>
+                    <P class="p7">¥318.00</P>
+                </div>
+                <div class="tfoot3">
+                    <div class="i2"></div>
+                    <P class="p6">澳大利亚原装进口红酒整箱...</P>
+                    <P class="p7">¥278.00</P>
+                </div>
+                <div class="tfoot4">
+                    <div class="i1"></div>
+                    <p class="p6">澳洲原瓶进口红酒洛神山庄干...</p>
+                </div>
+                <div class="tfoot5">
+                    <div class="i2"></div>
+                    <p class="p6">澳大利亚原装进口红酒整箱...</p>
+                </div>
+            </div>
+            <div class="tfoot6">
+                <div class="S">
+                    <div class="SY"></div>
+                    首页
+                </div>
+                <div class="D">
+                    <div class="FL"></div>
+                    分类
+                </div>
+                <div class="D1">
+                    <div class="GWC"></div>
+                    购物车
+                </div>
+                <div class="D">
+                    <div class="WD"></div>
+                    我的
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

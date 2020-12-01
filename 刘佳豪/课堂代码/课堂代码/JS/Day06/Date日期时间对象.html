@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date日期时间对象</title>
+	</head>
+	<body>
+		<!--
+			JS里，Date用来创建日期和时间对象，用来处理日期和时间有关的操作
+			Date是一个函数，通过该函数我们可以创建一个对象，这个对象才是真正用来操作日期和时间用的
+			
+			注意：创建日期时间对象里存储的是一个时刻！！！
+		-->
+		<div id="Time"></div>
+		<div id="yearLeft"></div>
+		<script type="text/javascript">
+			//1.创建日期时间对象
+			var dateObj = new Date();
+			console.log(dateObj,typeof dateObj);
+			
+			//日期时间对象有关的操作函数
+			//获取年份
+			console.log(dateObj.getFullYear());
+			//获取月份
+			console.log(dateObj.getMonth());
+			//获取日期
+			console.log(dateObj.getDate());
+			//获取周几(0-6，0是周日)
+			console.log(dateObj.getDay());
+			
+			//获取小时
+			console.log(dateObj.getHours());
+			//获取分钟
+			console.log(dateObj.getMinutes());
+			//获取秒
+			console.log(dateObj.getSeconds());
+			
+			setInterval(function() {
+				dateObj = new Date();
+				Time.innerHTML = dateObj.getFullYear() + "年" + (dateObj.getMonth()+1) + "月" + 
+				dateObj.getDate() + "日" + "星期" + dateObj.getDay() + " " + dateObj.getHours() +
+				"时" + dateObj.getMinutes() + "分" + dateObj.getSeconds() + "秒"
+			},1000)
+
+			//时间戳	任意一个时刻，距离1970年1月1日0时0分所经过的毫秒数
+			//获取时间戳
+			console.log(dateObj.getTime());
+			
+			//除夕倒计时
+			//获取2020年1月24日0时0分0秒的时间戳
+//			var newYear = new Date(2020,0,24,0,0,0);
+//			var newYear = new Date("2020/1/24 0:0:0"); 
+			var newYear = new Date();
+			newYear.setDate(24);
+			newYear.setHours(0);
+			newYear.setMinutes(0);
+			newYear.setSeconds(0);
+//			console.log(newYear);
+			
+			var newYearTime = newYear.getTime();
+			//不断获取当前时刻的时间戳
+			setInterval(function(){
+				var now = new Date();
+				var nowTime = now.getTime();
+				
+				//除夕的时间戳-当前的时间戳
+				var resTime = (newYearTime - nowTime)/1000;
+				
+				//将剩余的时间戳转化成对应的形式(xx天xx小时xx分钟xx秒)
+				var d = Math.floor(resTime / (60*60*24));
+				
+				var h = Math.floor(resTime % (60*60*24) / (60*60));
+				
+				var m = Math.floor(resTime % 3600 / 60);
+				
+				var s = Math.floor(resTime % 60);
+				
+				yearLeft.innerHTML = "距离除夕还有：" + d + "天" + h + "时" + m + "分" + s + "秒";
+			},1000);
+		</script>
+	</body>
+</html>

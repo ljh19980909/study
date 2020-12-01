@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>当前页面：first.html</h1>
+		<a href="./second.html">跳转到second.html</a>
+		<button type="button" id="go">前进</button>
+	</body>
+	<script type="text/javascript">
+		console.log(history.length);
+		var goObj = document.getElementById('go');
+		goObj.onclick = function() {
+			history.go(2);
+		};
+	</script>
+</html>

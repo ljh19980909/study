@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ音乐</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .box{
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .head{
+        width: 100%;
+        height: 150px;
+        background-color: #fff;
+    }
+    .div1{
+        width: 1240px;
+        height: 90px;
+        margin: 0 auto;
+        line-height: 150px;
+        padding-left: 15px;
+        border-bottom: 1px solid #dddbdb;
+    }
+    .a1{
+        float: left;
+    }
+    .ul1{
+        width: 500px;
+        height: 90px;
+        float: left;
+
+    }
+    .L1{
+        width: 54px;
+        height: 90px;
+        display: block;
+        text-align: center;
+        line-height: 90px;
+        padding: 0 20px;
+        float: left;
+        font-size: 18px;
+        background-color: #31C27C;
+        margin-left: 20px;
+        color: white;
+    }
+    .L2{
+        width: 72px;
+        height: 90px;
+        display: block;
+        text-align: center;
+        line-height: 90px;
+        padding: 0 20px;
+        float: left;
+        font-size: 18px;
+    }
+    .L3{
+        width: 54px;
+        height: 90px;
+        display: block;
+        text-align: center;
+        line-height: 90px;
+        padding: 0 20px;
+        float: left;
+        font-size: 18px;
+        position: relative;
+        
+    }
+    .div5{
+        width: 165px;
+        height: 0px;
+        background-color: #fff;
+        font-size: 13px;
+        position: fixed;
+        border-radius: 4px;
+        box-shadow: gray  1px 1px 4px;
+        /* display: none; */
+        position: absolute;
+        top: 70px;
+        overflow: hidden;
+    }
+    .L3:hover{
+        color: #31C27C;
+    }
+    .L3:hover .div5{
+        /* display: block; */
+        height: 165px;
+    }
+    .img1{
+        width: 37.13px;
+        height: 14px;
+        position: absolute;
+        top: 20px;
+        right: 1px;
+    }
+    .L5{
+        width: 26.109px;
+        height: 90px;
+        display: block;
+        text-align: center;
+        line-height: 90px;
+        padding: 0 20px;
+        float: left;
+    }
+    .L6{
+        width: 38px;
+        height: 90px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 90px;
+        margin: 0 10px;
+    }
+    .L7{
+        width: 95px;
+        height: 36px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 36px;
+        margin-right: 10px;
+        font-size: 13px;
+        margin: 28px 0 0 10px;
+        padding: 0 9px;
+        background-color: #31C27C;
+        color: white;
+        border-radius: 3px;
+    }
+    .L8{
+        width: 65px;
+        height: 36px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 36px;
+        font-size: 13px;
+        border: solid 1px grey;
+        margin: 27px 10px 0 10px;
+        padding: 0 9px;
+        border-radius: 2px;
+    }
+    .div2{
+        width: 200px;
+        height: 50px;
+        padding: 0 33px 0 33px; 
+        margin-top: 26px;
+        float: left;
+    }
+    .input1{
+        width: 220px;
+        height: 38px;
+        float: left;
+        padding-left: 5px;
+        border-radius: 5px;
+        font-size: 13px;
+        background-size: contain;
+        outline: none;
+        border: 1px grey solid;
+
+    }
+    .ul2{
+        width: 100%;
+        height: 52px;
+        display: block;
+        line-height: 52px;
+        padding-left: 260px;
+        margin: 0 auto;
+    }
+    .I1{
+        width: 30px;
+        height: 51px;
+        float: left;
+        font-size: 15px;
+        color: #31C27C;
+        margin-right: 24px;
+    }
+    .I2{
+        width: 30px;
+        height: 51px;
+        float: left;
+        font-size: 15px;
+        margin: 0 24px;
+    }
+    .I3{
+        width: 45px;
+        height: 51px;
+        float: left;
+        font-size: 15px;
+        margin: 0 24px;
+    }
+    .I4{
+        width: 60px;
+        height: 51px;
+        float: left;
+        font-size: 15px;
+        margin: 0 24px;
+    }
+    .div4{
+        width: 150px;
+        height: 100px;
+        background-color: #fff;
+        position: fixed;
+        right: 40px;
+        top: 165px;
+        padding: 20px;
+    }
+    .img2{
+        width: 102px;
+        display: block;
+        margin: 0 auto 9px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div class="head">
+        <div class="div1">
+                <a class="a1">
+                    <img src="1.png" alt="" style="margin-bottom: 10px;">
+                </a>
+            <ul class="ul1">
+                <li class="L1">音乐馆</li>
+                <li class="L2">我的音乐</li>
+                <li class="L3">客户端
+                    <img src="2.png" alt="" class="img1">
+                    <div class="div5">
+                        <p class="p1">HQ高品质 全员开启</p>
+                        <p class="p1">独家音效 全面升级</p>
+                        <p class="p1">轻盈视觉 动态皮肤</p>
+                    </div>
+                </li>
+                <li class="L2">开放平台</li>
+                <li class="L5">VIP</li>
+            </ul>
+            <div class="div2">
+                <input type="text" placeholder="搜索音乐、MV、歌单、用户"  class="input1">
+            </div>
+            <div class="div3">
+                <li class="L6">登录</li>
+                <li class="L7">开通绿钻豪华版</li>
+                <li class="L8">开通付费包</li>
+            </div>
+        </div>
+        <ul class="ul2">
+                <li class="I1">首页</li>
+                <li class="I2">歌手</li>
+                <li class="I2">新碟</li>
+                <li class="I3">排行榜</li>
+                <li class="I4">分类歌单</li>
+                <li class="I2">电台</li>
+                <li class="I2">MV</li>
+                <li class="I4">数字专辑</li>
+                <li class="I2">票务</li>
+            </ul>
+    </div>
+    <div class="div4">
+        <img src="1.png" alt="" class="img2">
+    </div>
+</div>
+</body>
+</html>

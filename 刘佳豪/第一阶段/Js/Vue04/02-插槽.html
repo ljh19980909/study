@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>02-插槽</title>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<c1 :c1v="appV">
+				<template>
+					<h2>你是个大呆逼!</h2>
+				</template>
+				<template>
+					<button @click="get">点击</button>
+				</template>
+			</c1>
+			<c2>
+				<template #s3>
+					<p>段落1</p>
+					<p>段落2</p>
+				</template>
+				<template v-slot:s1>
+					<h1>标题1</h1>
+					<h2>标题2</h2>
+				</template>
+				<template #s2>
+					<button>按钮1</button>
+					<button>按钮2</button>
+				</template>
+			</c2>
+			<c3>
+				<template v-slot="hhh">
+					<h2>标题:{{hhh.abc}}</h2>
+					<h2>标题:{{hhh.ac}}</h2>
+				</template>
+				<template #s4="per">
+					<p>段落内容1:<h2>{{per.sb.name}}</h2></p>
+					<p>段落内容2:<h2>{{per.sb.friend}}</h2></p>
+					<button @click="per.sd">点击</button>
+				</template>
+			</c3>
+		</div>
+		<template id="c1">
+			<fieldset>
+				<legend><h2>child1组件</h2></legend>
+				<p>接收app的值:{{c1v}}</p>
+				<slot></slot>
+			</fieldset>
+		</template>
+		<template id="c2">
+			<fieldset>
+				<legend><h2>child2组件</h2></legend>
+				<slot name="s1"></slot>
+				<slot name="s2"></slot>
+				<slot name="s3"></slot>
+			</fieldset>
+		</template>
+		<template id="c3">
+			<fieldset>
+				<legend><h2>child3组件</h2></legend>
+				<slot name="s4" :sb="data" :sd="al"></slot>
+				<slot :abc="c1V" :ac="c2V"></slot>
+			</fieldset>
+		</template>
+	</body>
+	<script type="text/javascript">
+		/*
+			我们可以在组件写内容,这些内容可以是多种形式,文本,变量,标签,甚至可以是一个组件
+				在对应的组件内部,利用slot插槽,可以接收组件外部传入的内容,插槽的使用,可以让组件的布局更加灵活
+				
+				具名插槽:
+					如果想要指定传入组件里内容的位置,而且想让不同的内容分不到不同的位置,我们需要多个插槽
+					1.如果有多个slot且没有做任何处理,vue会把传入的内容在每个slot里面都插入一次
+					2.想要实现内容的正确分配,首先不同的内容扥别用template标签包裹,并起名字,<slot>通过name属性捕捉对应的内容予以显示
+					
+				作用域插槽:
+					默认情况下 要传入插槽的内容能接收到的数据的作用域是其父组件的作用域,而不是对应的组件的作用域里的数据
+					实现作用域插槽的步骤
+						1.给<slot>标签添加一个自定义属性,此时就可以赋值当前组件的数据
+						2.添加给<slot>的自定义属性,我们称为插槽属性,我们通过v-slot可以获取到存储了该插槽属性的对象	语法:v-slot="插槽属性对象" 插槽属性对象的名字可以自定义
+						3.
+					
+		*/
+		let c1={
+			template:"#c1",
+			props:["c1v"],
+		};
+		let c2={
+			template:"#c2"
+		};
+		let c3={
+			template:"#c3",
+			data(){
+				return{
+					c1V:"今天星期五",
+					c2V:"明天不上课",
+					data:{
+						name:"你是大傻逼",
+						friend:"你是大逗逼"
+					}
+				}
+			},
+			methods:{
+				al(){
+					alert("你是个大傻逼")
+				}
+			}
+		};
+		new Vue({
+			components:{
+				c1,c2,c3
+			},
+			data:{
+				appV:"你是个大傻逼!",
+				c1V:"后天星期日",
+				c2V:"就该上课了"
+			},
+			methods:{
+				get(){
+					alert("你是个大逗逼!!")
+				}
+			}
+		}).$mount("#wrap")
+	</script>
+</html>

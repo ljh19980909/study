@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>京东轮播图</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#box {
+				width: 590px;
+				height: 470px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#ul1 {
+				width: 590px;
+				height: 470px;
+			}
+			
+			#ul1>img {
+				width: 590px;
+				height: 470px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				transition: all .5s;
+				opacity: 0;
+			}
+			#ul1 img:nth-child(1){
+				opacity: 1;
+			}
+			#div1 {
+				width: 30px;
+				height: 35px;
+				position: absolute;
+				top: 235px;
+				left: 0;
+				background-color: rgb(44, 2, 2, 0.5);
+				color: white;
+				border-bottom-right-radius: 35px;
+				border-top-right-radius: 35px;
+				text-align: center;
+				line-height: 35px;
+				font-weight: 900;
+				font-size: 20px;
+				opacity: 0;
+			}
+			#box:hover #div1{
+				opacity: 0.7;
+			}
+			#div2 {
+				width: 30px;
+				height: 35px;
+				position: absolute;
+				top: 235px;
+				right: 0;
+				background-color: rgb(44, 2, 2, 0.5);
+				color: white;
+				border-bottom-left-radius: 35px;
+				border-top-left-radius: 35px;
+				text-align: center;
+				line-height: 35px;
+				font-weight: 900;
+				font-size: 20px;
+				opacity: 0;
+			}
+			#box:hover #div2{
+				opacity: 0.7;
+			}
+			#ul2 {
+				width: 120px;
+				height: 10px;
+				display: flex;
+				justify-content: space-around;
+				position: absolute;
+				top: 430px;
+				left: 30px;
+			}
+			
+			#ul2>li {
+				width: 10px;
+				height: 10px;
+				background-color: white;
+				border-radius: 10px;
+				float: left;
+			}
+			#ul2 li:nth-child(1){
+				background-color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box">
+			<ul id="ul1">
+				<img src="img/1.png" />
+				<img src="img/2.png" />
+				<img src="img/3.png" />
+				<img src="img/4.png" />
+				<img src="img/5.png" />
+				<img src="img/6.png" />
+				<img src="img/7.png" />
+				<img src="img/8.png" />
+			</ul>
+			<div id="div1"><
+			</div>
+				<div id="div2">></div>
+				<ul id="ul2">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+		</div>
+		<script type="text/javascript">
+			var lis = document.querySelectorAll("#ul1 img");
+			var lis2 = document.querySelectorAll("#ul2 li");
+			var timer = setInterval(moveContent, 2000);
+			var i = 0;
+			function moveContent() {
+				for(var j = 0;j<lis.length;j++){
+					lis[j].style.opacity = 0;
+					lis2[j].style.backgroundColor = "white";
+				}
+				i++;
+				if(i > 7) {
+					i = 0;
+				}
+				lis[i].style.opacity = 1;
+				lis2[i].style.backgroundColor = "gray";
+			}
+
+			//鼠标移入移出事件
+			var box = document.querySelector("#box");
+			// 鼠标移入事件
+			box.onmouseover = function() {
+				clearInterval(timer);
+			}
+			// 鼠标移出事件
+			box.onmouseout = function() {
+				timer = setInterval(moveContent, 2000);
+			}
+			
+			
+			div1.onclick = function () {
+			for(var j = 0;j<lis.length;j++){
+					lis[j].style.opacity = 0;
+					lis2[j].style.backgroundColor = "white";
+				}
+				i--;
+				if(i < 0) {
+					i = 7;
+				}
+				lis[i].style.opacity = 1;
+				lis2[i].style.backgroundColor = "gray";
+			}
+			
+			div2.onclick = function () {
+				for(var j = 0;j<lis.length;j++){
+					lis[j].style.opacity = 0;
+					lis2[j].style.backgroundColor = "white";
+				}
+				i++;
+				if(i > 7) {
+					i = 0;
+				}
+				lis[i].style.opacity = 1;
+				lis2[i].style.backgroundColor = "gray";
+			}
+			
+			
+			for(var j = 0; j < lis2.length; j++) {
+					lis2[j].onmouseover = function() {
+						for(var k = 0; k < lis2.length; k++) {
+							lis[i].style.opacity = 0;
+							lis2[i].style.backgroundColor = "white";
+							if(lis2[k] == this) {
+								i = k;
+								lis[k].style.opacity = 1;
+								lis2[k].style.backgroundColor = "gray";
+								break;
+							}
+						}
+					}
+				}
+		</script>
+	</body>
+
+</html>

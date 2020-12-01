@@ -1,0 +1,12 @@
+<button bindtap="toast">点击</button>
+<button bindtap="modal">点击弹窗</button>
+<button bindtap="loading">loading</button>
+<button bindtap="sheet">sheet</button>
+<button bindtap="navigation">navigation</button>
+<button bindtap="reddot">reddot</button>
+<button bindtap="pulldown">pulldown</button>
+<button bindtap="saveS">存</button>
+<button bindtap="getS">取</button> 
+<button bindtap="removeS">删</button>
+<button bindtap="findS">查</button>
+<i-rate value="{{starIndex1}}" />

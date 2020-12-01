@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1 id="h1E">标题标签：{{msg}}</h1>
+			<button @click="msg='你是个大傻逼!!'">点击修改data</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let app=new Vue({
+			data:{
+				msg:"hello，world！"
+			},
+			beforeCreate() {
+				//vue实例创建之前触发,此时,无法获取data数据,DOM还未真正创建好
+				console.log("beforeCreate触发了",this.msg,h1E)
+			},
+			created() {
+				//vue实例创建完毕后触发,此时,可以获取data数据,DOM还未真正创建好
+				console.log("created触发了",this.msg,h1E)
+			},
+			beforeMount() {
+				//vue实例挂载之前触发,此时,可以获取data数据,DOM还未真正创建好
+				console.log("beforeMount触发了",this.msg,h1E)
+			},
+			mounted() {
+				//vue实例挂载完毕后触发,此时,可以获取data数据,DOM真正创建好了
+				console.log("mounted触发了",this.msg,h1E)
+			},
+			beforeUpdate() {
+				//data数据源已修改,但是页面还未更新
+				console.log("beforeUpdate触发了",this.msg,h1E)
+			},
+			updated() {
+				//data数据源已修改,页面页面更新完毕
+				console.log("updated触发了",this.msg,h1E)
+			},
+			beforeDestroy() {
+				// Vue实例销毁之前,我们一般会做一些数据的保存,缓存的清理,解绑事件接听,销毁定时器等善后性工作
+				console.log("beforeDestroy触发了")
+			},
+			destroyed() {
+				// Vue实例已经被销毁,该函数调用之后,当前vue实例的所有指令被解绑,所有监听被移除,所有子实例也会被销毁
+				console.log("destroyed触发了")
+			}
+		}).$mount("#wrap")
+		setTimeout(()=>{
+			app.$destroy();
+		},3000)
+	</script>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业</title>
+	</head>
+	<body>
+		<input type="text" placeholder="输入第一个数" id="i1"/>
+		<input type="text" placeholder="输入第二个数" id="i2"/>
+		<input type="text" placeholder="输入第三个数" id="i3"/>
+			<button onclick="zj()">仨数中间值</button>
+	<br />		
+		<input type="text" id="i4"/>
+			<button onclick="pdfh()">判断符号</button>
+	<br />		
+		<input type="text" placeholder="输入第一个数" id="i5"/>
+		<input type="text" placeholder="输入第二个数" id="i6"/>
+		<input type="text" placeholder="输入第三个数" id="i7"/>
+			<button onclick="threeMax()">三个数较大值</button>
+	<br />	
+		<input type="number" id="i8"/>
+			<button onclick="cz()">称重</button>
+	<br />		
+		<input type="number" id="i9"/>
+			<button onclick="jg()">结果</button>
+	<br />
+		<input type="text" placeholder="输入数" id="i10"/>
+		<input type="text" placeholder="输入符号" id="i11"/>
+		<input type="text" placeholder="输入数" id="i12"/>
+			<button onclick="dy()">等于</button>
+	<br />
+		<input type="text" placeholder="输入数" id="i13"/>
+		<input type="text" placeholder="输入数" id="i14"/>
+		<input type="text" placeholder="输入数" id="i15"/>
+			<button onclick="sjx()">组成三角形</button>
+			
+		<script type="text/javascript">
+			function zj() {
+				var i1 = document.getElementById("i1").value - 0;
+				var i2 = document.getElementById("i2").value - 0;
+				var i3 = document.getElementById("i3").value - 0;
+//				if (i1 > i2 && i1 < i3) {
+//					alert(i1);
+//				} 
+//				else {
+//					if(i2 > i1 && i2 < i3) {
+//						alert(i2);
+//					}else
+//					alert(i3);
+//				}
+				var zj = i1 > i2 ? (i1 < i3 ? i1 : i3) : (i2 > i1 ? i2 : i3);
+				alert(zj);
+				}
+			
+			function pdfh() {
+				var i4 = document.getElementById("i4").value - 0;
+				if (i4 > 0) {
+					alert("正数");
+				}
+				if (i4 < 0) {
+					alert("负数");
+				}
+				if (i4 == 0) {
+					alert("0");
+				}	
+			}
+				
+				function threeMax() {
+				var i5 = document.getElementById("i5").value - 0;
+				var i6 = document.getElementById("i6").value - 0;
+				var i7 = document.getElementById("i7").value - 0;
+				if (i5 > i6 && i5 > i7) {
+					alert(i5);
+				} 
+				else {
+					if(i6 > i7) {
+						alert(i6);
+					}else
+					alert(i7);
+				}
+			}
+				
+				function cz() {
+				var i8 = document.getElementById("i8").value - 0;
+				if(i8 <= 50) {
+					alert(0.15 * i8);
+				}else{
+					alert(50 * 0.15 + (i8 - 50) * 0.25)
+				}
+			}
+				
+				function jg() {
+				var x = document.getElementById("i9").value - 0;
+				if(x < 1) {
+					alert(x);
+				}else if(x >= 1 && x < 10) {
+					alert(2 * x - 1);
+				}else{
+					alert(3 * x - 11);
+				}
+			}
+				
+				function dy() {
+				var q = document.getElementById("i10").value - 0;
+				var w = document.getElementById("i11").value ;
+				var e = document.getElementById("i12").value - 0;
+				switch (w) {
+					case "+":{
+						alert((q + e).toFixed(2));
+						break;
+					}
+					case "-":{
+						alert((q - e).toFixed(2));
+						break;
+					}
+					case "*":{
+						alert((q * e).toFixed(2));
+						break;
+					}
+					default:{
+						alert((q / e).toFixed(2));
+						break;
+					}
+			}
+		}
+				
+				function sjx() {
+				var F1 = document.getElementById("i13").value - 0;
+				var F2 = document.getElementById("i14").value - 0;
+				var F3 = document.getElementById("i15").value - 0;
+					if(F1 + F2 > F3 && F3 + F2 > F1 && F1 + F3 > F2){
+						alert("可以组成三角形");
+					}else{
+						alert("不可以组成三角形");
+					}
+				}
+		</script>
+	</body>
+</html>

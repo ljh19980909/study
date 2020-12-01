@@ -1,0 +1,8 @@
+<!--components/Child3/Child3.wxml-->
+<view class="title">这是Child3组件</view>
+<view>{{c3Num}}</view>
+<view wx:for="{{c3Obj}}" wx:key="index">
+	<text>key:{{index}}</text>
+	---
+	<text>value:{{item}}</text>
+</view>

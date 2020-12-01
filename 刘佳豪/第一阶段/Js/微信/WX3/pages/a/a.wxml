@@ -1,0 +1,8 @@
+<view class="container">这是a页面</view>
+
+<view>store里的msg的值:{{$state.msg}}</view>
+<view wx:for="{{$state.arr}}" wx:key="{{item.name}}">
+    <view>名字:{{item.name}}</view>---
+    <view>年龄:{{item.age}}</view>
+</view>
+    <button bindtap="changes">修改数据</button>

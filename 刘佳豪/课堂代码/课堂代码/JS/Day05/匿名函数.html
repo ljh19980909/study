@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>匿名函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 匿名函数：没有名字的函数
+			 * 
+			 * 函数名对于一个函数来说很重要	函数的名字表示这个函数本身！
+			 * 
+			 * 匿名函数如何调用？？？
+			 * 1.在声明匿名函数的同时立刻调用
+			 * 2.可以将匿名函数赋值给一个变量，那么这个变量名就可以充当函数名使用
+			 */
+			
+			(function(a,b) {
+				console.log(a,b);
+			})(100,200);
+			
+			var a = function(name){
+				console.log(name);
+			}
+			a("王五");
+			
+			
+			function f1(a) {
+				a();
+			}
+			f1(function(){
+				alert(123);
+			});
+			
+			
+			f1(abc)
+			function abc(){
+				alert(123);
+			}
+			
+			var a = function(){alert(123)}
+			f1(a);
+		</script>
+	</body>
+</html>

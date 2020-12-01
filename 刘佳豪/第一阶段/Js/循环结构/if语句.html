@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <input type="text" name="" id="nu" value="" />
+		<button type="button" id="count">比较</button> -->
+		<!-- <br> -->
+		<!-- 	<input type="text" name="" id="oushu" value="" />
+		<button type="button" id="acount">比较</button> -->
+		<!-- <br> -->
+		<!-- <input type="text" name="" id="nianfen" value="" />
+		<button type="button" id="panduan">判断</button> -->
+		<!-- <br> -->
+		<!-- <input type="text" name="" id="beishu" value="" />
+		<button type="button" id="guo">比较</button> -->
+		<!-- 	<input type="text" name="" id="lucheng" value="" /><br>
+		<input type="text" name="" id="wait" value="" /><br>
+		<button type="button" id="jisuan">计算</button> -->
+	</body>
+	<script type="text/javascript">
+		// 输入两个数，代表“斗地主”游戏中的牌的点数，分别用变量a和b接收。如果 a 和 b相等，就输出“你摸了一个对子”。
+		// var a = 10,
+		// 	b = 10;
+		// if (a == b) {
+		// 	console.log("你摸了一个对子")
+		// }
+		// 输入3个数，分别用变量a,b,c接收。如果a > b，输出"a > b"，如果a > c，输出“a > c”。
+		// var a = 4,
+		// 	b = 3,
+		// 	c = 2;
+		// if (a > b) {
+		// 	console.log("a>b")
+		// }
+		// if (a > c) {
+		// 	console.log("a>c")
+		// }
+		// 有一个变量num，初始值是23。输入一个整数，如果输入的数字大于23，将num改为输入的数。
+		// var nu = document.getElementById('nu');
+		// var count = document.getElementById('count');
+		// count.onclick = function() {
+		// 	var name = nu.value;
+		// 	if (name > 23) {
+		// 		console.log(name);
+		// 	} else {
+		// 		console.log(23);
+		// 	}
+		// }
+		// 输入2个整数，分别用变量a和b接收数据，输出a和b中的最大值。
+		// var a = 3,
+		// 	b = 2,
+		// 	max;
+		// if (a > b) {
+		// 	max = a
+		// } else {
+		// 	max = b
+		// }console.log(max)
+		// 输入一个整数，判断输入的数是不是偶数，如果是偶数，输出"您输入的是一个偶数"，如果不是偶数，输出"您输入的是一个奇数"。
+		// var oushu = document.getElementById('oushu');
+		// var count = document.getElementById('count');
+		// acount.onclick = function() {
+		// 	// console.log(typeof x)
+		// 	var x = oushu.value;
+		// 	if (x % 2 == 0) {
+		// 		console.log('偶数');
+		// 	} else {
+		// 		console.log('奇数');
+		// 	}
+		// }
+		// 输入一个代表年份的数字，判断是不是闰年。（闰年的判断条件是：能被400整除，或者能被4整除且不能被100整除）。如果是闰年，输出"xxx年是闰年！"，如果不是闰年，输出"xxx年是平年！"。
+		// var nianfen = document.getElementById('nianfen');
+		// var panduan = document.getElementById("panduan");
+		// panduan.onclick = function() {
+		// 	var currentyear = nianfen.value;
+		// 	if (currentyear % 40 == 0 || (currentyear % 4 == 0 && currentyear % 100 != 0)) {
+		// 		console.log(currentyear + '是闰年！')
+		// 	} else {
+		// 		console.log(currentyear + '是平年！');
+		// 	}
+		// }
+		// 输入一个整数，判断这个数字是不是7的倍数。如果是7的倍数，输出"过"，否则输出数字本身。
+		// var beishu = document.getElementById('beishu');
+		// var guo = document.getElementById('guo');
+		// guo.onclick = function() {
+		// 	var x = beishu.value;
+		// 	if (x % 7 == 0) {
+		// 		console.log('过');
+		// 	} else {
+		// 		console.log(x);
+		// 	}
+		// }
+		// 输入一个100以内的整数，判断这个数字里面是不是包含7。个位为7或者是十位为7。如果包含7输出“过”，如果不包含7，直接输出数字本身。17.7.78
+		// var beishu = document.getElementById('beishu');
+		// var guo = document.getElementById('guo');
+		// guo.onclick = function() {
+		// 	var x = beishu.value;
+		// 	if (x % 10 == 7 || Math.floor(x / 10) == 7) {
+		// 		console.log('过');
+		// 	} else {
+		// 		console.log(x);
+		// 	}
+		// }
+		// 输入一个100以内的整数，如果这个数字包含7或者是7的倍数，输出"过"，否则输出数字本身。
+		// var beishu = document.getElementById('beishu');
+		// var guo = document.getElementById('guo');
+		// guo.onclick = function() {
+		// 	var x = beishu.value;
+		// 	if (x % 7 == 0 || x % 10 == 7 || Math.floor(x / 10) == 7) {
+		// 		console.log('过');
+		// 	} else {
+		// 		console.log(x);
+		// 	}
+		// }
+		// 输入一个整数，判断是正数、负数还是0。如果输入的数大于0，输出"您输入的是一个正数"，如果输入的数小于0，输出"您输入的是一个负数"，否则输出"您输入的是0"。
+		// var nianfen = document.getElementById('nianfen');
+		// var panduan = document.getElementById("panduan");
+		// panduan.onclick = function() {
+		// 	var x = nianfen.value;
+		// 	if (x > 0) {
+		// 		console.log('您输入的是一个正数')
+		// 	} else if (x == 0) {
+		// 		console.log('您输入的是0')
+		// 	} else if (x < 0) {
+		// 		console.log('您输入的是一个负数')
+		// 	}
+		// }
+		// 输入一个1~7之间的整数（含1和7），如果输入的是1，就输出"今天是星期一"，如果输入的是2，就输出"今天是星期二"，...，如果输入的是7，就输出"今天是星期天"。如果输入的是其他数字，就输出"输入的数字非法"。
+		// var nianfen = document.getElementById('nianfen');
+		// var panduan = document.getElementById("panduan");
+		// panduan.onclick = function() {
+		// 	x = parseInt(nianfen.value);
+			// alert(x)
+			// if (x == 1) {
+			// 	console.log('今天是星期一')
+			// } else if (x == 2) {
+			// 	console.log('今天是星期二')
+			// } else if (x == 3) {
+			// 	console.log('今天是星期三')
+			// } else if (x == 4) {
+			// 	console.log('今天是星期四')
+			// } else if (x == 5) {
+			// 	console.log('今天是星期五')
+			// } else if (x == 6) {
+			// 	console.log('今天是星期六')
+			// } else if (x == 7) {
+			// 	console.log('今天是星期日')
+			// }else{
+			// 	console.log('输入的数字非法')
+			// }
+		// 	switch (x) {
+		// 		case 1:
+		// 			console.log('今天是星期一');
+		// 			break;
+		// 		case 2:
+		// 			console.log('今天是星期二');
+		// 			break;
+		// 		case 3:
+		// 			console.log('今天是星期三');
+		// 			break;
+		// 		case 4:
+		// 			console.log('今天是星期四');
+		// 			break;
+		// 		case 5:
+		// 			console.log('今天是星期五');
+		// 			break;
+		// 		case 6:
+		// 			console.log('今天是星期六');
+		// 			break;
+		// 		case 7:
+		// 			console.log('今天是星期日');
+		// 			break;
+		// 		default:
+		// 			console.log('输入的数字非法');
+		// 			break;
+		// 	}
+		// }
+		// 根据考试成绩计算应该给与什么奖励：考试100分，奖励一架航拍遥控飞机；考试90分~99分，奖励游乐场玩一次；考试80分~89分，奖励玩具赛车一辆；考试70分~79分，奖励玩手机30分钟；考试70分以下，挨揍一顿
+		// var nianfen = document.getElementById('nianfen');
+		// var panduan = document.getElementById("panduan");
+		// panduan.onclick = function() {
+		// 	var x = nianfen.value;
+		// 	if (x == 100) {
+		// 		console.log('一架航拍遥控飞机')
+		// 	} else if (x >= 90) {
+		// 		console.log('游乐场玩一次')
+		// 	} else if (x >= 80) {
+		// 		console.log('玩具赛车一辆')
+		// 	} else if (x >= 70) {
+		// 		console.log('玩手机30分钟')
+		// 	} else if (x < 70) {
+		// 		console.log('挨揍一顿')
+		// 	}
+		// }
+		// 出租车计费标准为：3公里以内10元，3公里以后每1公里加2元，超过15公里，每1公里加3元。请输入一个最终公里数，计算应付的车费。
+		// var lucheng = document.getElementById('lucheng');
+		// var jisuan = document.getElementById("jisuan");
+		// jisuan.onclick = function() {
+		// 	var money = 10;
+		// 	var x = lucheng.value;
+		// 	if (x <= 3) {
+		// 		money += 0;
+		// 	}
+		// 	if (x > 3 && x <= 15) {
+		// 		money += (x - 3) * 2;
+		// 	} else if (x >= 15) {
+		// 		money += 24 + (x - 15) * 3;
+		// 	}
+		// 	console.log(money)
+		// }
+		// 出租车计费标准为：3公里以内10元，3公里以后每1公里加2元，超过15公里，每1公里加3元，行驶过程中每等待5分钟，需要增加2元（等待12分钟，加4元，非6元）。请输入一个最终公里数和行驶中的等待时间，计算应付的车费
+		// var lucheng = document.getElementById('lucheng');
+		// var jisuan = document.getElementById("jisuan");
+		// var wait = document.getElementById('wait');
+		// jisuan.onclick = function() {
+		// 	var money = 10;
+		// 	var x = lucheng.value;
+		// 	var y = wait.value;
+		// 	if (x <= 3) {
+		// 		money += 0;
+		// 	} else if (x > 3 && x < 15) {
+		// 		money += (x - 3) * 2;
+		// 	} else if (x >= 15) {
+		// 		money += 24 + (x - 15) * 3;
+		// 	}
+		// 	if (y <= 5 || Math.round(y % 5)) {
+		// 		money += 2;
+		// 	} else if (y >= 12) {
+		// 		money += 4;
+		// 	}
+		// 	console.log(money)
+		// }
+	</script>
+</html>

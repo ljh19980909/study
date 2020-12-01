@@ -1,0 +1,39 @@
+<!--pages/communitication/communitication.wxml-->
+<view>组件通信</view>
+<!-- 
+  小程序里的组件通信分两种情况:
+  1.页面(page)与组件通信
+  2.组件(component)与组件通信 
+  
+  实现原理:
+    1.数据绑定:     用于父组件(页面)向子组件传值
+    2.自定义事件    用于子组件向父组件(页面)传值
+    3.如果上述两种都无法满足,还可以通过this. selectComponenmt()方法直接获取子组件
+  -->
+<!-- 1.父page向子组件传值 -->
+<Child1 c1Msg="{{fMsg}}" c1Array="{{news}}" />
+<!-- 2.父page向子组件传值 -->
+<Child2 />
+<!-- 3.子组件向父page传值 -->
+<view>接收child4的值:{{pageMsg}}</view>
+<Child4 bind:cusC4="getVTC4" />
+<Child5 />
+<!-- 父page直接获取子组件实例 -->
+<Child7 id="c7" />
+<view>Child7的data数据:{{c7}}</view>
+<button bindtap="getC7Data">点击获取Child7的data数据</button>
+<view>Child7的随机数:{{c7V}}</view>
+<button bindtap="getC7RandNum">点击获取Child7的随机方法</button>
+<!-- 
+    自定义事件
+        1.微信小程序的事件系统,自定义组件可以通过触发任意的事件,引用了该组件的page可以监听到这个事件,而组件本身或者其他父组件都无法监听到
+        2.自定义事件默认是不冒泡的
+        
+        如果想要冒泡需要设置triggerEvent的第三个参数为
+         {bubbles:true}
+         默认情况下,自定义事件在传播的时候,不会进入组件内部,如果想要穿透到组件内部,还是需要设置triggerEvent的第三个参数:
+         {composed:true}
+ -->
+<Child8 bind:c9="page1Func">
+	<Child9 bind:c9="page2Func"/>
+</Child8>

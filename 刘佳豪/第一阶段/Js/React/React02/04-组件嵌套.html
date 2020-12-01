@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Comment {
+            padding: 10px 20px;
+            border: 2px dotted blue;
+        }
+
+        .icon {
+            width: 100px;
+            border-radius: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    let app=document.getElementById('app')
+    let {Component,Fragment}=React;
+
+    class UserInfo extends Component {
+        render() {
+            return (
+                // Fragment可以行使跟标签的功能,而且不会真正被渲染
+                <Fragment>
+                   <h4>{this.props.users.userName}</h4>
+                    <Touxiang iconurl={this.props.users.iconUrl} iconalt={this.props.users.imgAlt}/>
+                </Fragment>
+            )
+        }
+    }
+    class Touxiang extends Component {
+        render() {
+            return (
+                // Fragment可以行使跟标签的功能,而且不会真正被渲染
+                <Fragment>
+                    <img src={this.props.iconurl} alt={this.props.iconalt} className="icon" />
+                </Fragment>
+            )
+        }
+    }
+    class Comment extends Component {
+        render() {
+            return (
+                <div className="Comment">
+                    <UserInfo users={this.props.users}/>
+                    <div>{this.props.text}</div>
+                    <div>{this.props.time}</div>
+                </div>
+            )
+        }
+    }
+    let iconUrl="./1.jpg"
+    let userName="现宝"
+    let users={iconUrl,userName,imgAlt:'阿刚'}
+    let text ="我好美啊~~~"
+    let time=(new Date()).toLocaleTimeString()
+    ReactDOM.render(
+        <Comment users={users} text={text} time={time} />,
+        app
+    )
+</script>
+
+</html>

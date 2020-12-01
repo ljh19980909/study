@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="btn1">66
+			<div type="button" id="btn2">666</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// var a = {
+		// 	name: 1,
+		// 	age: 2,
+		// 	sex: 3
+		// };
+		// for(let i in a){
+		// 	console.log(i)
+		// }
+		// console.log(Object.values(a));
+
+		// console.log(Object.prototype.valueOf.apply(a))
+		// $.ajax({
+		// 	url: "http://10.10.12.170:333/liu",
+		// 	dataType: 'json',
+		// 	type: 'get',
+		// 	success: function(data) {
+		// 		console.log(data)
+		// 	}
+		// });
+		// var ab = 12.12355;
+		// console.log(ab.toFixed(2), typeof ab.toFixed(2));
+		var nums = [2, 7, 11, 15],
+			target = 9;
+		for (let i = 0; i < nums.length; i++) {
+			var x = [];
+			for (let j = i + 1; j < nums.length; j++) {
+				if (nums[i] + nums[j] == target) {
+					x.push(i, j);
+				}
+			}
+			console.log(x)
+		}
+	</script>
+</html>

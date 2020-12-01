@@ -1,0 +1,5 @@
+<view class="container"></view>
+<button bindtap="gotoNetwork">点击切换到网络请求页</button>
+
+
+<button bindtap="gotoCt">点击切换到circleTwo页面</button>

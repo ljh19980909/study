@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串操作函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 字符串有关的方法在调用时，语法：字符串，方法()
+			 */
+			/*
+			 * 1.获取一个字符串的子字符串 substr()
+			 * substr(start,length)
+			 * start：截取的起始位置,可以给负值，负值从后往前数
+			 * length:要截取的字符串长度，可以不写，默认截取到最后
+			 * 
+			 * 返回值：截取到的子串
+			 */
+			
+			var str = "abcdefghijk"
+			var subStr = str.substr(3,4);
+			console.log(subStr);
+			
+			/*
+			 * 2.字符串分割
+			 * split(string,count)
+			 * string:分隔符，系统会按照分隔符对字符串进行切割,充当分隔符的字符不会出现在结果里;
+			 * 如果分隔符给"",系统会把字符串里每个符号分割出来。
+			 * count:规定得到的子串个数
+			 * 
+			 * 返回值：字符串组
+			 */
+//			var cityName = "郑州-开封-商丘-中牟-新郑";
+//			var cityArr = cityName.split("-");
+//			console.log(cityArr);
+			
+			var str2 = "abcdefg";
+			var strArr = str2.split("");
+			console.log(strArr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+.wrap{
+	width: 500px;
+	height: 500px;
+	border: 1px solid red;
+	display: flex;
+	/* flex-direction: row;弹性方向x轴*/
+	flex-direction: row;
+	/* flex-direction: comlun;弹性方向y轴*/
+	/* flex-direction: column; */
+	/* 是否换行 */
+	/* flex-wrap: nowrap; */
+	flex-wrap: wrap;
+	/* 换行方向 从下向上 */
+	/* flex-wrap: wrap-reverse; */
+	/* justify-content: center; */
+	/* justify-content: flex-start; */
+	/* justify-content: flex-end; */
+	/* justify-content: space-between; */
+	/* justify-content: space-around; */
+	/* align-items: center; */
+	/* align-items: flex-start; */
+	align-items: flex-end;
+	/* align-content: center; */
+	/* align-content: space-between; */
+		/* align-content: space-around; */
+}
+
+.wrap>div{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	padding: 5px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>无限轮播</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 350px;
+				height: 500px;
+				border: 1px solid red;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			#div1 {
+				width: 2450px;
+				height: 500px;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#div1 img {
+				float: left;
+				width: 350px;
+				height: 500px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box">
+			<div id="div1">
+				<img src="img/1.png" />
+				<img src="img/2.jpeg" />
+				<img src="img/3.jpeg" />
+				<img src="img/4.png" />
+				<img src="img/5.jpeg" />
+				<img src="img/6.png" />
+				<img src="img/1.png" />
+			</div>
+			<script src="tween.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				//			写法1
+				//			var t = 0;
+				//			var b = 0;
+				//			var c = -2100;
+				//			var d = 500; 
+				//			var timer = setInterval(function(){
+				//				t++;
+				//				div1.style.left = Tween.Linear(t,b,c,d) + "px";
+				//				if(t == d) {
+				//					t = 0;
+				//				}
+				//			},20)
+				//			写法2 停顿效果
+				var t = 0;
+				var c = -350;
+				var d = 100;
+				var index = 0;
+				setInterval(function() {
+					var timer = setInterval(function() {
+						if(index == 6) {
+							index = 0;
+						}
+						b = -350 * index;
+						t++;
+						div1.style.left = Tween.Linear(t, b, c, d) + "px";
+						if(t == d) {
+							clearInterval(timer);
+							t = 0;
+							index++;
+						}
+					}, 10)
+				}, 2000);
+
+				//				var t = 0;
+				//				var b = 0;
+				//				var c = -350;
+				//				var d = 150;
+				//				var index = 0;
+				//				setInterval(function() {
+				//					var timer = setInterval(function() {
+				//						t++;
+				//						div1.style.left = Tween.Linear(t, b, c, d) + "px";
+				//						if(t == d) {
+				//							t = 0;
+				//							index++;
+				//							b = c * index;
+				//							if(index == 6) {
+				//								index = 0
+				//							}
+				//							clearInterval(timer);
+				//						}
+				//					}, 10)
+				//				}, 2000);
+			</script>
+		</div>
+	</body>
+
+</html>

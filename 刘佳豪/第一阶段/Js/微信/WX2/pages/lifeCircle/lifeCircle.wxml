@@ -1,0 +1,18 @@
+<view>------------------生命周期------------------</view>
+<!-- 通过navigator组件 切换页面 -->
+<navigator class="" target="" url="../circle-one/circle-one" hover-class="navigator-hover" open-type="navigate">
+    <button>点击切换到circleOne页面</button>
+</navigator>
+<!-- 
+    page页面想要展示，首先出发以下三个生命周期函数
+        1.onLoad
+        2.onShow
+        3。onReady
+        以上三个事件执行完毕，表示当前页面处于活跃状态（用户正在看到的页面）
+
+        当页面发生切换时：
+            1.通过tabbar切换页面，被切换的页面只是hide（切入后台，并不会销毁，待重新切换会tabbar时触发show（重新进入活跃状态））
+            2.当A页面通过navigator组件切换页面的行为 像 栈存储数据的原理（先进后出）；当A页面进入到B页面时，A页面先hide，B页面入栈，触发onLoad，onShow，onReady，此时B页面处于活跃状态，当从B页面返回A页面时，B页面出栈，触发onUload被销毁，A页面触发onShow，重新进入活跃状态
+            3.从navigationBar管理的页面直接跳转到其他tabBar页面时，会关闭所有非tabBar页面,新的tabBar页面触发onLoad，onShow，onReady，处于活跃状态
+            4.从navigationBar管理的页面，越级跳回页面，当前页面和被跨过的页面都会被销毁，返回到的页面重新show，进入活跃态
+ -->

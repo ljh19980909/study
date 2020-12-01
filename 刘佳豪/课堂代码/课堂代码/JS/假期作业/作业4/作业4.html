@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				transform-style: preserve-3d;
+			}
+			#box{
+				width: 660px;
+				height: 360px;
+				margin: 100px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotateX(-20deg);
+			}
+			#box>div{
+				width: 600px;
+				height: 330px;
+				position: absolute;
+				transition: all 0.5s; 
+			}
+			#box>div>img{
+				width: 100%;
+				height: 100%;
+			}
+			#box>div:nth-child(1){
+				transform: translateX(0px) translateZ(400px);
+				opacity: 1;
+			}
+			#box>div:nth-child(2){
+				transform: translateX(-300px) translateZ(100px);
+				opacity: 0.5;			
+			}
+			#box>div:nth-child(3){
+				transform: translateX(-300px) translateZ(-100px);
+				opacity: 0.5;
+			}
+			#box>div:nth-child(4){
+				transform: translateX(0px) translateZ(-200px);
+				opacity: 0.5;
+			}
+			#box>div:nth-child(5){
+				transform: translateX(300px) translateZ(-100px);
+				opacity: 0.5;
+				
+			}
+			#box>div:nth-child(6){
+				transform: translateX(300px) translateZ(100px);
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div><img src="image/1.jpg"/></div>
+			<div><img src="image/2.jpg"/></div>
+			<div><img src="image/3.jpg"/></div>
+			<div><img src="image/4.jpg"/></div>
+			<div><img src="image/5.jpg"/></div>
+			<div><img src="image/6.jpg"/></div>
+		</div>
+		<script type="text/javascript">
+			var divs = document.querySelectorAll("#box div");
+			var T1 = setInterval(a, 1000);
+            	function a() {
+				divs[0].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[1].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[2].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[3].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[4].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[5].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[0].style.opacity = .4;
+				divs[1].style.opacity = 1;
+				clearInterval(T1)
+			}
+			var T2 = setInterval(b, 2000);
+			function b() {
+				divs[1].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[2].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[3].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[4].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[5].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[0].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[1].style.opacity = .4;
+				divs[2].style.opacity = 1;
+				clearInterval(T2)
+			}
+			var T3 = setInterval(c, 3000);
+			function c() {
+				divs[2].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[3].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[4].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[5].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[0].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[1].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[2].style.opacity = .4;
+				divs[3].style.opacity = 1;
+				clearInterval(T3)
+			}
+			var T4 = setInterval(d, 4000);
+			function d() {
+				divs[3].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[4].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[5].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[0].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[1].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[2].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[3].style.opacity = .4;
+				divs[4].style.opacity = 1;
+				clearInterval(T4)
+			}
+			var T5 = setInterval(e, 5000);
+			function e() {
+				divs[4].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[5].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[0].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[1].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[2].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[3].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[4].style.opacity = .4;
+				divs[5].style.opacity = 1;
+				clearInterval(T5)
+			}
+			var T6 = setInterval(f, 6000);
+			function f() {
+				divs[5].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[0].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + 400 + "px)";
+				divs[1].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + 100 + "px)";
+				divs[2].style.transform = "translateX(" + -300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[3].style.transform = "translateX(" + 0 + "px)" + "translateZ(" + -200 + "px)";
+				divs[4].style.transform = "translateX(" + 300 + "px)" + "translateZ(" + -100 + "px)";
+				divs[5].style.opacity = .4;
+				divs[0].style.opacity = 1;
+				clearInterval(T6)
+			}
+			
+			setInterval(function(){
+				T1 = setInterval(a, 1000);
+				T2 = setInterval(b, 2000);
+				T3 = setInterval(c, 3000);
+				T4 = setInterval(d, 4000);
+				T5 = setInterval(e, 5000);
+				T6 = setInterval(f, 6000);
+			},6000);
+		</script>
+	</body>
+</html>

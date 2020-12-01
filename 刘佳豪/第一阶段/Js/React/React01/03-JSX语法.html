@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-JSX语法</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- React-dom.js 支持react有关的dom操作 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script type="text/babel">
+    /*
+        JSX语法的注意点:
+        1.JSX语法结构可以被包裹在小括号里,小括号也可以不写
+        2.JSX里的注释比较特殊
+        3.在JSX里可以通过{}嵌入表达式或者变量
+        4.如果jsx里的标签是单标签,
+        5.jsx结构有且只有一个根标签
+    */
+   let app=document.getElementById("app");
+   let msg="hello"
+   let a=1,b=2
+   ReactDOM.render((
+       <div>
+        <ul>
+            <li>111</li>
+            {/*<li>222</li>*/}
+            <li>{msg}</li>
+            <li>a+b的值时:{a+b}</li>
+            <li><input type="text" /></li>
+        </ul>
+        <p>123</p>
+        </div>
+   ),app)
+
+   /*
+        react里的列表渲染
+            建议使用map方法进行,返回想要渲染的jsx标签
+            ract要求,列表渲染的标签需要key属性做唯一标识,建议以后使用循环集合理的对象的某个唯一key值(数字或者字符串)
+   */
+  let cities=["郑州","北京","上海","深圳","广州"]
+  ReactDOM.render((
+      <ul>
+        {
+            cities.map((v,i)=>{
+                return <li key={i}>城市序号:{i+1},城市名:{v}</li>
+            })
+        }
+        </ul>
+  ),app)
+</script>
+
+</html>

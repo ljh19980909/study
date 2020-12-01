@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 350px;
+				height: 500px;
+				border: 1px solid red;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			#div1{
+				width: 2450px;
+				height: 500px;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#div1 img{
+				float: left;
+				width: 350px;
+				height: 500px;
+			}
+			button{
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="box">
+			<div id="div1">
+				<img src="img/1.png"/>
+				<img src="img/2.jpeg"/>
+				<img src="img/3.jpeg"/>
+				<img src="img/4.png"/>
+				<img src="img/5.jpeg"/>
+				<img src="img/6.png"/>
+				<img src="img/1.png"/>
+			</div>
+		</div>
+		<button id="btn1">上一页</button>
+		<button id="btn2">下一页</button>
+		<script type="text/javascript">
+			//声明一个变量存储当前是第几张图片
+			var index = 0;
+			btn1.onclick = syz;
+			function syz(){
+				btn1.onclick = null;
+				if(index == 0){
+					index = 6;
+				}
+				//声明一个变量控制当前div1Div的偏移一次的距离(350px)
+				var x = 0;
+				//创建js动画(通过setInterval实现)
+				var timer1 = setInterval(function(){
+					x+=5;
+					div1.style.left = index * -350 + x + "px";
+					//一次换图完成之后，清除本次计时器
+					if(x == 350) {
+						clearInterval(timer1);
+						index--;
+						btn1.onclick = syz;
+					}
+				},10)
+			}
+			btn2.onclick = nextClick;
+			function nextClick(){
+				btn2.onclick = null;
+				if(index == 6){
+					index = 0;
+				}
+				//声明一个变量控制当前div1Div的偏移一次的距离(350px)
+				var x = 0;
+				//创建js动画(通过setInterval实现)
+				var timer2 = setInterval(function(){
+					x+=5;
+					div1.style.left = index * -350 - x + "px";
+					//一次换图完成之后，清除本次计时器
+					if(x == 350) {
+						clearInterval(timer2);
+						index++;
+						btn2.onclick = nextClick;
+					}
+				},10)
+			}
+
+			
+		</script>
+	</body>
+</html>

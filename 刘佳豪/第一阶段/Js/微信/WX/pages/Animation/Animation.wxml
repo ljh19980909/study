@@ -1,0 +1,17 @@
+<view>-------------------动画-----------------</view>
+<!--
+微信小程序里可以使用之前原生的css动画
+    1.transition过渡动画
+    2.keyframs关键帧动画 
+
+    而且还可以通过绑定如下事件,监听动画的生命周期
+    1.bindtransitionend 过渡的任何一个动画属性之行结束就会触发一次
+    2.bindanimationstart 关键帧动画开始执行时触发
+    3.bindanimationiteration  关键帧动画完成一个阶段进行下一个阶段时触发
+    4.bindanimationend 关键帧动画执行结束触发
+-->
+<!-- <view class="v1" bindtransitionend="tranEnd"></view> -->
+<!-- <view class="v2" bindanimationend="anEnd" bindanimationiteration="anIter" bindanimationstart="anStart"></view> -->
+
+<view class="v3"></view>
+<button bindtap="animation">开始动画</button>

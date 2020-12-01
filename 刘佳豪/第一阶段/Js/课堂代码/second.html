@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-color: yellow;
+			}
+
+			a {
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>当前页面：second.html</h1>
+		<a href="./three.html">跳转到three.html</a>
+		<button type="button" id="back">后退</button>
+		<button type="button" id="forward">前进</button>
+	</body>
+	<script type="text/javascript">
+		console.log(history.length);
+
+		var backObj = document.getElementById('back');
+		backObj.onclick = function() {
+			// 后退一个历史记录
+			history.back();
+		};
+
+		var forwardObj = document.getElementById('forward');
+		forwardObj.onclick = function() {
+			// 前进一个历史记录
+			// history.forward();
+			history.go(1);
+		};
+	</script>
+</html>

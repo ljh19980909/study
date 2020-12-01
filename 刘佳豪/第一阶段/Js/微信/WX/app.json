@@ -1,0 +1,27 @@
+{
+    "pages": ["pages/Animation/Animation", "pages/communitication/communitication"],
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/Animation/Animation",
+                "text": "动画",
+                "iconPath": "./home (1).png",
+                "selectedIconPath": "./home.png"
+            },
+            {
+                "pagePath": "pages/communitication/communitication",
+                "text": "组件通信",
+                "iconPath": "./我的 (1).png",
+                "selectedIconPath": "./我的.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "通信",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

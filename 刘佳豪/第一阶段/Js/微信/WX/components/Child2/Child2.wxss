@@ -1,0 +1,4 @@
+/* components/Child2/Child2.wxss */
+.title {
+    border: 1rpx dotted blue;
+}

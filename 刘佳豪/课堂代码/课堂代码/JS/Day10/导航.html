@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>导航</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 500px;
+				height: 53px;
+				margin: 100px auto;
+				position: relative;
+			}
+			
+			ul {
+				display: flex;
+				list-style: none;
+				background-color: blue;
+				justify-content: space-around;
+			}
+			
+			ul>li {
+				width: 100px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+			}
+			
+			#div1 {
+				width: 100px;
+				height: 3px;
+				background-color: red;
+				position: absolute;
+				top: 50px;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="tween.js" type="text/javascript" charset="utf-8"></script>
+		<div id="box">
+			<ul>
+				<li>新闻</li>
+				<li>娱乐</li>
+				<li>体育</li>
+				<li>热门</li>
+				<li>历史</li>
+			</ul>
+			<div id="div1"></div>
+		</div>
+		<script type="text/javascript">
+			var lis = document.querySelectorAll("ul li");
+			for(var i = 0; i < lis.length; i++) {
+				var e = 0;
+				lis[i].onclick = function() {
+					this.onclick = null;
+					var b = e;
+					clearInterval(timer);
+					for(var j = 0; j < lis.length; j++) {
+						if(lis[j] == this) {
+							var t = 0;
+							var c = 100*j - b;
+							var d = 50;
+							e = 100*j;
+							var timer = setInterval(function() {
+								t++;
+								div1.style.left = Tween.Linear(t, b, c, d) + "px";
+								if(t == d) {
+									clearInterval(timer);
+								}
+							}, 10)
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

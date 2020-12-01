@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+		<script src="./js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">Slide 1</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var mySwiper = new Swiper("body>.swiper-container", {
+			direction: "vertical",
+			effect: "overflow",
+			onSlideChangeEnd: function(swiper) {
+				switch (swiper.activeIndex) {
+					case 0:
+						{
+							//追加当前界面动画
+							$("body").addClass("animateOne")
+
+							//删除其他界面动画
+							$("body").removeClass("animateTwo")
+							$("body").removeClass("animateFour")
+							break;
+						}
+					case 1:
+						{
+							//追加当前界面动画
+							$("body").addClass("animateTwo")
+							//删除其他界面动画
+							$("body").removeClass("animateOne")
+
+							$("body").removeClass("animateFour")
+							break;
+						}
+					case 2:
+						{
+							//追加当前界面动画
+							//删除其他界面动画
+							$("body").removeClass("animateOne")
+							$("body").removeClass("animateTwo")
+							$("body").removeClass("animateFour")
+							break;
+						}
+					case 3:
+						{
+
+							//触发第四块界面的轮播事件
+
+							//显示轮播界面关闭其余图片
+
+
+							$(".person").each(function(i, e) {
+								$(".person:eq(" + i + ")").click(function() {
+									$("#div4 .swiper-container").css("zIndex", "0")
+									swiper1.slideTo(i + 1, 0, false)
+									$(".person").css("display", "none")
+									$("#close").css("display", "block")
+								})
+							})
+							//点击关闭按钮关闭轮播部分,显示小图片部分
+							$("#close").click(function() {
+								$("#div4 .swiper-container").css("zIndex", "-1");
+								$(".person").css("display", "block");
+								$("#close").css("display", "none")
+							})
+
+							//追加当前界面动画
+							$("body").addClass("animateFour")
+							//删除其他界面动画
+							$("body").removeClass("animateOne")
+							$("body").removeClass("animateTwo")
+							break;
+						}
+				}
+			}
+		})
+	</script>
+</html>

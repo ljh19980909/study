@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <fieldset>
+        <legend><h2>值绑定</h2></legend>
+        <!--{{}}里是vue的编译环境-->
+        <p v-cloak>msg的值是：{{msg}}</p>
+        <p>a+b的值是：{{a+b}}</p>
+        <!--注意：指令双引号里面也是Vue的编译环境-->
+        <p>a>b是真的吗？{{a>b?"真":"假"}}</p>
+        <p v-html="dValue"></p>
+        <p v-text="dValue"></p>
+        <p v-html="'a>b是真的吗？'+(a>b?'真':'假')"></p>
+        <p v-html="eValue"></p>
+        <p v-text="eValue"></p>
+    </fieldset>
+    <fieldset>
+        <legend><h2>属性绑定</h2></legend>
+        <img v-bind:src="imgSrc" />
+        <img v-bind:src="'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1070150864,4192886663&fm=26&gp=0.jpg'" />
+        <img :src="imgSrc" />
+        <div :style="divstyle1"></div>
+        <div :style="divstyle2"></div>
+        <div :style="divstyle3"></div>
+    </fieldset>
+</div>
+</body>
+<script>
+    /**
+     * 1、数据绑定
+     *      1.1     值绑定
+     *          a.插值表达式     {{}},大括号里面可以填data里的变量，表达式，函数调用
+     *          b.v-text或者v-html指令
+     *                      两者的区别：当数据里有html字符串时，v-html能直接解析，而v-text只回原样输出，{{}}也会原样输出
+     *                      ps：如何解决vue里的文本闪烁问题
+     *                      文本闪烁： 当加载vue.js文件不及时时，会导致vue的语法无法继续加载，页面会显示vue的原始语法，用户体验不好
+     *                      解决办法：我们可以使用v-cloak指令解决,当vue.js文件没加载时，v-cloak会被识别成普通的自定义属性，我们让添加了该属性的元素display：none；一旦vue.js加载完毕，v-cloak就会被vue识别成指令，会自动去除之前的display:none，显示内容
+     *      1.2     属性绑定
+     *          1、语法：
+     *              a.v-bind:属性名=""
+     *              简写：
+     *                  ：属性名=""
+     *          2、动态绑定style属性
+     *                语法：
+     *                  ：style="数组/对象/行间样式字符串"
+     *          3、动态绑定class属性
+     *      1.3     事件绑定
+     * */
+    new Vue({
+        el: "#root",
+        data: {
+            msg: "hello Vue",
+            a: 1,
+            b: 5,
+            dValue: "你好",
+            eValue:"这是a链接：<a href='http://www.baidu.com'>点击跳转百度首页</a>",
+            imgSrc:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1070150864,4192886663&fm=26&gp=0.jpg",
+            divstyle1:{
+                width:"200px",
+                height:"200px",
+                background:"red"
+            },
+            divstyle2:[{width:"200px"},{height:"200px"},{background:"blue"}],
+            divstyle3:"width:200px;height:200px;background:yellow"
+        }
+    })
+</script>
+</html>

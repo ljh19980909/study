@@ -1,0 +1,6 @@
+<!--components/Child5/Child5.wxml-->
+<view class="Child5">
+  <view>这是Child5组件</view>
+  <view>这是Child5传的值：{{c5Msg}}</view>
+  <Child6 bind:cusC6="getVTC6"/>
+</view>

@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: deepskyblue;
+    position: fixed;
+    z-index: 2;
+}
+
+.header > span:last-child {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header > span {
+    font-size: 16px;
+    color: #fff;
+}
+
+.header a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+/*轮播图*/
+.swiper-container {
+    padding-top: 50px;
+    width: 100%;
+    height: 250px;
+    padding-bottom: 10px;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide > ul {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.swiper-slide > ul > li {
+    float: left;
+    list-style: none;
+    width: 25%;
+    height: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.swiper-slide > ul > li > img {
+    width: 80%;
+}
+
+.swiper-slide > ul > li > p {
+    font-size: 14px;
+}
+
+.content {
+    position: relative;
+}
+
+.content > p {
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.content > ul {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.content > ul > li {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.left {
+    position: absolute;
+    width: 20%;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.left > img {
+    width: 100%;
+}
+.middle{
+    position: absolute;
+    left: 25%;
+    width: 60%;
+    height: 100px;
+    box-sizing: border-box;
+}
+.middle>.brand{
+    position: absolute;
+    font-size: 16px;
+    background-color: yellow;
+    font-family: 800;
+    top: 5px;
+}
+.title{
+    position: absolute;
+    left: 40px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 120px;
+}
+.send{
+    position: absolute;
+    top: 72px;
+    font-size: 14px;
+}
+.right{
+    position:absolute;
+    right: 10px;
+    width: 30%;
+    height: 100px;
+}
+.time3{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 14px;
+}
+.time2{
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    font-size: 14px;
+}
+.time1{
+    position: absolute;
+    right: 60px;
+    top: 5px;
+    font-size: 14px;
+}
+.postStyle{
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    background-color: deepskyblue;
+    color: #ffffff;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.arrive{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    border: 1px solid deepskyblue;
+    padding: 1px 3px;
+    box-sizing: border-box;
+    color: deepskyblue;
+}
+.distance{
+    position: absolute;
+    right: 57px;
+    bottom: 10px;
+    font-size: 14px;
+}
+.xie{
+    position: absolute;
+    right: 48px;
+    bottom: 10px;
+    font-size: 14px;
+}
+.minute{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    font-size: 14px;
+    color: deepskyblue;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM基础02</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				height: 500px;
+				padding: 10px;
+				border: 5px solid red;
+				background-color: cyan;
+				margin: 30px;
+			}
+			.big{
+				width: 300px;
+				height: 400px;
+				background-color: yellow;
+				padding: 15px;
+				margin: 30px;
+				border: 0px solid black;
+				border-width: 1px 2px 3px 4px;
+				overflow: auto;
+				/*
+				 * overflow:处理溢出内容
+				 * 1.hidden 将溢出的内容隐藏
+				 * 2.scroll 底部和右边添加滚动条，不管内容是否溢出
+				 * 3.auto 根据内容是否溢出,决定是否添加滚动条
+				 */
+			}
+			.small{
+				width: 200px;
+				height: 600px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="big">
+				<div class="small">
+					
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			/*
+			 * 我们可以通过DOM	直接获取一个元素节点的尺寸和位置
+			 * 以下所有的尺寸和位置都是元素的节点的属性，直接使用点语法获取即可
+			 * 
+			 * 尺寸
+			 * 
+			 * 内尺寸
+			 * clientWidth = width + 左右padding
+			 * clientHeight = height + 上下padding
+			 * 
+			 * 外尺寸
+			 * offsetWidth = width + 左右padding + 左右border
+			 * offsetHeight = height + 上下padding + 上下border
+			 * 
+			 * 
+			 * 位置
+			 * 
+			 * 内位置
+			 * clientLeft = border - left;
+			 * clientTop = border - top;
+			 * 
+			 * 外位置
+			 * offsetLeft = 元素的左边框的外边缘距离离它最近的，设置了非static定位的祖先元素的左边框的内边缘
+			 * offsetTop = 元素的上边框的外边缘距离离它最近的，设置了非static定位的祖先元素的上边框的内边缘
+			 */
+			var bigDiv = document.querySelector(".big");
+			console.log(bigDiv.clientWidth,bigDiv.clientHeight);
+			console.log(bigDiv.offsetWidth,bigDiv.offsetHeight);
+			
+			console.log(bigDiv.clientLeft,bigDiv.clientTop);
+			console.log(bigDiv.offsetLeft,bigDiv.offsetTop);
+			
+			
+			/*
+			 * 滚动尺寸
+			 * scrollWidth = 元素滚动区域的总宽度
+			 * scrollHeight = 元素滚动区域的总高度
+			 * 
+			 * 滚动位置
+			 * scrollLeft
+			 * scrollTop
+			 */
+			
+			console.log(bigDiv.scrollWidth,bigDiv.scrollHeight);
+			console.log(bigDiv.scrollLeft,bigDiv.scrollTop);
+			
+//			setInterval(function(){
+//				if(bigDiv.scrollTop > 100){
+//					bigDiv.style.backgroundColor = "green";
+//				}else{
+//					bigDiv.style.backgroundColor = "yellow";
+//				}
+//				
+//			},10)
+
+//			bigDiv.onscroll = function(){
+//				console.log("动")
+//				if(bigDiv.scrollTop > 100){
+//					bigDiv.style.backgroundColor = "green";
+//				}else{
+//					bigDiv.style.backgroundColor = "yellow";
+//				}
+//			}
+
+			
+			/*
+			 * 以上所有的属性除了scrollTop和scrollLeft之外，其余的属性全部都是只读的。
+			 * scrollTop和scrollLeft是读写的。
+			 */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<view class="container">这是status页面</view>
+<navigator url="../a/a" >
+    <button>点击进入a页面</button>
+</navigator>
+  
+<!-- wxministore  小程序的状态管理 -->
+<!-- 在某个page页面使用ministore的数据源里的值 -->
+<view>store里的msg的值:{{msg}}</view>
+<view wx:for="{{$state.arr}}" wx:key="{{item.name}}">
+    <view>名字:{{item.name}}</view>
+    <view>年龄:{{item.age}}</view>---
+</view>
+<button bindtap="change">点击修改数据</button>

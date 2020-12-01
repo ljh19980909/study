@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TweenJS</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script src="tween.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 * Tween.js	JS的动画插件
+			 * 要想实现tween。js，首先要声明每种动画函数里的t，b，c，d四个参数的意义
+			 * t---	开始步数，一般给0
+			 * b---	开始量
+			 * c---	改变量
+			 * d---	结束步数
+			 * 
+			 * tween.js整个动画的运动过程实际上是t追赶d的过程。
+			 */
+			var t = 0;
+			var b = 0;
+			var c = 500;
+			var d = 100;
+			var timer = setInterval(function(){
+				t++;
+				div1.style.left = Tween.Linear(t,b,c,d) + "px";
+				if(t == d) {
+					clearInterval(timer);
+				}
+			},10)
+		</script>
+	</body>
+</html>

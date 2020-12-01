@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			/* 整体容器 */
+			.wrap{
+				width: 700px;/* 
+				height: 700px; */
+				/* border: 10px solid red; */
+				/* overflow: hidden; */
+			}
+			/* 上端 */
+			.head{
+				width: 100%;
+				height: 20px;
+				/* border: 10px solid yellow; */
+				line-height: 20px;
+				padding-top: 10px;
+				margin-bottom: 10px;
+			}
+			.head h2{
+				font-size: 16px;
+				font-weight: 500;
+				color: #111;
+				float: left;
+				/* border: 1px solid yellow; */
+				margin-right: 10px;
+			}
+			.head span,.third{
+				font-size:13px;
+				color: #111;
+				float: left;
+				/* border: 1px solid red; */
+				margin-left: 12px;
+				cursor: pointer;
+			}
+			.head .name{
+				color: #BCBCBC;
+			}
+			.wrap .head .third{
+				color: #0000FF;
+				}
+			.head .name:hover{
+				background-color: #0000FF;
+				color: white;
+			}
+			.head .third{
+				float: right;
+				margin: 0px;
+			}
+			/* 下端 */
+			.main{
+				width: 100%;
+				height: 500px;
+				/* border: 10px solid green; */
+			}
+			.main ul{
+				width: 700px;
+				cursor: pointer;
+				/* border: 10px solid yellow; */
+				/* overflow: hidden; */
+			}
+			.main ul li{
+				width: 115px;
+				list-style: none;
+				float: left;
+				margin: 10px 0px 25px 25px;
+				position: relative;
+			}
+			.main li img{
+				width: 115px;
+				height: 172.5px;
+			}
+			.main li .mask{
+				width: 285px;
+				height: 368px;
+				/* border: 10px solid red; */
+				background-color: white;
+				position: absolute;
+				left: 140px;
+				top: 0px;
+				z-index: 200;
+				display: none;
+			}
+			ul li:hover .mask{
+				display: block;
+			}
+			.main li p{
+				font-size: 13px;
+				color: blue;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="head">
+				<h2>最近热门电影</h2>
+				<div class="second">
+					<span>热门</span>
+					<span class="name">最新</span>
+					<span class="name">豆瓣高分</span>
+					<span class="name">冷门佳片</span>
+					<span class="name">华语</span>
+					<span class="name">欧美</span>
+					<span class="name">韩国</span>
+					<span class="name">日本</span>
+				</div>
+				<span class="third">更多»</span>
+			</div>
+			<hr>
+			<div class="main">
+				<ul>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+					<li>
+						<img src="./img/untitled.png" alt="">
+						<div class="mask">666</div>
+						<p>想哭的我戴上了猫的面具 <span style="color: orange;">6.5</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

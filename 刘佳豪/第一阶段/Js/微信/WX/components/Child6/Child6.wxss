@@ -1,0 +1,4 @@
+/* components/Child6/Child6.wxss */
+.Child6 {
+    border: 1rpx dotted greenyellow;
+}

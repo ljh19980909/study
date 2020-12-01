@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			#box {
+				width: 800px;
+				overflow: hidden;
+				background-color: skyblue;
+				margin: 80px auto;
+				padding: 30px 10px;
+			}
+			
+			#lyb {
+				width: 100%;
+				height: 300px;
+				margin: 10px 0;
+			}
+			#qq{
+				width: 100%;
+				margin: 10px 0;
+			}
+			#btn{
+				width: 50px;
+				height: 30px;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<p>输入球球号:</p>
+			<input id="qq" />
+			<p>请留言:</p>
+			<textarea id="lyb"></textarea>
+			<button id="btn">提交</button>
+			<p>显示留言:</p>
+			<ul id="commen"></ul>
+		</div>
+		<script type="text/javascript">
+			btn.onclick = function() {
+				var qq = document.getElementById("qq").value;
+				var lyb = document.getElementById("lyb").value;
+				if(qq.trim().length == 0 || lyb.trim().length == 0) {
+					alert("请输入球球或者留言");
+					return;
+				}
+					var warpLi = document.createElement("li");
+					
+					var bt = document.createElement("p");
+					var nr = document.createElement("p");
+					var sc = document.createElement("button")
+
+					bt.innerHTML = qq;
+					bt.style.backgroundColor = "cyan"
+					nr.innerHTML = lyb;
+					nr.style.backgroundColor = "pink"
+					sc.innerHTML = "删除"
+
+					warpLi.appendChild(bt);
+					warpLi.appendChild(nr);
+					warpLi.appendChild(sc);
+					
+					commen.appendChild(warpLi);
+					
+					document.getElementById("qq").value = "";
+					document.getElementById("lyb").value = "";
+					
+					sc.onclick = function() {
+						this.parentNode.parentNode.removeChild(this.parentNode);
+					}
+			}
+		</script>
+	</body>
+
+</html>

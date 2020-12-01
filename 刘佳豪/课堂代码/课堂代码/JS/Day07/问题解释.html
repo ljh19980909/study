@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问题解释</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//计时器在调用方法时，可以给调用函数传参，参数从第二个实参往后写
+			function randomNumber(x,y){
+				var rn = Math.floor(Math.random() * (y - x + 1) + x);
+				console.log(rn);
+			}
+			setInterval(randomNumber,1000,10,100);
+			
+//			var n1 = 100;
+//			function fun1(a){
+//				a = 200;
+//				console.log(a);
+//			}
+//			fun1(n1);
+//			console.log(n1);
+
+//			var arr = [1, 2, 3];
+//			function fun2(a){
+//				a[0] = 100;
+//				console.log(a);
+//			}
+//			fun2(arr);
+//			console.log(arr);
+			/*
+			 * JS里，哪些值得传递是值传递？哪些是址传递？
+			 * 除了对象类型(Object)是址传递，其余类型都是值传递
+			 * 
+			 * 任何赋值的过程都是一个拷贝的过程
+			 * 值传递，拷贝的就是存储的值，拷贝之后，修改一个值，不影响另外一个值
+			 * 址传递，拷贝的是值所在的地址，拷贝之后，不管修改哪个值，修改的是同一个，只要有一个改变，另一个跟着改变
+			 */
+		</script>
+	</body>
+</html>
